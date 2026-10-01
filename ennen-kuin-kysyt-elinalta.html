@@ -1,0 +1,1044 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ennen kuin kysyt Elinalta</title>
+<meta name="description" content="Sarkastinen markkinointitoimiston selviytymispeli: 40 kysymystä ennen kuin häiritset Elinaa.">
+<meta name="theme-color" content="#FFF8EC">
+<meta name="color-scheme" content="light only">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF8EC; --surface:#FFFFFF; --ink:#1D1B22; --muted:#55505E; --shadow:#1D1B22; --dots:rgba(29,27,34,.07);
+  --q:#FFE066; --detour:#BFE3FF; --stop:#FFC2B8; --self:#DCCBFF; --go:#BDF2C5;
+  --accent:#B8312A; --s-stop:#B8312A; --s-self:#5B3CC4; --s-go:#1D7337;
+  --meter-bg:#EFE6D6; --skin:#FFD3A6; --hair:#3B2A20; --cup:#E8453C; --cta:#FF8A3D; --cta-hover:#FF9D5C;
+  --body:'Atkinson Hyperlegible',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --head:'Fredoka','Atkinson Hyperlegible',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --gutter:max(16px,env(safe-area-inset-left));
+  --gutter-r:max(16px,env(safe-area-inset-right));
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background-color:var(--bg);background-image:radial-gradient(var(--dots) 1.5px,transparent 1.5px);background-size:22px 22px;
+  color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5;overflow-wrap:break-word}
+h1,h2,h3,h4,p,dd,li,.bubble,.ans,.pill{hyphens:auto;-webkit-hyphens:auto}
+button{font:inherit;color:inherit;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:680px;margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter-r)}
+[hidden]{display:none!important}
+
+/* ---------- header (collapses to one line during a game) ---------- */
+header{padding-top:max(18px,env(safe-area-inset-top));padding-bottom:10px;transition:padding .3s ease}
+.kick{font-family:var(--head);font-weight:600;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0}
+h1{font-family:var(--head);font-weight:700;font-size:clamp(1.7rem,7.6vw,2.8rem);line-height:1.08;margin:4px 0 8px;transition:font-size .3s ease,margin .3s ease}
+.subtitle{margin:0;color:var(--muted);font-size:1rem}
+body.in-game header{padding-top:max(8px,env(safe-area-inset-top));padding-bottom:6px}
+body.in-game .kick,body.in-game .subtitle{display:none}
+body.in-game h1{font-size:1.02rem;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;hyphens:none}
+
+main{padding-top:12px;padding-bottom:24px}
+
+/* ---------- HUD ---------- */
+.hud{display:flex;gap:12px;align-items:flex-end;margin:4px 0 10px}
+.avatar{flex:none;width:76px;text-align:center}
+.face{width:76px;height:76px;display:block;overflow:visible}
+.avatar-tag{display:inline-block;max-width:100%;margin-top:-4px;font-family:var(--head);font-weight:600;font-size:.72rem;background:var(--surface);border:2px solid var(--ink);border-radius:12px;padding:1px 6px;line-height:1.25}
+.bubble{position:relative;flex:1;min-width:0;min-height:60px;margin-bottom:18px;background:var(--surface);border:3px solid var(--ink);border-radius:16px;padding:8px 12px;box-shadow:4px 4px 0 var(--shadow);font-size:.98rem;line-height:1.35}
+.bubble::before{content:"";position:absolute;left:-12px;bottom:16px;width:18px;height:18px;background:var(--surface);border-left:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:rotate(45deg)}
+.bubble b{display:block}
+.bubble .think{display:block;margin-top:4px;color:var(--muted);font-style:italic;font-size:.92rem}
+.bubble.pop{animation:pop .3s ease-out}
+
+.meter{display:grid;gap:4px;font-size:.92rem}
+.meter-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:0 8px}
+.meter-top b{font-family:var(--head);font-weight:600;white-space:nowrap}
+.m-delta{font-family:var(--head);font-weight:700;opacity:0;transition:opacity .3s;margin-left:6px}
+.m-delta.show{opacity:1} .m-delta.neg{color:var(--s-stop)} .m-delta.pos{color:var(--s-go)}
+.bar{height:14px;border:3px solid var(--ink);border-radius:999px;background:var(--meter-bg);overflow:hidden}
+.bar i{display:block;height:100%;width:100%;transition:width .5s ease,background-color .5s ease}
+.prog{height:6px;border-radius:99px;background:var(--meter-bg);margin:10px 0 14px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--ink);transition:width .4s ease}
+
+/* ---------- card ---------- */
+.card{position:relative;background:var(--fill,var(--surface));border:3px solid var(--ink);border-radius:18px;padding:18px 16px 16px;box-shadow:5px 5px 0 var(--shadow)}
+.card.is-q{--fill:var(--q)}
+.t-stop{--fill:var(--stop);--st:var(--s-stop)} .t-detour{--fill:var(--detour)} .t-self{--fill:var(--self);--st:var(--s-self)} .t-go{--fill:var(--go);--st:var(--s-go)}
+.kicker{display:block;font-family:var(--head);font-weight:600;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.card h2{font-family:var(--head);font-weight:600;font-size:clamp(1.32rem,6vw,1.8rem);line-height:1.2;margin:6px 0 8px}
+.card h2:focus{outline:none}
+.card p{margin:0 0 8px;font-size:1.04rem}
+.sub{color:var(--muted)}
+.card.enter{animation:enter .28s ease-out}
+.card.shake{animation:shake .45s}
+.stamp{display:inline-block;font-family:var(--head);font-weight:700;font-size:1.2rem;letter-spacing:.06em;text-transform:uppercase;color:var(--st);
+  border:4px solid currentColor;border-radius:10px;padding:0 12px;transform:rotate(-7deg);animation:slam .5s cubic-bezier(.2,1.5,.4,1) both;margin:2px 0 6px}
+.status-h{font-family:var(--head);font-weight:600;font-size:.95rem;margin:18px 0 0;color:var(--muted)}
+.status{margin:6px 0 4px;display:grid;gap:4px;font-size:.96rem}
+.status div{display:flex;justify-content:space-between;gap:12px;border-bottom:2px dashed color-mix(in srgb,var(--ink) 25%,transparent);padding:4px 0}
+.status dt{color:var(--muted)} .status dd{margin:0;font-weight:700;text-align:right}
+
+.answers{display:grid;gap:10px;margin-top:14px}
+.ans{width:100%;min-height:54px;display:flex;align-items:center;gap:12px;text-align:left;padding:10px 14px;background:var(--surface);color:var(--ink);
+  border:3px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--shadow);font-weight:700;font-size:1.03rem;line-height:1.25;cursor:pointer;
+  transition:transform .08s,box-shadow .08s}
+.ans:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--shadow)}
+@media (hover:hover){.ans:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--shadow)}}
+.ans .k{flex:none;width:28px;height:28px;border-radius:50%;border:2.5px solid var(--ink);display:grid;place-items:center;font-family:var(--head);font-size:.85rem}
+.ans.primary{background:var(--cta);color:var(--ink);justify-content:center;text-align:center;font-family:var(--head);font-weight:600;font-size:1.15rem}
+.ans.primary .k{display:none}
+@media (hover:hover){.ans.primary:hover{background:var(--cta-hover)}}
+.mode{flex-direction:column;align-items:flex-start;gap:2px;text-align:left}
+.mode.primary{align-items:center;text-align:center}
+.mode .mt{font-family:var(--head);font-weight:600;font-size:1.18rem}
+.mode .mm{font-family:var(--body);font-weight:400;font-size:.9rem;opacity:.85}
+.verdict{margin-top:6px}
+.cert{margin-top:14px;background:var(--surface);border:3px dashed var(--ink);border-radius:16px;padding:12px 14px}
+.cert .rank{font-size:1.05rem;margin:4px 0 2px}
+.cert .rank b{font-family:var(--head);font-weight:700;font-size:1.25rem;color:var(--accent)}
+.cert h3{font-family:var(--head);font-weight:600;font-size:1rem;margin:12px 0 6px}
+.ach{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ach li{display:grid;grid-template-columns:28px 1fr;gap:2px 8px;align-items:start}
+.ach li::before{content:"★";grid-row:span 2;width:28px;height:28px;border-radius:50%;background:var(--q);border:2px solid var(--ink);display:grid;place-items:center;font-size:.85rem;color:var(--ink)}
+.ach span{color:var(--muted);font-size:.95rem}
+
+.skip-zone{position:relative;height:56px;margin:14px 0 2px}
+#skip{position:absolute;left:50%;top:8px;transform:translateX(-50%);max-width:100%;min-height:40px;padding:6px 14px;border:2.5px dashed var(--muted);border-radius:999px;background:transparent;
+  color:var(--muted);font-weight:700;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;transition:left .22s ease,top .22s ease}
+#skip.done{border-style:solid}
+#skip.wiggle{animation:shake .4s}
+.under{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:4px 16px;margin-top:10px}
+details.path summary{cursor:pointer;font-family:var(--head);font-weight:600;color:var(--muted);min-height:44px;display:flex;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:6px}
+.chip{font-size:.88rem;background:var(--surface);border:2px solid var(--ink);border-radius:999px;padding:2px 10px}
+.linkbtn{display:inline-flex;align-items:center;min-height:44px;padding:0;background:none;border:0;color:var(--accent);font-weight:700;font-size:.95rem;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-align:left}
+
+footer{padding-top:6px;padding-bottom:max(36px,env(safe-area-inset-bottom));color:var(--muted);font-size:.9rem;text-align:center}
+#confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50}
+#confetti i{position:absolute;top:-24px;border-radius:2px;animation:fall linear forwards}
+#toast{position:fixed;left:50%;bottom:max(22px,env(safe-area-inset-bottom));transform:translate(-50%,20px);width:max-content;max-width:calc(100% - 32px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:60;text-align:center}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- avatar parts (fixed colours so the face works in both themes) ---------- */
+.face .disc{fill:#CFE8FF;stroke:var(--ink);stroke-width:3}
+.face .ln{stroke:#1D1B22;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.face .head{fill:var(--skin)} .face .hair{fill:var(--hair)}
+.face .brow{fill:none;stroke-width:3.5;transform-box:fill-box;transform-origin:center;transition:transform .3s}
+.face .eyes circle{fill:#1D1B22}
+.face .eyes{transform-box:fill-box;transform-origin:center;animation:blink 4.5s infinite}
+.face .mouth{fill:none;stroke-width:3.5}
+.face .glasses circle{fill:rgba(255,255,255,.28);stroke-width:2.5}
+.face .band{fill:none;stroke-width:5}
+.face .cup{fill:var(--cup);stroke-width:2.5}
+.face .earring{fill:#FFD43B;stroke-width:2}
+.face .blush ellipse{fill:#FF8FA3;opacity:.65}
+.face .sweat{fill:#7CC4FF;stroke-width:2}
+.face .steam path{fill:none;stroke:var(--muted);stroke-width:3;stroke-linecap:round;animation:steam 1.1s ease-in-out infinite alternate}
+.face .eyes-love path{fill:#E8453C;stroke-width:1.5}
+.face .eyes-x,.face .eyes-love,.face .sweat,.face .steam,.face .blush{display:none}
+.face.m-happy .blush,.face.m-love .blush{display:inline}
+.face.m-annoyed .sweat,.face.m-fried .sweat{display:inline}
+.face.m-fried .steam{display:inline}
+.face.m-fried .eyes,.face.m-love .eyes{display:none}
+.face.m-fried .eyes-x,.face.m-love .eyes-love{display:inline}
+.face.m-happy .brow,.face.m-love .brow{transform:translateY(-3px)}
+.face.m-meh .brow{transform:translateY(3px)}
+.face.m-annoyed .brow-l{transform:translateY(2px) rotate(16deg)} .face.m-annoyed .brow-r{transform:translateY(2px) rotate(-16deg)}
+.face.m-fried .brow-l{transform:rotate(-14deg)} .face.m-fried .brow-r{transform:rotate(14deg)}
+.face.bump{animation:bump .35s ease-out} .face.shake{animation:shake .45s}
+
+@keyframes enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{transform:scale(.94)}60%{transform:scale(1.03)}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(7px)}60%{transform:translateX(-5px)}80%{transform:translateX(3px)}}
+@keyframes bump{0%{transform:translateY(0)}40%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+@keyframes slam{0%{transform:scale(2.4) rotate(-7deg);opacity:0}100%{transform:scale(1) rotate(-7deg);opacity:1}}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+@keyframes steam{from{transform:translateY(0);opacity:.4}to{transform:translateY(-5px);opacity:1}}
+@keyframes fall{to{transform:translateY(112vh) rotate(760deg)}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* very small phones */
+@media (max-width:359px){
+  body{font-size:16px}
+  .avatar,.face{width:64px} .face{height:64px}
+  .tab{padding:6px 12px}
+  .card{padding:16px 13px 14px}
+  .ans{padding:9px 11px;gap:9px}
+  .status div{flex-direction:column;gap:0} .status dd{text-align:left}
+}
+/* tablets and up */
+@media (min-width:600px){
+  body{font-size:18.5px}
+  header{padding-top:max(32px,env(safe-area-inset-top))}
+  .avatar,.face{width:104px} .face{height:104px}
+  .avatar-tag{font-size:.78rem}
+  .bubble{font-size:1.04rem;padding:10px 14px;min-height:70px}
+  .answers.multi{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+  .card{padding:24px 24px 22px}
+  .meter{font-size:.98rem} .bar{height:18px}
+}
+/* short phones: tighten everything so the answers fit on screen */
+@media (max-height:700px) and (orientation:portrait){
+  .avatar,.face{width:58px} .face{height:58px}
+  .avatar-tag{display:none}
+  .hud{margin:0 0 8px;gap:12px}
+  .bubble{min-height:0;margin-bottom:6px;padding:7px 10px;font-size:.93rem}
+  .bubble::before{bottom:12px}
+  .bubble .think{font-size:.86rem;margin-top:2px}
+  .meter{font-size:.86rem;gap:2px} .bar{height:10px;border-width:2.5px}
+  .prog{margin:8px 0 10px}
+  .card{padding:14px 13px 13px;border-radius:16px}
+  .card h2{font-size:1.24rem;margin:4px 0 6px}
+  .card p{font-size:.98rem;margin-bottom:6px}
+  .kicker{font-size:.74rem}
+  .answers{gap:8px;margin-top:10px}
+  .ans{min-height:48px;padding:8px 12px;font-size:.98rem;box-shadow:3px 3px 0 var(--shadow)}
+  .ans .k{width:24px;height:24px;font-size:.78rem}
+  .stamp{font-size:1.05rem}
+  .skip-zone{margin-top:10px}
+}
+/* landscape phones: two columns, no header during the game */
+@media (max-height:500px) and (orientation:landscape){
+  body.in-game header{display:none}
+  #play{display:grid;grid-template-columns:minmax(210px,36%) minmax(0,1fr);column-gap:18px;align-items:start}
+  #play .hud{grid-column:1;grid-row:1;margin-bottom:6px}
+  #play .meter{grid-column:1;grid-row:2}
+  #play .prog{grid-column:1;grid-row:3;margin:8px 0 0}
+  #play .card{grid-column:2;grid-row:1 / span 4}
+  #play .skip-zone{grid-column:2;grid-row:5}
+  #play .under{grid-column:1 / -1;grid-row:6}
+  .avatar,.face{width:58px} .face{height:58px}
+  .avatar-tag{display:none}
+  .bubble{min-height:0;margin-bottom:6px;font-size:.92rem;padding:7px 10px}
+  .bubble .think{font-size:.86rem}
+  .card{padding:14px 14px 13px}
+  .card h2{font-size:1.25rem;margin:4px 0 6px}
+  .card p{font-size:.98rem}
+  .answers{gap:8px;margin-top:10px}
+  .answers.multi{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+  .ans{min-height:48px;padding:8px 12px;font-size:.96rem}
+  main{padding-top:8px}
+}
+
+</style>
+</head>
+<body>
+<header class="wrap">
+  <p class="kick" id="kick"></p>
+  <h1 id="h1"></h1>
+  <p class="subtitle" id="subtitle"></p>
+</header>
+<main class="wrap">
+  <section id="play">
+    <div class="hud" id="hud">
+      <div class="avatar" id="avatar"></div>
+      <div class="bubble" id="bubble" aria-live="polite"></div>
+    </div>
+    <div class="meter">
+      <div class="meter-top"><span id="m-label"></span><span><b id="m-val"></b><span class="m-delta" id="m-delta"></span></span></div>
+      <div class="bar" aria-hidden="true"><i id="m-fill"></i></div>
+    </div>
+    <div class="prog" aria-hidden="true"><i id="prog"></i></div>
+    <article class="card" id="card"></article>
+    <div class="skip-zone" id="skip-zone" hidden><button type="button" id="skip"></button></div>
+    <div class="under">
+      <details class="path" id="path" hidden><summary id="path-sum"></summary><div class="chips" id="chips"></div></details>
+      <button class="linkbtn" id="quit" type="button" hidden></button>
+    </div>
+  </section>
+</main>
+<footer class="wrap" id="footer"></footer>
+<div id="confetti" aria-hidden="true"></div>
+<div id="toast" role="status"></div>
+
+<script>
+const seen = (S, id) => S.visited.includes(id);
+const NEXT = '@next', RETRY = '@retry';
+
+const UI = {
+  kicker: 'Elina, markkinointi (ei taikuri)',
+  title: 'Ennen kuin kysyt Elinalta',
+  subtitle: 'Interaktiivinen selviytymisopas kaikille, joilla on ”ihan pikainen markkinointijuttu”.',
+  ql: '”', qr: '”',
+  avatar: 'elina', avatarTag: 'Elina · ei taikuri', avatarAlt: 'Elinan kasvot, jotka reagoivat valintoihisi',
+  hello: 'Ai. Moi. Kestääkö tämä kauan?',
+  helloThink: '(Tämä kestää kauan.)',
+  startSay: { normal:'No niin. Mennään.', full:'Koko rumba? Oletko varma? No, sinä sen valitsit.' },
+  meter: 'Elinan kärsivällisyys',
+  moodWords: ['Ilahtunut', 'Ok', 'Meh', 'Ärtynyt', 'Käristynyt'],
+  start: 'Alku',
+  startTitle: 'Joku markkinointihomma mielessä?',
+  startSub: 'Vastaa rehellisesti. Elina huomaa, jos valehtelet. Elina huomaa aina.',
+  statusTitle: 'Elinan tilannekatsaus juuri nyt',
+  status: [
+    ['Elinan tila', 'Kiireinen (vuodesta 2019)'],
+    ['Avoimia ”pikaisia juttuja”', '27'],
+    ['Palavereja tänään', '9, joista 3 palavereista'],
+    ['Nyt kommentoitava versio', 'final_FINAL_v7'],
+    ['Kahvin taso', 'Kriittinen']
+  ],
+  modes: {
+    normal: { t:'Normaali kierros', m:n => `${n} kysymystä · n. 3 min · joka kerta eri kysymykset` },
+    full:   { t:'Koko rumba', m:n => `Kaikki ${n} kysymystä · n. 10 min · vain vahvoille` }
+  },
+  question: 'Kysymys',
+  quit: 'Lopeta ja palaa alkuun',
+  quitToast: 'Luovutit. Elina kirjasi sen.',
+  skipLabel: 'Ohita kaikki, anna mun vaan kysyä',
+  skip: ['Ei.', 'Liian hidas.', 'Melkein!', 'Elina on nopeampi.', 'Hyvä yritys.', 'Edelleen ei.'],
+  skipDone: 'Myös ohitusnappi on kiireinen.',
+  skipSay: 'Luulitko oikeasti, että tähän on oikotie? Voi pientä.',
+  trail: 'Reittisi tähän asti',
+  outcome: 'Lopputulos:',
+  badge: { stop:'Ei käy', detour:'Kiertotie', self:'Ratkaisit itse', go:'Saa kysyä' },
+  stamps: { stop:'Hylätty', self:'Ratkaistu!', go:'Hyväksytty' },
+  verdict: {
+    self: 'Paras mahdollinen loppu. Elina ei koskaan edes tiennyt, että sinulla oli kysymys.',
+    go:   'Voit nyt lähestyä Elinaa. Rauhallisesti. Sanomatta sanaa ”viraali”.',
+    stop: 'Pyyntö hylätty. Tämä oli opettavainen kokemus kaikille osapuolille.'
+  },
+  certTitle: 'Virallinen keskeytystodistus',
+  certRank: 'Arvonimesi',
+  certStats: (p, q, d) => `Kärsivällisyyttä jäljellä: ${p} % · Kysymyksiä: ${q} · Kiertoteitä: ${d}`,
+  ranks: [
+    { min:90, t:'Vuoden työkaveri (ehdokas)' },
+    { min:70, t:'Briefin kirjoittaja' },
+    { min:50, t:'Hyväksyttävä ihminen' },
+    { min:30, t:'Tunnettu keskeyttäjä' },
+    { min:0,  t:'Porttikielto kahviautomaatille' }
+  ],
+  achTitle: 'Avatut saavutukset',
+  ach: [
+    { t:'Omatoimisuuden legenda', d:'Ratkaisit sen kysymättä keneltäkään. Sinulle pystytetään patsas.', test:(S, e) => e.type === 'self' },
+    { t:'Koko rumban selviytyjä', d:'Kävit läpi jokaisen kysymyksen. Elina on vaikuttunut ja vähän huolissaan sinusta.', test:(S, e) => S.mode === 'full' && (e === N.end_ask || e === N.end_coffee) },
+    { t:'Kofeiinidiplomaatti', d:'Ymmärrät toimiston todellisen valuutan.', test:S => seen(S, 'end_coffee') },
+    { t:'Lohikeiton vihollinen', d:'Elina ei unohda. Elina ei anna anteeksi.', test:S => seen(S, 'x_lunch') },
+    { t:'Saunaideoija', d:'Toit idean suoraan lauteilta töihin. Se on vielä vähän kostea.', test:S => seen(S, 'r_sauna') },
+    { t:'Viraalihaaveilija', d:'Uskoit taikuuteen. Hetken.', test:S => seen(S, 'r_viral') },
+    { t:'Logonsuurentaja', d:'Pyysit isompaa logoa. Tietenkin pyysit.', test:S => seen(S, 'r_logo') },
+    { t:'Moi-viestittäjä', d:'Lähetit pelkän ”Moi”. Elina odottaa yhä jatkoa.', test:S => seen(S, 'r_hello') },
+    { t:'Kaikki kanavat -fani', d:'Halusit julkaista kaikkialla. Myös faksilla.', test:S => seen(S, 'r_channels') },
+    { t:'Kopio-ninja', d:'Laitoit johtoryhmän kopioksi. Rohkeaa. Typerää, mutta rohkeaa.', test:S => seen(S, 'r_cc') },
+    { t:'Päiväni murmelina', d:'Vastasit samaan kysymykseen kahdesti. Toivoitko eri lopputulosta?', test:S => Object.values(S.qCount).some(c => c > 1) },
+    { t:'Viikonlopun pilaaja', d:'Yritit aloittaa jotain perjantai-iltapäivänä.', test:S => seen(S, 'r_friday') },
+    { t:'Kiertotieasiantuntija', d:'Valitsit maisemareitin. Useamman kerran.', test:S => S.detours >= 3 },
+    { t:'Kärsivällisyyden tuhoaja', d:'Elina tarvitsee pienet päiväunet.', test:S => S.patience < 25 },
+    { t:'Pikajuoksija', d:'Pääsit maaliin ennen kuin Elina ehti huokaista.', test:S => S.asked <= 2 },
+    { t:'Mallikansalainen', d:'Ei yhtään huokausta. Oletko edes oikea?', test:S => S.lost === 0 && S.asked >= 10 }
+  ],
+  achNone: { t:'Osallistuja', d:'Tulit paikalle. Se on… jotain.' },
+  playAgain: 'Pelaa uudelleen',
+  copy: 'Kopioi tulokseni',
+  copied: 'Kopioitu! Mene ja jaa häpeäsi.',
+  share: r => `Tein ”Ennen kuin kysyt Elinalta” -testin. Lopputulos: ${r.title} Elinan kärsivällisyyttä jäljellä: ${r.p} %. Arvonimi: ${r.rank}.`,
+  react: {
+    neg: ['*syvä huokaus*', 'Rohkea valinta.', 'En ole vihainen. Olen vain pettynyt.', 'Kirjattu. Ikuisesti.', 'Tämä menee kuukausiraporttiin. Punaisella.', 'Silmäni nykii. Onko se normaalia?'],
+    neu: ['Mm-hm.', 'Jatka.', 'Hyväksyttävää.', 'Okei. Eteenpäin.'],
+    pos: ['Oho? Tykkään.', 'Vihdoin hyviä uutisia.', 'Saat elää.', 'Tästä tulee hyvä case.']
+  },
+  footer: 'v4.0 – nyt 40 kysymystä ja 40 % enemmän sarkasmia. Yhtään markkinoijaa ei vahingoitettu tämän pelin teossa. Useampaa häirittiin lievästi.'
+};
+
+const STAGES = [
+  { id:'alku', name:'Hätätarkastus', fixed:true, qs:['crisis','isMkt'] },
+  { id:'kiire', name:'Kiire ja aikataulut', pick:1, qs:['deadline','asap','holiday','approvals'] },
+  { id:'pyynto', name:'Pyyntö ja brief', pick:2, qs:['brief','goal','audience','budget','viral','ceoIdea','competitor'] },
+  { id:'sisalto', name:'Sisältö ja visuaalit', pick:2, qs:['material','logo','canva','brand','textLong','popping','emojis','stockphoto'] },
+  { id:'kanavat', name:'Kanavat ja some', pick:1, qs:['tiktok','linkedinCeo','newsletter','frontpage','allChannels','influencer','ai'] },
+  { id:'mittarit', name:'Mittarit ja raportit', pick:1, qs:['report','likes','cta'] },
+  { id:'etiketti', name:'Työyhteisöetiketti', pick:1, qs:['friday','hello','triple','headphones','meetingHour','lunch','cc'] },
+  { id:'loppu', name:'Loppukiri', fixed:true, qs:['quick','coffee'] }
+];
+const SPINE_END = 'end_ask';
+
+const N = {
+  start: { type:'start', text:'Minulla on ihan pikainen kysymys Elinalle!' },
+
+  /* ---------- Hätätarkastus ---------- */
+  crisis: { type:'q', short:'Somekriisi?', q:'Onko käynnissä somekriisi?',
+    sub:'Kommenttikenttä on liekeissä, joku julkaisi väärän kuvan tai iltapäivälehti soitti.',
+    mutter:'Sano ei. Sano ei. Sano ei.',
+    opts:[ {label:'Ei', pos:'down', next:NEXT, say:'Huh. Hyvä. Jatketaan.'},
+           {label:'Kyllä', pos:'side', next:'r_crisis', say:'MIKSI LUET VIELÄ TÄTÄ?!'} ] },
+  r_crisis: { type:'go', calm:true, title:'Unohda tämä peli. JUOKSE.',
+    text:'Juuri tästä Elinalle maksetaan. Tule heti, tuo kuvakaappaukset äläkä vastaa yhteenkään kommenttiin ennen sitä. Varsinkaan nauruhymiöllä.' },
+
+  isMkt: { type:'q', short:'Markkinointia?', q:'Liittyykö asia oikeasti markkinointiin?',
+    sub:'Vai onko se IT:tä, HR:ää, taloutta tai ”se tulostin taas”?',
+    mutter:'Markkinointi ei ole sama asia kuin ”kaikki, mikä näkyy jossain”.',
+    opts:[ {label:'Ei oikeastaan', pos:'side', next:'r_wrongdoor', d:-5, say:'Ja silti seisot tässä. Elinan ovella.'},
+           {label:'Kyllä', pos:'down', next:NEXT, say:'Hyvä. Olet oikeassa osoitteessa. Valitettavasti.'} ] },
+  r_wrongdoor: { type:'stop', title:'Väärä ovi.',
+    text:'Tulostin kuuluu IT:lle. Palkka kuuluu HR:lle. Kahvinkeitin kuuluu kaikille. Elina kuuluu markkinointiin, eikä hänellä ole avainta tulostinkaappiin. Eikä hän halua sitä.' },
+
+  /* ---------- Kiire ja aikataulut ---------- */
+  deadline: { type:'q', short:'Kiireellisyys?', q:'Kuinka kiireellinen asia on, rehellisesti?',
+    sub:'Elina haistaa tekokiireen kolmen kerroksen päästä. Se tuoksuu maanantailta.',
+    mutter:'Kaikki on ”kiireellistä”. Mikään ei ole koskaan ollut ”melko aikasidonnaista”.',
+    opts:[ {label:'Tarvitsin sen eilen', pos:'side', next:'r_yesterday', d:-10, say:'Ah. Aikamatkustaja. Lempityyppini.'},
+           {label:'Ensi viikolla riittää', pos:'down', next:NEXT, say:'Järkevä ihminen. Harvinaista. Kirjattu.'},
+           {label:'Ihan vaan ideoin', pos:'side', next:'r_idea', d:-5, say:'Ideoit. Kesken Elinan työpäivän. Ihanaa.'} ] },
+  r_yesterday: { type:'detour', title:'Ah, aikamatkustaja.',
+    text:'Sinun huono suunnittelusi ei ole Elinan hätätilanne. Jos olet oikeasti rakentanut aikakoneen, palaa viime viikkoon ja kysy silloin.',
+    opts:[ {label:'Selvä, jatketaan', next:NEXT} ] },
+  r_idea: { type:'stop', title:'Idea parkkiin.',
+    text:'Ideat ovat ihania. Elinan ideapankissa niitä on jo 412, joista 38 on ”joku tiktok-tanssi”. Lisää omasi jonon jatkoksi, niin palataan asiaan seuraavassa kvartaalipalaverissa. Jonkin vuoden.' },
+
+  asap: { type:'q', short:'ASAP?', q:'Onko deadline ”ASAP”?',
+    sub:'Tai ”heti kun ehdit”, joka tarkoittaa ”tänään kello 14 mennessä”.',
+    mutter:'ASAP ei ole päivämäärä. Se on mielentila.',
+    opts:[ {label:'Joo, ASAP', pos:'side', next:'r_asap', d:-10, say:'Neljä kirjainta, jotka vievät Elinalta vuoden elämästä.'},
+           {label:'Ei, on oikea päivämäärä', pos:'down', next:NEXT, say:'Päivämäärä! Se mahtuu kalenteriin! Juhlitaan!'} ] },
+  r_asap: { type:'detour', title:'ASAP ei ole päivämäärä.',
+    text:'Elinan jonossa on tällä hetkellä yhdeksän ASAP-työtä. Ne on järjestetty sen mukaan, kuka toi pullaa. Anna oikea päivämäärä, niin pääset jonoon.',
+    opts:[ {label:'Annan oikean päivämäärän', next:NEXT} ] },
+
+  holiday: { type:'q', short:'Heinäkuussa?', q:'Pitäisikö tämä julkaista heinäkuussa?',
+    sub:'Tai juhannusaattona. Tai jouluaattona kello 16.',
+    mutter:'Heinäkuussa Suomi on suljettu. Se on käytännössä laissa.',
+    opts:[ {label:'Kyllä, heinäkuussa', pos:'side', next:'r_july', d:-10, say:'Heinäkuussa. Kun kukaan ei ole töissä. Paitsi sinä. Ja nyt Elina.'},
+           {label:'Ei, ihan normaaliin aikaan', pos:'down', next:NEXT, say:'Hyvä. Elinan mökillä ei ole kenttää. Tarkoituksella.'} ] },
+  r_july: { type:'detour', title:'Suomi on kiinni.',
+    text:'Heinäkuussa kohderyhmä on mökillä, Elina on mökillä ja algoritmikin on vähän mökillä. Ajastetaan elokuulle, jolloin ihmiset palaavat ja lukevat sähköpostinsa itkien.',
+    opts:[ {label:'Ajastetaan elokuulle', next:NEXT} ] },
+
+  approvals: { type:'q', short:'Hyväksyjät?', q:'Montako ihmistä tämän pitää hyväksyä?',
+    sub:'Ennen kuin sen voi julkaista. Rehellisesti.',
+    mutter:'Jokainen uusi hyväksyjä tuo kaksi versiota ja yhden mielipiteen fontista.',
+    opts:[ {label:'Yksi, ja hän vastaa nopeasti', pos:'down', next:NEXT, say:'Unelma. Tällaista ei ole tapahtunut sitten vuoden 2017.'},
+           {label:'Koko johtoryhmä', pos:'side', next:'r_approvals', d:-15, say:'*Elina avaa tiedoston final_FINAL_v7*'} ] },
+  r_approvals: { type:'detour', title:'Tervetuloa kommenttikierrokselle.',
+    text:'Kahdeksan hyväksyjää, kahdeksan mielipidettä ja yksi, joka haluaa ”vähän lisää energiaa”. Lopullisen tiedoston nimi on final_FINAL_oikeasti_final_v12.pdf. Nimeä yksi päättäjä.',
+    opts:[ {label:'Nimesin yhden päättäjän', next:NEXT} ] },
+
+  /* ---------- Pyyntö ja brief ---------- */
+  brief: { type:'q', short:'Brief?', q:'Onko sinulla brief?',
+    sub:'Kirjallinen. Tavoite, kohderyhmä, budjetti ja aikataulu. ”Tehdään jotain kivaa” ei ole brief.',
+    mutter:'Brief on kuin kartta. Ilman sitä ajetaan ympyrää ja syytetään navigaattoria.',
+    opts:[ {label:'Ei', pos:'side', next:'r_brief', d:-15, say:'Eli mennään fiiliksellä. Rakastan fiilistä. (En rakasta.)'},
+           {label:'Kyllä', pos:'down', next:NEXT, say:'Brief?! Joku antakoon tälle ihmiselle mitalin.'} ] },
+  r_brief: { type:'detour', title:'Kolme virkettä riittää.',
+    text:'Mitä halutaan, keneltä ja mihin mennessä. Kirjoita ne ylös. Elina odottaa. (Elina ei odota.)',
+    opts:[ {label:'Kirjoitin, ja keksin samalla vastauksen', next:'w_brief'}, {label:'Kirjoitin sen', next:NEXT} ] },
+  w_brief: { type:'self', title:'Briefin taika.',
+    text:'Puolet markkinoinnin ongelmista ratkeaa, kun ne kirjoittaa paperille. Loput ratkeavat kahvilla.' },
+
+  goal: { type:'q', short:'Tavoite?', q:'Mikä on tavoite?',
+    sub:'Siis mitä pitäisi tapahtua sen jälkeen, kun joku on nähnyt tämän?',
+    mutter:'”Näkyvyys” on markkinoinnin ”ihan hyvää kuuluu”.',
+    opts:[ {label:'”Näkyvyys”', pos:'side', next:'r_visibility', d:-10, say:'Näkyvyys. Kenelle? Miksi? Mitä sitten? Kysyn vain.'},
+           {label:'Ilmoittautumisia tai myyntiä', pos:'down', next:NEXT, say:'Mitattava tavoite?! Elina kuulee enkelikuoron.'},
+           {label:'Pomo halusi', pos:'side', next:'r_boss', d:-10, say:'Ah. Strategian korkein muoto.'} ] },
+  r_visibility: { type:'detour', title:'Näkyvyys ei ole tavoite.',
+    text:'Myös tienvarren kivi on näkyvä. Kukaan ei silti osta sitä. Kerro, mitä ihmisen pitäisi tehdä: ilmoittautua, ostaa, tulla paikalle tai edes klikata.',
+    opts:[ {label:'Okei, ilmoittautua', next:NEXT} ] },
+  r_boss: { type:'detour', title:'”Pomo halusi” ei ole tavoite.',
+    text:'Se on syy. Kysy pomolta, mitä hän haluaa tapahtuvan. Jos vastaus on ”että näkyy”, palaa edelliseen ruutuun ja itke hetki.',
+    opts:[ {label:'Kysyin, tavoite löytyi', next:NEXT} ] },
+
+  audience: { type:'q', short:'Kohderyhmä?', q:'Kuka on kohderyhmä?',
+    sub:'Kenen pitäisi nähdä tämä ja tehdä sen jälkeen jotain?',
+    mutter:'Jos kohderyhmä on ”kaikki”, kohderyhmä on ”ei kukaan”.',
+    opts:[ {label:'Kaikki', pos:'side', next:'r_everyone', d:-10, say:'Kaikki. Myös vauvat? Ja mummot Kuopiossa?'},
+           {label:'Tarkasti rajattu porukka', pos:'down', next:NEXT, say:'Segmentointia! Elinan sydän lyö vähän nopeammin.'} ] },
+  r_everyone: { type:'detour', title:'”Kaikki” ei ole kohderyhmä.',
+    text:'”Kaikki” on Suomen väkiluku. Sen tavoittamiseen ei riitä budjetti, vaikka myisimme toimiston kahvinkeittimen. Ja sohvan.',
+    opts:[ {label:'Okei, rajataan', next:RETRY} ] },
+
+  budget: { type:'q', short:'Budjetti?', q:'Mikä on budjetti?',
+    sub:'Euroina. ”Katsotaan” ei ole summa.',
+    mutter:'Budjetti on kuin bensa. Ilman sitä auto on vain hyvin kallis tuoli.',
+    opts:[ {label:'Ei ole budjettia', pos:'side', next:'r_budget', d:-10, say:'Nolla euroa. Ja odotukset? Anna kun arvaan: kuussa.'},
+           {label:'Budjetti on olemassa', pos:'down', next:NEXT, say:'Oikeaa rahaa? Elina punastuu.'} ] },
+  r_budget: { type:'detour', title:'Nollabudjetti, vastaanotettu.',
+    text:'Nollalla eurolla saa nolla euroa näkyvyyttä. Orgaaninen some on ilmaista samalla tavalla kuin koiranpentu on ilmainen.',
+    opts:[ {label:'Löysin budjettia', next:NEXT, say:'Kas, rahaa löytyi. Ihme ja kumma.'},
+           {label:'Mennään orgaanisesti', next:NEXT, d:-5, say:'Rohkeaa. Elina toivottaa onnea.'} ] },
+
+  viral: { type:'q', short:'Viraali?', q:'Pitäisikö siitä tulla viraali?',
+    sub:'Itsestään. Nollabudjetilla. Mieluiten jo tällä viikolla.',
+    mutter:'Aina kun joku sanoo ”viraali”, jossain markkinoija menettää siipensä.',
+    opts:[ {label:'Kyllä!', pos:'side', next:'r_viral', d:-10, say:'*hengittää paperipussiin*'},
+           {label:'Riittää, että oikeat ihmiset näkevät', pos:'down', next:NEXT, say:'Kuulitko? Se oli aikuisen ihmisen ääni.'} ] },
+  r_viral: { type:'detour', title:'Elina ei ole taikuri.',
+    text:'Se lukee ihan nimilapussa. Viraaliksi ei voi tilata. Sinne päädytään vahingossa, yleensä kirjoitusvirheen tai kissan ansiosta.',
+    opts:[ {label:'Okei, maltan mieleni', next:NEXT} ] },
+
+  ceoIdea: { type:'q', short:'Saunaidea?', q:'Syntyikö idea toimitusjohtajan saunaillassa?',
+    sub:'Lauteilla kello 23, kolmannen löylyn jälkeen.',
+    mutter:'Saunassa syntyneet ideat ovat kuumia vain saunassa.',
+    opts:[ {label:'Kyllä', pos:'side', next:'r_sauna', d:-10, say:'Ja nyt se on Elinan to do -listalla. Löylyhuurussa.'},
+           {label:'Ei, ihan työajalla', pos:'down', next:NEXT, say:'Selvin päin ja vaatteet päällä keksitty. Lupaavaa.'} ] },
+  r_sauna: { type:'detour', title:'Saunaidea havaittu.',
+    text:'Kirjoitetaan se ylös ja katsotaan maanantaina kylmänä. Yllättävän moni ”legendaarinen kampanja” näyttää maanantaiaamuna lähinnä ”jutulta”.',
+    opts:[ {label:'Katsotaan maanantaina', next:NEXT} ] },
+
+  competitor: { type:'q', short:'Kilpailija teki?', q:'Tehdäänkö tämä, koska kilpailija teki samanlaisen?',
+    sub:'Näit sen eilen illalla Instagramissa, ja nyt sinulla on ”pieni ajatus”.',
+    mutter:'Kilpailijan kampanja näyttää aina paremmalta. Koska siinä on kilpailijan budjetti.',
+    opts:[ {label:'No… joo', pos:'side', next:'r_competitor', d:-10, say:'Kopio kopiosta. Elinan lempigenre.'},
+           {label:'Ei, meillä on oma juttu', pos:'down', next:NEXT, say:'Oma juttu! Rohkeutta! Brändi kiittää.'} ] },
+  r_competitor: { type:'detour', title:'Kilpailija vaihtoi myös logonsa limenvihreäksi.',
+    text:'Seurataanko siinäkin? Kopioimalla meistä tulee kilpailijan halvempi versio. Kysytään mieluummin: mitä me teemme paremmin?',
+    opts:[ {label:'Mietin oman kulman', next:NEXT} ] },
+
+  /* ---------- Sisältö ja visuaalit ---------- */
+  material: { type:'q', short:'Kuvat ja tekstit?', q:'Onko kuvat ja tekstit jo olemassa?',
+    sub:'”Ota vaikka joku kiva kuva netistä” ei ole kuvapankki.',
+    mutter:'Kuvapankki maksaa vähemmän kuin asianajaja. Mainitsen vain.',
+    opts:[ {label:'Ota vaikka netistä', pos:'side', next:'r_images', d:-10, say:'Ja sitten maksetaan lakimiehelle. Kiva.'},
+           {label:'Kaikki on valmiina', pos:'down', next:NEXT, say:'Valmista materiaalia?! Onko tämä unta?'} ] },
+  r_images: { type:'detour', title:'Tekijänoikeudet ovat olemassa.',
+    text:'Googlen kuvahaku ei ole ilmainen kuvapankki. Se on lasku, joka saapuu puolen vuoden päästä lakitoimistolta. Kirjekuoressa. Raskaassa.',
+    opts:[ {label:'Haen omat kuvat', next:NEXT} ] },
+
+  logo: { type:'q', short:'Isompi logo?', q:'Pitäisikö logoa suurentaa?',
+    sub:'Klassikko. Joka kerta. Joka ikinen kerta.',
+    mutter:'Logo on jo 40 % mainoksesta. Seuraavaksi se on talon kokoinen.',
+    opts:[ {label:'Ei', pos:'down', next:NEXT, say:'Olet nyt virallisesti Elinan lempikollega. Tämän päivän.'},
+           {label:'Kyllä', pos:'side', next:'r_logo', d:-10, say:'Isompi. Totta kai. Miksei saman tien kuuhun?'} ] },
+  r_logo: { type:'detour', title:'Logo on jo iso.',
+    text:'Jos logoa vielä suurennetaan, mainos on pelkkä logo. Silloin se on kyltti. Kylttejä tekee kylttiliike.',
+    opts:[ {label:'Pidetään koko ennallaan', next:NEXT} ] },
+
+  canva: { type:'q', short:'Kokeilitko itse?', q:'Oletko kokeillut tehdä sen itse Canvalla?',
+    sub:'Sinulla on tunnukset. Elina antoi ne sinulle. Kahdesti.',
+    mutter:'Canvassa on satoja tuhansia pohjia. Yksi niistä on varmasti juuri tämä.',
+    opts:[ {label:'En', pos:'side', next:'r_canva', d:-10, say:'Tunnukset ovat sähköpostissasi. Ne odottavat sinua. Kaipaavat.'},
+           {label:'Kyllä', pos:'down', next:NEXT, say:'Yritteliäisyyttä! Elina liikuttuu hiljaa.'} ] },
+  r_canva: { type:'detour', title:'Kokeile. Se on helpompaa kuin luulet.',
+    text:'Valitse pohja, vaihda teksti, paina Lataa. Elina tekee samat kolme liikettä, vain nopeammin ja hiljaa kiroillen.',
+    opts:[ {label:'Tein sen itse!', next:'w_canva'},
+           {label:'Lopputulos näyttää rikospaikalta', next:NEXT, say:'Comic Sans ja kuusi väriä? Arvasin.'} ] },
+  w_canva: { type:'self', title:'Uusi graafikko on syntynyt.',
+    text:'Elina on ylpeä. Muista brändivärit. Ei sitä limenvihreää. Ei ikinä sitä limenvihreää.' },
+
+  brand: { type:'q', short:'Brändiohje?', q:'Oletko lukenut brändiohjeen?',
+    sub:'Sen 48-sivuisen PDF:n. Värikoodit, fontit ja logon suoja-alueet. Vastaus on siellä.',
+    mutter:'Brändiohje on kuin huonekalun kokoamisohje. Kaikki väittävät, ettei sitä tarvita.',
+    opts:[ {label:'Mikä brändiohje?', pos:'side', next:'r_brand', d:-15, say:'*Elinan vasen silmä alkaa nykiä*'},
+           {label:'Luin, ei auttanut', pos:'down', next:NEXT, say:'Luit sen?! Olet ensimmäinen. Tervetuloa kerhoon.'} ] },
+  r_brand: { type:'detour', title:'Tämä brändiohje.',
+    text:'Se löytyy Teamsista, intrasta, sähköpostista ja Elinan sydämestä. Avattu neljä kertaa kahdessa vuodessa. Kolmella kerralla avaaja oli Elina.',
+    opts:[ {label:'Vastaus oli siellä', next:'w_brand'}, {label:'Luin, olen yhä jumissa', next:NEXT} ] },
+  w_brand: { type:'self', title:'Brändiohje palkitsee lukijansa.',
+    text:'Vastaus oli siellä koko ajan, sivulla 23. Kuten aina. Sivu 23 tietää kaiken.' },
+
+  textLong: { type:'q', short:'Teksti lyhyt?', q:'Onko teksti lyhyempi kuin gradu?',
+    sub:'Somepostaukseen. Johon pitäisi ”mahtua kaikki”.',
+    mutter:'Kukaan ei lue kolmatta kappaletta. Paitsi Elina, joka joutuu lyhentämään sen.',
+    opts:[ {label:'Se on vain neljä sivua', pos:'side', next:'r_long', d:-10, say:'Neljä sivua. Instagramiin. Kuvatekstiksi.'},
+           {label:'Kyllä, pari virkettä', pos:'down', next:NEXT, say:'Tiiviyttä! Onko sinulla markkinointitausta?'} ] },
+  r_long: { type:'detour', title:'Somepostaus ei ole gradu.',
+    text:'Ihmiset skrollaavat kolmen sekunnin välein. Neljä sivua mahtuu yhteen ruutuun vain, jos fonttikoko on 2. Valitse yksi asia ja kerro se hyvin.',
+    opts:[ {label:'Lyhensin yhteen asiaan', next:NEXT} ] },
+
+  popping: { type:'q', short:'Pitäisikö popata?', q:'Pitäisikö sen ”popata” enemmän?',
+    sub:'Tai olla ”vähän raikkaampi”, ”modernimpi” tai ”enemmän sellainen niinku”.',
+    mutter:'Kukaan ei tiedä, mitä ”popata” tarkoittaa. Kaksi graafikkoa on vaihtanut alaa yrittäessään selvittää.',
+    opts:[ {label:'Kyllä, enemmän poppia!', pos:'side', next:'r_pop', d:-10, say:'Lisätään siis… poppia. Mihin? Miten? Miksi?'},
+           {label:'Ei, se on hyvä näin', pos:'down', next:NEXT, say:'Luottamusta ammattilaiseen! Elina liikuttuu.'} ] },
+  r_pop: { type:'detour', title:'”Poppaa” ei ole palaute.',
+    text:'Hyvä palaute kertoo mitä ja miksi: ”otsikko ei erotu”, ”kuva on liian tumma”. ”Voisko se vaan popata?” johtaa siihen, että lopulta kaikki on oranssia.',
+    opts:[ {label:'Kirjoitin oikean palautteen', next:NEXT} ] },
+
+  emojis: { type:'q', short:'Lisää emojeja?', q:'Lisätäänkö loppuun ”vähän emojeja”?',
+    sub:'Raketti, tuli ja ne kaksi kättä, joista kukaan ei tiedä, ovatko ne kiitos vai ylävitonen.',
+    mutter:'Kolme rakettia ei tee tiedotteesta jännittävää. Se tekee siitä huolestuttavan.',
+    opts:[ {label:'Joo, ainakin kymmenen', pos:'side', next:'r_emoji', d:-5, say:'Kymmenen. Tiedotteeseen budjettileikkauksista.'},
+           {label:'Ei, sävy on jo kohdallaan', pos:'down', next:NEXT, say:'Sävytaju! Harvinainen lahja.'} ] },
+  r_emoji: { type:'detour', title:'Emojit eivät ole mauste.',
+    text:'Yksi tai kaksi oikeassa paikassa toimii. Kymmenen rakettia budjettitiedotteessa tekee siitä viestin, joka päätyy kuvakaappauksena muiden firmojen WhatsApp-ryhmiin.',
+    opts:[ {label:'Jätetään yksi', next:NEXT} ] },
+
+  stockphoto: { type:'q', short:'Kuvapankkikuva?', q:'Onko kuvassa kättelevät pukumiehet valkoisella taustalla?',
+    sub:'Tai ihmisiä, jotka nauravat salaatille. Tai tikkataulu.',
+    mutter:'Vuosi 2009 soitti ja haluaa kuvansa takaisin.',
+    opts:[ {label:'Kyllä, se on niin ammattimainen', pos:'side', next:'r_stock', d:-10, say:'Ammattimainen. Kuten vuoden 2009 diaesitys.'},
+           {label:'Ei, meillä on omia kuvia', pos:'down', next:NEXT, say:'Oikeita ihmisiä! Oikeasta paikasta! Elina itkee onnesta.'} ] },
+  r_stock: { type:'detour', title:'Kättelevät pukumiehet on nähty.',
+    text:'Kaikki ovat nähneet sen kuvan. Kaikki tietävät, ettei kukaan kättele noin. Kuvataan mieluummin oikeita ihmisiä, vaikka puhelimella, kunhan ei 40 asteen kulmassa.',
+    opts:[ {label:'Kuvataan omat', next:NEXT} ] },
+
+  /* ---------- Kanavat ja some ---------- */
+  tiktok: { type:'q', short:'TikTokiin?', q:'Pitäisikö meidän olla TikTokissa?',
+    sub:'Koska ”kaikki nuoret on siellä” ja joku näki yhden videon.',
+    mutter:'TikTokissa pärjätään tekemällä videoita joka päivä. Joku tekee ne. Arvaa kuka.',
+    opts:[ {label:'Kyllä, ja Elina voisi tanssia', pos:'side', next:'r_tiktok', d:-15, say:'Elina. Ei. Tanssi.'},
+           {label:'Vain jos meillä on siihen tekijä', pos:'down', next:NEXT, say:'Resurssiajattelua! Joku on lukenut johtamiskirjan.'} ] },
+  r_tiktok: { type:'detour', title:'Kuka tanssii?',
+    text:'TikTok vaatii säännöllistä tekemistä, ideoita ja kasvoja. Jos vastaus kysymykseen ”kuka tekee” on ”joku vaan”, se joku on Elina. Elina ei tanssi. Ei edes pikkujouluissa.',
+    opts:[ {label:'Mietitään tekijä ensin', next:NEXT} ] },
+
+  linkedinCeo: { type:'q', short:'Johtajan LinkedIn?', q:'Pitäisikö toimitusjohtajan ”postailla enemmän LinkedInissä”?',
+    sub:'Henkilöbrändi! Ajatusjohtajuus! Inspiroivia oivalluksia maratonilta!',
+    mutter:'Jos toimitusjohtaja postaa, kuka sen oikeasti kirjoittaa? Elinalla on teoria.',
+    opts:[ {label:'Kyllä, Elina voi kirjoittaa ne', pos:'side', next:'r_linkedin', d:-10, say:'Elina kirjoittaa siis toimitusjohtajan oivallukset. Elinan omista oivalluksista.'},
+           {label:'Kyllä, ja hän kirjoittaa ne itse', pos:'down', next:NEXT, say:'Itse?! Tämä on käänteentekevää.'} ] },
+  r_linkedin: { type:'detour', title:'Haamukirjoittaja Elina.',
+    text:'Elina on jo kirjoittanut 14 postausta otsikolla ”Mitä opin johtajuudesta”. Elina ei ole johtanut mitään. Aitous syntyy siitä, että ihminen kirjoittaa itse, edes ranskalaisin viivoin.',
+    opts:[ {label:'Pyydän pomoa kirjoittamaan itse', next:NEXT} ] },
+
+  newsletter: { type:'q', short:'Oma uutiskirje?', q:'Pitäisikö tästä lähettää oma uutiskirje?',
+    sub:'Jo kolmas tällä viikolla. Mutta tämä on tärkeä.',
+    mutter:'Jokainen uutiskirje on tärkeä. Siksi kukaan ei avaa niitä.',
+    opts:[ {label:'Kyllä, kaikille 8 000 tilaajalle', pos:'side', next:'r_newsletter', d:-10, say:'Avausprosentti kiittää. Se on nyt sama kuin Elinan motivaatio perjantaina.'},
+           {label:'Ei, seuraavaan kuukausikirjeeseen', pos:'down', next:NEXT, say:'Kärsivällisyyttä! Tilaajat kiittävät ja peruvat tilauksensa harvemmin.'} ] },
+  r_newsletter: { type:'detour', title:'Peru tilaus -nappi kiittää.',
+    text:'Kolmas uutiskirje samalla viikolla saa tilaajat painamaan markkinoinnin surullisinta nappia. Laitetaan tämä seuraavan kirjeen kärkinostoksi.',
+    opts:[ {label:'Seuraavaan kirjeeseen', next:NEXT} ] },
+
+  frontpage: { type:'q', short:'Etusivulle?', q:'Pitäisikö tämä nostaa etusivulle?',
+    sub:'Ihan ylös. Isolla. Vähintään karuselliin.',
+    mutter:'Etusivulla on jo 14 nostoa, 3 karusellia ja ponnahdusikkuna. Etusivu ei ole ilmoitustaulu.',
+    opts:[ {label:'Kyllä, ihan ylös', pos:'side', next:'r_frontpage', d:-10, say:'Ylös. Kuten kaikki muutkin 14 asiaa.'},
+           {label:'Ei, sopiva alasivu riittää', pos:'down', next:NEXT, say:'Informaatioarkkitehtuuria! Elina pyörtyy onnesta.'} ] },
+  r_frontpage: { type:'detour', title:'Etusivu ei ole ilmoitustaulu.',
+    text:'Kun kaikki on etusivulla, mikään ei ole etusivulla. Karusellin kolmatta kuvaa on klikannut kaksi ihmistä, ja toinen oli Elina testaamassa. Laitetaan alasivulle ja linkitetään sinne.',
+    opts:[ {label:'Alasivu käy', next:NEXT} ] },
+
+  allChannels: { type:'q', short:'Missä kanavissa?', q:'Missä kanavissa tämä julkaistaan?',
+    sub:'Valitse huolella. Tai älä, kuten yleensä.',
+    mutter:'Jokainen kanava on oma työnsä. Paitsi kirjekyyhky, joka lakkautettiin säästösyistä.',
+    opts:[ {label:'Kaikissa!', pos:'side', next:'r_channels', d:-10, say:'Kaikissa. Myös faksilla?'},
+           {label:'Kahdessa, joissa kohderyhmä oikeasti on', pos:'down', next:NEXT, say:'Kanavastrategia?! Kuka olet ja mistä tulit?'} ] },
+  r_channels: { type:'detour', title:'”Kaikki kanavat” on paljon kanavia.',
+    text:'Facebook, Instagram, LinkedIn, TikTok, uutiskirje, intra, nettisivut, aulan näyttö ja tiedote. Kaikki eri kokoisina ja eri sävyllä. Valitse kaksi, joissa kohderyhmä oikeasti on.',
+    opts:[ {label:'Valitsin kaksi', next:NEXT} ] },
+
+  influencer: { type:'q', short:'Vaikuttaja?', q:'Pitäisikö pyytää joku vaikuttaja mukaan?',
+    sub:'”Vaikka joku tunnettu.” ”Vaikka se yks, mikä sen nimi nyt oli.”',
+    mutter:'Vaikuttajilla on hinnasto. Meillä on toive.',
+    opts:[ {label:'Joo, joku tosi tunnettu!', pos:'side', next:'r_influencer', d:-10, say:'Tosi tunnettu. Budjetilla, jolla saa kaksi korvapuustia.'},
+           {label:'Ei, tai sitten pieni ja sopiva', pos:'down', next:NEXT, say:'Mikrovaikuttaja ja realistinen budjetti. Elina taputtaa hiljaa.'} ] },
+  r_influencer: { type:'detour', title:'Tunnetuilla on hinnasto.',
+    text:'Ja hinnastossa on enemmän nollia kuin kampanjabudjetissa euroja. ”Näkyvyydellä” ei makseta vuokraa. Etsitään pieni vaikuttaja, jonka seuraajat oikeasti ovat kohderyhmää.',
+    opts:[ {label:'Etsitään pieni ja sopiva', next:NEXT} ] },
+
+  ai: { type:'q', short:'Tekoälyllä?', q:'Voisiko tekoäly tehdä tämän?',
+    sub:'Sehän on ilmaista ja sekunnissa valmis. Kuulemma.',
+    mutter:'Tekoäly kirjoittaa sekunnissa. Joku tarkistaa sen silti. Arvaa kuka.',
+    opts:[ {label:'En ole kokeillut', pos:'side', next:'r_ai', d:-5, say:'Sinulla on robotti, joka ei väsy. Ja silti olet täällä.'},
+           {label:'Kokeilin, tarvitsen ihmisen', pos:'down', next:NEXT, say:'Kokeilit ensin! Tämä on uusi taso.'} ] },
+  r_ai: { type:'detour', title:'Kokeile ensin.',
+    text:'Kerro tekoälylle, mitä tarvitset, kenelle ja millä sävyllä. Tarkista faktat, koska tekoäly keksii asioita hyvin itsevarmasti. Vähän kuin se yksi kollega.',
+    opts:[ {label:'Se toimi!', next:'w_ai'}, {label:'Se keksi kolme uutta faktaa', next:NEXT, say:'Klassikko. Tarkistetaan yhdessä.'} ] },
+  w_ai: { type:'self', title:'Robotti pelasti päivän.',
+    text:'Teit sen itse tekoälyn kanssa, tarkistit faktat ja Elina sai syödä lounaansa rauhassa. Tulevaisuus on täällä, ja se on ihan kiva.' },
+
+  /* ---------- Mittarit ja raportit ---------- */
+  report: { type:'q', short:'Miten kampanja meni?', q:'Haluatko tietää, ”miten se kampanja meni”?',
+    sub:'Se, joka loppui kolme viikkoa sitten.',
+    mutter:'Raportti on olemassa. Se on jaettu. Sitä on avattu kerran.',
+    opts:[ {label:'Joo, kerro vaan suullisesti', pos:'side', next:'r_report', d:-10, say:'Suullisesti. Kuten luolamaalaukset.'},
+           {label:'Luin raportin, minulla on tarkentava kysymys', pos:'down', next:NEXT, say:'Luit raportin?! Elina kehystää tämän hetken.'} ] },
+  r_report: { type:'detour', title:'Raportti on jaettu.',
+    text:'Se on Teamsissa, sähköpostissa ja intrassa. Sitä on avattu kerran, kun Elina tarkisti, toimiiko linkki. Avaa se. Siinä on kuvaajia ja kaikkea.',
+    opts:[ {label:'Avasin, vastaus oli siellä', next:'w_report'}, {label:'Avasin, en ymmärrä kuvaajia', next:NEXT} ] },
+  w_report: { type:'self', title:'Datalukutaitoa!',
+    text:'Löysit vastauksen raportista itse. Elina haluaa nyt halata sinua. Hän ei tee sitä, mutta haluaa.' },
+
+  likes: { type:'q', short:'Tykkäykset?', q:'Mitataanko onnistumista tykkäyksillä?',
+    sub:'”Se sai tosi paljon tykkäyksiä!” – kaikki, aina.',
+    mutter:'Tykkäykset ovat kuin mummon kehut. Mukavia, mutta eivät maksa laskuja.',
+    opts:[ {label:'Kyllä, tykkäykset ratkaisee', pos:'side', next:'r_likes', d:-10, say:'Tykkäyksillä ostetaan siis… hyvää mieltä.'},
+           {label:'Ei, seurataan ilmoittautumisia tai myyntiä', pos:'down', next:NEXT, say:'Oikeat mittarit! Excel hymyilee.'} ] },
+  r_likes: { type:'detour', title:'Tykkäykset eivät maksa laskuja.',
+    text:'Sata tykkäystä ja nolla ilmoittautumista on kuin sata ihmistä, jotka vilkuttavat ohi ajaessaan. Mukavaa, mutta kukaan ei pysähtynyt.',
+    opts:[ {label:'Seurataan ilmoittautumisia', next:NEXT} ] },
+
+  cta: { type:'q', short:'Toimintakehote?', q:'Onko julkaisussa selkeä toimintakehote?',
+    sub:'Eli kohta, jossa kerrotaan, mitä lukijan pitäisi tehdä.',
+    mutter:'”Hyvää viikonloppua kaikille!” ei ole toimintakehote.',
+    opts:[ {label:'Mikä toimintakehote?', pos:'side', next:'r_cta', d:-10, say:'Se on se kohta, jossa lukija tietää mitä tehdä. Nyt hän ei tiedä. Kuten et sinäkään.'},
+           {label:'Kyllä: ”Ilmoittaudu tästä”', pos:'down', next:NEXT, say:'Linkki ja kehote! Lukija tietää mitä tehdä! Ihme!'} ] },
+  r_cta: { type:'detour', title:'Lukija ei osaa lukea ajatuksia.',
+    text:'Jos haluat ilmoittautumisia, kirjoita ”Ilmoittaudu tästä” ja lisää linkki. Muuten lukija tykkää, skrollaa ja unohtaa. Sitten ihmetellään, miksi kukaan ei ilmoittautunut.',
+    opts:[ {label:'Lisäsin toimintakehotteen', next:NEXT} ] },
+
+  /* ---------- Työyhteisöetiketti ---------- */
+  friday: { type:'q', short:'Perjantai klo 15?', q:'Onko nyt perjantai ja kello yli 15?',
+    sub:'Tai Elinan lounas. Tai maanantaiaamun ensimmäinen tunti. Samat säännöt.',
+    mutter:'Aivoilla on aukioloajat. Kunnioita aukioloaikoja.',
+    opts:[ {label:'Ei', pos:'down', next:NEXT, say:'Hyvä. Aivot ovat vielä teknisesti töissä.'},
+           {label:'Kyllä', pos:'side', next:'r_friday', d:-10, say:'Sinä. Olet. Uhka.'} ] },
+  r_friday: { type:'stop', title:'Ei todellakaan.',
+    text:'Elinan aivot ovat jo mökillä. Paikalla on vain keho, joka tuijottaa kelloa ja miettii saunan lämmitystä.',
+    opts:[ {label:'Selvä, maanantaina sitten', next:'x_monday'},
+           {label:'Mutta tämä on somekriisi!', next:'crisis', say:'Ai NYT se on kriisi. Kätevää.'} ] },
+  x_monday: { type:'stop', title:'Nähdään maanantaina.',
+    text:'Kirjoita kysymys ylös. On todellinen mahdollisuus, että keksit vastauksen itse saunan lauteilla viikonlopun aikana.' },
+
+  hello: { type:'q', short:'Pelkkä ”Moi”?', q:'Aiotko lähettää Teamsissa pelkän ”Moi”?',
+    sub:'Ja sitten odottaa, että Elina vastaa ”Moi”, ennen kuin kerrot asiasi.',
+    mutter:'”Moi” ja kolme pistettä. Kauhuelokuvan alku.',
+    opts:[ {label:'Joo, se on kohteliasta', pos:'side', next:'r_hello', d:-10, say:'Elina näkee ”kirjoittaa…”. Kuusi minuuttia. Ei mitään. Jännitys tappaa.'},
+           {label:'Ei, kirjoitan koko asian kerralla', pos:'down', next:NEXT, say:'Koko asia kerralla! Elina voi vastata omaan tahtiinsa!'} ] },
+  r_hello: { type:'detour', title:'”Moi” ei ole kysymys.',
+    text:'Kirjoita tervehdys ja koko asia samaan viestiin. Silloin Elina voi vastata kerralla, eikä hänen tarvitse jännittää, onko kyseessä tulipalo vai lounaskysymys.',
+    opts:[ {label:'Kirjoitin koko asian', next:NEXT} ] },
+
+  headphones: { type:'q', short:'Kuulokkeet päässä?', q:'Onko Elinalla kuulokkeet päässä?',
+    sub:'Isot. Vastamelulla. Mahdollisesti ei edes musiikkia.',
+    mutter:'Kuulokkeet ovat voimakenttä. Voimakenttä on kantava rakenne.',
+    opts:[ {label:'Ei', pos:'down', next:NEXT, say:'Hmm. Harvinainen suojaamaton hetki.'},
+           {label:'Kyllä', pos:'side', next:'r_headphones', d:-5, say:'Olit aikeissa koputtaa olkapäälle. Tiedän sen.'} ] },
+  r_headphones: { type:'detour', title:'Älä koputa olkapäälle.',
+    text:'Kuulokkeet ovat kansainvälinen merkki sanoista ”olen keskittynyt”. Lähetä viesti, jossa on koko kysymys. Elina vastaa, kun hän palaa maan pinnalle.',
+    opts:[ {label:'Lähetin viestin', next:NEXT} ] },
+
+  meetingHour: { type:'q', short:'Tunnin palaveri?', q:'Aiotko varata tästä tunnin palaverin?',
+    sub:'12 osallistujaa, ei asialistaa, kutsu lähtee 10 minuuttia ennen alkua.',
+    mutter:'Tämä palaveri olisi voinut olla sähköposti. Ja se sähköposti olisi voinut olla ei mitään.',
+    opts:[ {label:'Kyllä, koko tiimi mukaan', pos:'side', next:'r_meetingHour', d:-10, say:'12 ihmistä × 1 tunti = koko kampanjan työmäärä. Hienoa.'},
+           {label:'Ei, laitan viestin', pos:'down', next:NEXT, say:'Viesti palaverin sijaan! Kalenteri huokaisee helpotuksesta.'} ] },
+  r_meetingHour: { type:'detour', title:'Tämä palaveri olisi voinut olla viesti.',
+    text:'12 ihmistä tunnin ajan on 12 työtuntia. Sillä ajalla olisi tehty koko kampanja ja käyty kahvilla. Laita viesti tai varaa vartti kahdelle ihmiselle.',
+    opts:[ {label:'Laitan viestin', next:NEXT} ] },
+
+  lunch: { type:'q', short:'Lounaalle lähdössä?', q:'Onko Elina juuri lähdössä lounaalle?',
+    sub:'Takki päällä. Avaimet kädessä. Katse ovessa.',
+    mutter:'Nälkäinen markkinoija on vaarallinen markkinoija.',
+    opts:[ {label:'Kyllä, mutta tämä on nopea', pos:'side', next:'r_lunch', d:-15, say:'Nopea. Seison tässä takki päällä. Hikoilen.'},
+           {label:'Ei', pos:'down', next:NEXT, say:'Hyvä. Verensokeri on vielä turvallisella tasolla.'} ] },
+  r_lunch: { type:'stop', title:'Ei. Turvallisuussyistä.',
+    text:'Lounaalla on tänään lohikeittoa. Lohikeitto loppuu kello 11.45. Elina ei menetä lohikeittoa sinun takiasi. Kysy kello 12.30, kun hän on taas ihminen.',
+    opts:[ {label:'Odotan 12.30 asti', next:NEXT, say:'Viisas valinta. Elina palasi lounaalta ihmisenä.'},
+           {label:'Kysyn silti', next:'x_lunch', d:-10, say:'…'} ] },
+  x_lunch: { type:'stop', title:'Lohikeitto loppui.',
+    text:'Elina vastasi kysymykseesi. Lohikeitto loppui sillä välin. Elina muistaa tämän. Elina muistaa aina.' },
+
+  cc: { type:'q', short:'Johtoryhmä kopiona?', q:'Laitoitko viestiin kopioksi koko johtoryhmän?',
+    sub:'Ihan vaan ”tiedoksi”. Ja ehkä vähän painostukseksi.',
+    mutter:'Kopio johtoryhmälle on passiivis-aggressiivisuuden huippulaji.',
+    opts:[ {label:'Kyllä, tiedoksi', pos:'side', next:'r_cc', d:-15, say:'Tiedoksi. Kahdeksalle johtajalle. Kysymyksestä fontin koosta.'},
+           {label:'En, vain Elinalle', pos:'down', next:NEXT, say:'Kahdenkeskinen viesti! Kuin aikuiset!'} ] },
+  r_cc: { type:'detour', title:'Kopio havaittu.',
+    text:'Nyt Elina vastaa viestiisi kahdeksan johtajan katsellessa, kuin kokeessa. Seuraavaksi joku vastaa kaikille kysyäkseen, mistä on kyse. Lähetä uusi viesti vain Elinalle.',
+    opts:[ {label:'Lähetin vain Elinalle', next:NEXT} ] },
+
+  triple: { type:'q', short:'Kolme kanavaa?', q:'Kysyitkö saman asian Teamsissa, sähköpostissa JA tekstiviestillä?',
+    sub:'Varmuuden vuoksi. Ja sitten vielä ohimennen käytävällä.',
+    mutter:'Yksi kysymys, neljä kanavaa. Elina vastaa siihen neljä kertaa.',
+    opts:[ {label:'Kyllä, varmuuden vuoksi', pos:'side', next:'r_triple', d:-10, say:'Elina sai saman kysymyksen neljästi. Jokainen oli ”pikainen”.'},
+           {label:'Ei, yksi viesti riittää', pos:'down', next:NEXT, say:'Yksi viesti, yksi kanava. Elina voisi itkeä.'} ] },
+  r_triple: { type:'detour', title:'Kolmoisvarmistus havaittu.',
+    text:'Elina vastasi sähköpostiin, minkä jälkeen kysyit Teamsissa, oliko hän nähnyt tekstiviestisi. Valitse yksi kanava ja anna sille työrauha.',
+    opts:[ {label:'Valitsin yhden kanavan', next:NEXT} ] },
+
+  /* ---------- Loppukiri ---------- */
+  quick: { type:'q', short:'Pikainen juttu?', q:'Onko tämä ”ihan pikainen juttu”?',
+    sub:'”Voisitko vähän somettaa tätä” ei ole koskaan ollut pikainen juttu.',
+    mutter:'Yksikään ”pikainen juttu” ei ole historian aikana ollut pikainen.',
+    opts:[ {label:'Joo, 2 minuuttia!', pos:'side', next:'r_quick', d:-10, say:'Hahaha. Haha. Ha. Ei.'},
+           {label:'Rehellisesti, vartti', pos:'down', next:NEXT, say:'Rehellisyyttä! Tässä taloustilanteessa?'},
+           {label:'Ei, tämä on iso juttu', pos:'side', next:'r_meeting', d:5, say:'Ihminen, joka kunnioittaa kalenteriani. Kuka SINÄ olet?'} ] },
+  r_quick: { type:'detour', title:'Historia on eri mieltä.',
+    text:'Keskimääräinen ”pikainen juttu” kestää 47 minuuttia ja synnyttää kaksi jatkopalaveria ja yhden Excelin. Kerro arviosi viidellätoista ja yritä uudelleen.',
+    opts:[ {label:'Lasken uudelleen…', next:RETRY} ] },
+  r_meeting: { type:'go', title:'Kunnioitusta.',
+    text:'Varaa kunnon palaveri. Asialistan kanssa. Elina saattaa jopa vähän ilahtua. (Hän ei näytä sitä.)' },
+
+  coffee: { type:'q', short:'Toitko kahvia?', q:'Toitko kahvia?',
+    sub:'Myös korvapuusti kelpaa maksuvälineeksi.',
+    mutter:'Tämä kysymys ei ole osa prosessia. Se ON prosessi.',
+    opts:[ {label:'En', pos:'down', next:'end_ask', say:'Ymmärrän. Rohkea strategia.'},
+           {label:'Kyllä', pos:'side', next:'end_coffee', d:40, say:'Oi. OI. Tule sisään, ystävä. Istu. Jää.'} ] },
+  end_coffee: { type:'go', title:'Tervetuloa, ystävä!',
+    text:'Ovi on auki, mieli on auki ja kärsivällisyys palautui 40 %. Kysy pois. Kysy vaikka kaksi asiaa.' },
+  end_ask: { type:'go', title:'Mene ja kysy Elinalta.',
+    text:'Teit kotitehtävät ja ansaitsit sen. (Korvapuusti olisi ollut kiva. Sanonpahan vaan. Kukaan ei pidä kirjaa. Elina pitää kirjaa.)' }
+};
+
+</script>
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const QL = UI.ql || '“', QR = UI.qr || '”';
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const pick = a => a[Math.floor(Math.random() * a.length)];
+  const quote = s => QL + s + QR;
+  const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  const STAGE_OF = {};
+  STAGES.forEach(st => st.qs.forEach(id => { STAGE_OF[id] = st; }));
+  const ALL_Q = STAGES.reduce((n, st) => n + st.qs.length, 0);
+  const NORMAL_Q = STAGES.reduce((n, st) => n + (st.fixed ? st.qs.length : st.pick), 0);
+
+  /* ---------- static text ---------- */
+  $('kick').textContent = UI.kicker;
+  $('h1').textContent = UI.title;
+  $('subtitle').textContent = UI.subtitle;
+  $('m-label').textContent = UI.meter;
+  $('quit').textContent = UI.quit;
+  $('footer').textContent = UI.footer;
+
+  /* ---------- avatar ---------- */
+  const MOUTH = {
+    happy:'M45 78 Q60 92 75 78', fine:'M47 80 Q60 86 73 80', meh:'M47 82 L73 82',
+    annoyed:'M47 86 Q60 76 73 86', fried:'M44 84 Q49 79 54 84 T64 84 T74 84', love:'M44 77 Q60 96 76 77'
+  };
+  const MOODS = ['happy','fine','meh','annoyed','fried'];
+  function faceSVG(kind){
+    const elina = kind === 'elina';
+    const hairBack = elina ? '<path class="hair ln" d="M22 66 C20 34 40 22 60 22 C82 22 100 36 98 66 L100 104 C92 110 84 106 82 100 L82 76 L38 76 L38 100 C36 106 28 110 20 104 Z"/>' : '';
+    const hairTop = elina
+      ? '<path class="hair ln" d="M27 60 C27 38 44 28 60 28 C78 28 93 40 93 60 C88 50 78 44 66 42 C58 46 46 46 38 44 C32 48 29 54 27 60 Z"/>'
+      : '<path class="hair ln" d="M27 58 C25 36 42 24 60 26 C80 24 96 38 93 58 C88 48 80 44 72 46 C68 40 60 40 54 44 C46 40 36 44 32 50 C30 52 28 55 27 58 Z"/>';
+    const extras = elina
+      ? '<circle class="earring ln" cx="26" cy="80" r="4.5"/><circle class="earring ln" cx="94" cy="80" r="4.5"/>'
+      : '<g class="glasses"><circle class="ln" cx="48" cy="62" r="10"/><circle class="ln" cx="72" cy="62" r="10"/><path class="ln" d="M58 62 h4"/></g>' +
+        '<path class="band ln" d="M22 66 A38 38 0 0 1 98 66"/><rect class="cup ln" x="14" y="58" width="12" height="22" rx="5"/><rect class="cup ln" x="94" y="58" width="12" height="22" rx="5"/>';
+    return `<svg viewBox="0 0 120 120" class="face" id="face" role="img" aria-label="${UI.avatarAlt}">
+      <circle class="disc" cx="60" cy="62" r="56"/>
+      <g class="steam"><path d="M42 20 q-4 -5 0 -10 q4 -5 0 -10"/><path d="M60 16 q-4 -5 0 -10 q4 -5 0 -10"/><path d="M78 20 q-4 -5 0 -10 q4 -5 0 -10"/></g>
+      ${hairBack}<circle class="head ln" cx="60" cy="66" r="34"/>${hairTop}
+      <path class="brow brow-l ln" d="M42 50 h13"/><path class="brow brow-r ln" d="M65 50 h13"/>
+      <g class="eyes"><circle cx="48" cy="62" r="4.5"/><circle cx="72" cy="62" r="4.5"/></g>
+      <g class="eyes-x"><path class="ln" d="M43 63 h10 M67 63 h10"/></g>
+      <g class="eyes-love"><path class="ln" d="M48 68 C40 62 41 56 45 56 C47 56 48 58 48 59 C48 58 49 56 51 56 C55 56 56 62 48 68 Z"/><path class="ln" d="M72 68 C64 62 65 56 69 56 C71 56 72 58 72 59 C72 58 73 56 75 56 C79 56 80 62 72 68 Z"/></g>
+      <g class="blush"><ellipse cx="38" cy="76" rx="6" ry="3.5"/><ellipse cx="82" cy="76" rx="6" ry="3.5"/></g>
+      <path class="sweat ln" d="M90 40 q6 9 0 12 q-6 -3 0 -12z"/>
+      <path class="mouth ln" id="mouth" d="${MOUTH.happy}"/>${extras}</svg>`;
+  }
+  $('avatar').innerHTML = faceSVG(UI.avatar) + (UI.avatarTag ? `<span class="avatar-tag">${UI.avatarTag}</span>` : '');
+
+  /* ---------- state ---------- */
+  const S = {};
+  let skipN = 0, lastDodge = 0;
+  function reset(){
+    Object.assign(S, {cur:'start', mode:'normal', seq:[], qpos:0, lastQ:null, patience:100, trail:[], visited:[], asked:0, detours:0, lost:0, qCount:{}});
+    skipN = 0; const sk = $('skip'); sk.textContent = UI.skipLabel; sk.className = ''; sk.style.left = ''; sk.style.top = ''; sk.style.transform = '';
+  }
+  const level = p => p >= 85 ? 0 : p >= 65 ? 1 : p >= 45 ? 2 : p >= 25 ? 3 : 4;
+  const rankOf = p => (UI.ranks.find(r => p >= r.min) || UI.ranks[UI.ranks.length - 1]).t;
+  const isTerminal = n => n.type !== 'q' && n.type !== 'start' && !n.opts;
+
+  function buildSeq(mode, force){
+    const seq = [];
+    STAGES.forEach(st => {
+      let qs;
+      if (st.fixed) qs = st.qs.slice();
+      else if (mode === 'full') qs = shuffle(st.qs);
+      else {
+        qs = shuffle(st.qs).slice(0, st.pick);
+        if (force && st.qs.includes(force) && !qs.includes(force)) qs[0] = force;
+      }
+      seq.push(...qs);
+    });
+    return seq;
+  }
+  function enter(id){
+    S.cur = id; S.visited.push(id);
+    const n = N[id];
+    if (n.type === 'q') S.qCount[id] = (S.qCount[id] || 0) + 1;
+    if (n.type === 'detour') S.detours++;
+  }
+  function goTo(next){
+    if (next === '@next'){
+      const p = S.qpos + 1;
+      if (p < S.seq.length){ S.qpos = p; S.lastQ = S.seq[p]; return enter(S.lastQ); }
+      return enter(SPINE_END);
+    }
+    if (next === '@retry') return enter(S.lastQ);
+    if (N[next].type === 'q'){
+      let i = S.seq.indexOf(next);
+      if (i < 0){ S.seq.splice(S.qpos + 1, 0, next); i = S.qpos + 1; }
+      S.qpos = i; S.lastQ = next; return enter(next);
+    }
+    enter(next);
+  }
+
+  function setFace(anim){
+    const f = $('face');
+    const m = S.cur === 'end_coffee' ? 'love' : MOODS[level(S.patience)];
+    f.setAttribute('class', 'face m-' + m);
+    $('mouth').setAttribute('d', MOUTH[m]);
+    if (anim && !reduce){ f.getBoundingClientRect(); f.classList.add(anim); }
+  }
+  function say(main, think){
+    const b = $('bubble');
+    b.innerHTML = (main ? `<b>${main}</b>` : '') + (think ? `<span class="think">${think}</span>` : '');
+    b.classList.remove('pop'); void b.offsetWidth; if (!reduce) b.classList.add('pop');
+  }
+  function meter(delta){
+    const p = S.patience;
+    $('m-fill').style.width = p + '%';
+    $('m-fill').style.backgroundColor = `hsl(${Math.round(p * 1.2)} 72% 47%)`;
+    $('m-val').textContent = `${p} % · ${UI.moodWords[level(p)]}`;
+    const d = $('m-delta');
+    if (delta){
+      d.textContent = (delta > 0 ? '+' : '') + delta;
+      d.className = 'm-delta show ' + (delta > 0 ? 'pos' : 'neg');
+      clearTimeout(meter.t); meter.t = setTimeout(() => d.classList.remove('show'), 1600);
+    }
+  }
+  function achievements(){
+    const end = N[S.cur];
+    const got = UI.ach.filter(a => { try { return a.test(S, end); } catch(e){ return false; } });
+    return (got.length ? got : [UI.achNone]).slice(0, 4);
+  }
+
+  /* ---------- rendering ---------- */
+  function answersHTML(opts){
+    return `<div class="answers${opts.length > 1 ? ' multi' : ''}">` + opts.map((o, i) =>
+      `<button class="ans" data-i="${i}"><span class="k" aria-hidden="true">${i + 1}</span><span>${o.label}</span></button>`).join('') + '</div>';
+  }
+  function endHTML(n){
+    const p = S.patience;
+    return `<p class="verdict"><b>${UI.outcome}</b> ${UI.verdict[n.type]}</p>
+      <div class="cert"><span class="kicker">${UI.certTitle}</span>
+        <p class="rank">${UI.certRank}: <b>${rankOf(p)}</b></p>
+        <p class="sub">${UI.certStats(p, S.asked, S.detours)}</p>
+        <h3>${UI.achTitle}</h3>
+        <ul class="ach">${achievements().map(a => `<li><b>${a.t}</b><span>${a.d}</span></li>`).join('')}</ul>
+      </div>
+      <div class="answers"><button class="ans primary" data-act="again">${UI.playAgain}</button>
+        <button class="ans" data-act="copy"><span class="k" aria-hidden="true">↗</span><span>${UI.copy}</span></button></div>`;
+  }
+  function render(focus){
+    const n = N[S.cur], card = $('card');
+    document.body.classList.toggle('in-game', S.cur !== 'start');
+    let cls = 'card', h;
+    if (n.type === 'start'){
+      h = `<span class="kicker">${UI.start}</span><h2 tabindex="-1">${UI.startTitle}</h2><p>${UI.startSub}</p>
+        <div class="answers">
+          <button class="ans primary mode" data-act="start" data-mode="normal"><span class="mt">${UI.modes.normal.t}</span><span class="mm">${UI.modes.normal.m(NORMAL_Q)}</span></button>
+          <button class="ans mode" data-act="start" data-mode="full"><span class="mt">${UI.modes.full.t}</span><span class="mm">${UI.modes.full.m(ALL_Q)}</span></button>
+        </div>
+        <h3 class="status-h">${UI.statusTitle}</h3>
+        <dl class="status">${UI.status.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>`;
+    } else if (n.type === 'q'){
+      cls += ' is-q';
+      h = `<span class="kicker">${STAGE_OF[S.cur].name} · ${S.qpos + 1}/${S.seq.length}</span><h2 tabindex="-1">${n.q}</h2><p class="sub">${n.sub}</p>` + answersHTML(n.opts);
+    } else {
+      cls += ' t-' + n.type;
+      h = (isTerminal(n) ? `<span class="stamp">${UI.stamps[n.type]}</span>` : `<span class="kicker">${UI.badge[n.type]}</span>`) +
+          `<h2 tabindex="-1">${n.title}</h2><p>${n.text}</p>` + (n.opts ? answersHTML(n.opts) : endHTML(n));
+    }
+    card.className = cls; card.innerHTML = h;
+    if (!reduce){ void card.offsetWidth; card.classList.add('enter'); }
+    $('skip-zone').hidden = n.type !== 'q';
+    $('quit').hidden = S.cur === 'start' || isTerminal(n);
+    if (S.cur === 'start') $('prog').style.width = '0%';
+    else if (isTerminal(n)) $('prog').style.width = '100%';
+    else $('prog').style.width = (S.qpos / S.seq.length) * 100 + '%';
+    $('path').hidden = !S.trail.length;
+    $('path-sum').textContent = `${UI.trail} (${S.trail.length})`;
+    $('chips').innerHTML = S.trail.map(t => {
+      const f = N[t.from];
+      return `<span class="chip">${f.type === 'q' ? f.short : f.title} — ${t.label}</span>`;
+    }).join('');
+    if (focus){ const h2 = card.querySelector('h2'); if (h2) h2.focus({preventScroll:true}); }
+  }
+  function keepInView(){
+    const navH = 0;
+    const top = $('hud').getBoundingClientRect().top;
+    const cardBottom = $('card').getBoundingClientRect().bottom;
+    if (top < navH || cardBottom > window.innerHeight) window.scrollBy({top: top - navH - 8, behavior: reduce ? 'auto' : 'smooth'});
+  }
+  function effects(d){
+    const n = N[S.cur], card = $('card');
+    if (reduce) return;
+    if (d <= -15 || (isTerminal(n) && n.type === 'stop')){ card.classList.remove('enter'); void card.offsetWidth; card.classList.add('shake'); }
+    if (isTerminal(n) && (n.type === 'self' || n.type === 'go') && !n.calm) confetti();
+  }
+
+  /* ---------- interactions ---------- */
+  function startGame(mode, force){
+    reset();
+    S.mode = mode;
+    S.seq = buildSeq(mode, force);
+    S.qpos = force ? Math.max(0, S.seq.indexOf(force)) : 0;
+    S.lastQ = S.seq[S.qpos];
+    enter(S.lastQ);
+    say(UI.startSay[mode], N[S.lastQ].mutter);
+    meter(0); setFace('bump'); render(true);
+    window.scrollTo({top:0});
+  }
+  function choose(o){
+    const from = S.cur, fn = N[from];
+    S.trail.push({from, label:o.label});
+    if (fn.type === 'q') S.asked++;
+    const d = o.d || 0;
+    S.patience = Math.max(0, Math.min(100, S.patience + d));
+    if (d < 0) S.lost -= d;
+    goTo(o.next);
+    const nn = N[S.cur];
+    say(o.say || pick(UI.react[d < 0 ? 'neg' : d > 0 ? 'pos' : 'neu']), nn.type === 'q' ? nn.mutter : '');
+    meter(d);
+    setFace(d < 0 ? 'shake' : 'bump');
+    render(true);
+    effects(d);
+    keepInView();
+  }
+  $('card').addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    const act = b.dataset.act;
+    if (act === 'start') return startGame(b.dataset.mode);
+    if (act === 'again'){ reset(); paint(); window.scrollTo({top:0}); return; }
+    if (act === 'copy') return copyResult();
+    const o = (N[S.cur].opts || [])[+b.dataset.i];
+    if (o) choose(o);
+  });
+  $('quit').onclick = () => { toast(UI.quitToast); reset(); paint(); window.scrollTo({top:0}); };
+  document.addEventListener('keydown', e => {
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    if (!/^[1-9]$/.test(e.key)) return;
+    const b = $('card').querySelector(`.ans[data-i="${+e.key - 1}"]`);
+    if (b){ e.preventDefault(); b.click(); }
+  });
+
+  /* runaway skip button */
+  const skip = $('skip');
+  function dodge(){
+    if (skipN >= UI.skip.length) return;
+    skip.textContent = UI.skip[skipN++];
+    const zw = $('skip-zone').clientWidth, bw = skip.offsetWidth, room = Math.max(0, zw - bw);
+    let x = Math.random() * room, tries = 0;
+    while (Math.abs(x - skip.offsetLeft) < Math.min(80, room / 3) && tries++ < 10) x = Math.random() * room;
+    skip.style.transform = 'none'; skip.style.left = x + 'px'; skip.style.top = Math.round(Math.random() * 12) + 'px';
+    if (skipN >= UI.skip.length){
+      setTimeout(() => { skip.textContent = UI.skipDone; skip.classList.add('done'); skip.style.left = '50%'; skip.style.top = '8px'; skip.style.transform = 'translateX(-50%)'; say(UI.skipSay, ''); }, 450);
+    }
+  }
+  skip.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse'){ lastDodge = Date.now(); dodge(); } });
+  skip.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse'){ lastDodge = Date.now(); dodge(); } });
+  skip.addEventListener('click', () => {
+    if (Date.now() - lastDodge < 600) return;
+    if (skipN < UI.skip.length) return dodge();
+    skip.classList.remove('wiggle'); void skip.offsetWidth; skip.classList.add('wiggle');
+  });
+
+  /* copy result */
+  function toast(msg){ const t = $('toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('show'), 2200); }
+  function copyResult(){
+    const txt = UI.share({title:N[S.cur].title, rank:rankOf(S.patience), p:S.patience});
+    const fallback = () => {
+      const ta = document.createElement('textarea'); ta.value = txt; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      let ok = false; try { ok = document.execCommand('copy'); } catch(e){}
+      ta.remove(); toast(ok ? UI.copied : txt);
+    };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(() => toast(UI.copied), fallback);
+    else fallback();
+  }
+  function confetti(){
+    const c = $('confetti'), cols = ['#FFD43B','#E8453C','#4DABF7','#9775FA','#51CF66','#FF8FA3'];
+    let h = '';
+    for (let i = 0; i < 80; i++){
+      const w = 6 + Math.random() * 8;
+      h += `<i style="left:${Math.random() * 100}%;width:${w}px;height:${w * 1.4}px;background:${cols[i % cols.length]};animation-duration:${1.8 + Math.random() * 1.6}s;animation-delay:${Math.random() * .5}s"></i>`;
+    }
+    c.innerHTML = h; clearTimeout(confetti.t); confetti.t = setTimeout(() => { c.innerHTML = ''; }, 4200);
+  }
+
+  function paint(){ say(UI.hello, UI.helloThink); meter(0); setFace(); render(false); }
+  reset(); paint();
+})();
+</script>
+</body>
+</html>
