@@ -1,0 +1,1210 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hyvinvointiaamut ja palautumisillat 2027</title>
+<meta name="description" content="Avoimet hyvinvointiaamut Kisakalliossa ja palautumisillat Pajulahdessa syksyllä 2027. Yritys ostaa liput, ja jokainen valitsee päivän. Pyydä lippuvaraus.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 12'%3E%3Ccircle cx='6' cy='6' r='5' fill='%2394A67C'/%3E%3Ccircle cx='16' cy='6' r='5' fill='%23486499'/%3E%3Ccircle cx='26' cy='6' r='5' fill='%23A18BB6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@600;700;800&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  /* text */
+  --ink: #0A0A0A;            /* all body text on light */
+  --on-dark: #FFFFFF;        /* all text on navy / ink */
+  /* brand */
+  --navy: #1F2C53;           /* headings, primary buttons, dark bands */
+  --blue: #486499;           /* logo dot 1; page A accent; links on light allowed (5.5:1) */
+  --green: #94A67C;          /* logo dot 2; page B accent – CHROME ONLY on light (2.5:1) */
+  --violet: #A18BB6;         /* logo dot 3; page C accent – CHROME ONLY on light (2.9:1) */
+  --green-strong: #6B7F52;   /* meaningful non-text graphics on light, page B (4.1:1) */
+  --violet-strong: #7A5F96;  /* meaningful non-text graphics on light, page C (5.1:1) */
+  /* surfaces */
+  --paper: #F6F8F8;          /* page background (3K) */
+  --surface: #FFFFFF;        /* cards, form */
+  --tint-a: #E8EDF6;         /* page A section tint */
+  --tint-b: #EEF1E8;         /* page B section tint */
+  --tint-c: #F1EDF5;         /* page C section tint */
+  /* chrome */
+  --rule: #C9D1DC;           /* dividers, card borders (decorative) */
+  --field: #5E6B7E;          /* input borders, radio/checkbox outlines (5.1:1 on paper) */
+  /* states */
+  --focus: #1F2C53;          /* focus ring on light */
+  --focus-on-dark: #FFE58A;  /* focus ring on navy / ink */
+  --error: #B3261E;          /* error text + icon (6.5:1 on white) */
+  --error-bg: #FDECEA;
+  --success: #1E6B3A;        /* success icon/border; success text stays --ink */
+  --success-bg: #E6F2EA;
+  /* placeholders */
+  --vahvista-bg: #FFE58A;    /* [VAHVISTA: …] chip */
+  --vahvista-border: #8A6D00;
+  --kuva-bg: #FFF6CC;        /* [KUVA: …] image placeholder block */
+  /* per-page accent: set ONE of these on <body> */
+  --accent: var(--blue);           /* page A */
+  /* --accent: var(--green);       page B */
+  /* --accent: var(--violet);      page C */
+  --accent-strong: var(--blue);    /* A: --blue · B: --green-strong · C: --violet-strong */
+  --tint: var(--tint-a);           /* A: --tint-a · B: --tint-b · C: --tint-c */
+}
+:root {
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px;
+  --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px;
+  --gutter: 16px;            /* ≤ 600 px; 32px from 601; 48px from 1024 */
+  --container: 1200px;       /* content max width; page bg runs full width */
+  --measure: 68ch;
+  --radius-card: 10px; --radius-field: 8px; --radius-pill: 999px; --radius-chip: 4px;
+  --tap: 48px;               /* min height of buttons; links/targets ≥ 44 × 44 */
+  --shadow-card: 0 1px 2px rgba(31,44,83,.08), 0 4px 16px rgba(31,44,83,.06); /* chrome only */
+}
+:root {
+  --f-body: "Barlow", "Segoe UI", Arial, sans-serif;
+  --f-cond: "Barlow Semi Condensed", "Arial Narrow", "Segoe UI", sans-serif;
+}
+body {
+  --accent: var(--blue);
+  --accent-strong: var(--blue);
+  --tint: var(--tint-a);
+}
+@media (min-width: 601px)  { :root { --gutter: 32px; } }
+@media (min-width: 1024px) { :root { --gutter: 48px; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 16px; }
+@media (min-width: 768px) { html { scroll-padding-top: 72px; } }
+body {
+  margin: 0;
+  font: 400 18px/1.6 var(--f-body);
+  color: var(--ink);
+  background: var(--paper);
+}
+img { display: block; max-width: 100%; height: auto; }
+p { margin: 0 0 var(--s4); }
+ul, ol { margin: 0; padding: 0; }
+a { color: var(--navy); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: .18em; }
+a:hover { text-decoration-thickness: 3px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+#sisalto:focus { outline: none; }
+h1, h2, h3 { margin: 0; font-family: var(--f-cond); color: var(--navy); text-wrap: balance; }
+h1 { font-weight: 800; font-size: 32px; line-height: 1.04; letter-spacing: -0.01em; }
+h2 { font-weight: 700; font-size: 28px; line-height: 1.1; margin-bottom: var(--s4); }
+h3 { font-weight: 700; font-size: 20px; line-height: 1.2; }
+@media (min-width: 601px)  { h1 { font-size: 42px; } h2 { font-size: 34px; } h3 { font-size: 22px; } }
+@media (min-width: 1024px) { h1 { font-size: 48px; } h2 { font-size: 38px; } }
+@media (min-width: 1280px) { h1 { font-size: 56px; } }
+mark { background: none; color: inherit; }
+.visually-hidden, .hp {
+  position: absolute !important; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;
+}
+.wrap {
+  width: 100%;
+  max-width: calc(var(--container) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.section { padding-block: var(--s7); }
+@media (min-width: 768px) { .section { padding-block: var(--s8); } }
+.band-tint { background: var(--tint); }
+.band-surface { background: var(--surface); }
+.on-dark { color: var(--on-dark); }
+.ic { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.intro { max-width: var(--measure); }
+
+/* skip link */
+.skip {
+  position: absolute; left: 8px; top: -100px; z-index: 200;
+  padding: 12px 20px; border-radius: 999px;
+  background: var(--navy); color: var(--on-dark);
+  font: 700 19px/1 var(--f-cond); text-decoration: none;
+}
+.skip:focus { top: 8px; outline: 3px solid var(--focus-on-dark); outline-offset: 0; box-shadow: 0 0 0 6px var(--navy); }
+
+/* placeholders */
+.vahvista {
+  display: inline;
+  background: var(--vahvista-bg); color: var(--ink);
+  border: 1px dashed var(--vahvista-border); border-radius: var(--radius-chip);
+  padding: 0 4px;
+  font-family: var(--f-body); font-weight: 600; font-size: .85em; line-height: 1.5;
+  white-space: normal; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.kuva {
+  display: flex; align-items: center; gap: var(--s4);
+  background: var(--kuva-bg); border: 2px dashed var(--vahvista-border); border-radius: var(--radius-card);
+  padding: var(--s3) var(--s4);
+  font: 600 16px/1.4 var(--f-body); color: var(--ink);
+}
+.kuva .ic { width: 28px; height: 28px; }
+
+/* bar */
+.bar {
+  background: var(--ink); color: var(--vahvista-bg);
+  font: 600 14px/1.4 var(--f-body); text-align: center;
+  padding: 8px var(--s4);
+}
+@media (min-width: 768px) { .bar { position: sticky; top: 0; z-index: 100; } }
+
+/* header */
+.site-header { background: var(--surface); border-bottom: 1px solid var(--rule); }
+.hdr { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2px var(--s3); padding-block: 4px; min-height: 56px; }
+.brand { display: flex; flex: 1 1 0; min-width: 0; flex-wrap: wrap; align-items: center; gap: 4px var(--s3); }
+.dots { display: inline-flex; gap: 4px; flex: none; }
+.dots i { display: block; width: 10px; height: 10px; border-radius: 50%; }
+.dots i:nth-child(1) { background: var(--green); }
+.dots i:nth-child(2) { background: var(--blue); }
+.dots i:nth-child(3) { background: var(--violet); }
+.wordmark {
+  font: 700 15px/1.1 var(--f-cond); letter-spacing: .02em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+  display: inline-flex; align-items: center; min-height: 44px;
+}
+.campus { font: 600 16px/1 var(--f-cond); color: var(--navy); }
+@media (max-width: 600px) { .campus { display: none; } }
+.hdr-nav { display: none; }
+.hdr-nav ul { list-style: none; display: flex; gap: var(--s5); }
+.hdr-nav a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font: 600 16px/1.2 var(--f-body); color: var(--navy); text-decoration: none;
+}
+.hdr-nav a:hover, .hdr-nav a:focus-visible { text-decoration: underline; text-decoration-thickness: 2px; }
+.hdr-phone {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-width: 44px; min-height: 44px;
+  font: 600 17px/1 var(--f-cond); color: var(--navy); text-decoration: none; white-space: nowrap;
+}
+.hdr-phone .num { display: none; }
+@media (min-width: 768px) {
+  .wordmark { font-size: 18px; }
+  .campus { font-size: 18px; padding-left: var(--s3); border-left: 1px solid var(--rule); }
+  .hdr { gap: 0 var(--s5); padding-block: 8px; min-height: 64px; }
+  .brand { flex: 1 1 100%; }
+  .hdr-nav { display: block; margin-left: auto; }
+  .hdr-phone .num { display: inline; }
+  .hdr-phone { padding-inline: 4px; }
+}
+@media (min-width: 1024px) {
+  .hdr { flex-wrap: nowrap; }
+  .brand { flex: 0 1 auto; }
+  .hdr-nav { margin-left: auto; }
+  .hdr-nav ul { gap: var(--s5); }
+}
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: var(--tap); padding: 0 28px; border-radius: var(--radius-pill);
+  font: 700 19px/1.1 var(--f-cond); text-decoration: none; text-align: center; cursor: pointer;
+  border: 2px solid var(--navy);
+}
+.btn-primary { background: var(--navy); color: var(--on-dark); }
+.btn-primary:hover { background: var(--blue); border-color: var(--blue); }
+.btn-secondary { background: transparent; color: var(--navy); }
+.btn-secondary:hover { background: var(--tint); }
+.btn:hover { text-decoration: none; }
+.btn .ic { width: 22px; height: 22px; }
+
+/* hero */
+.hero { padding-block: var(--s4) var(--s6); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s4); }
+.hero-body { display: flex; flex-direction: column; }
+.eyebrow {
+  margin: 0 0 var(--s3);
+  font: 600 14px/1.3 var(--f-cond); letter-spacing: .08em; text-transform: uppercase; color: var(--navy);
+}
+.lead { max-width: 56ch; margin: var(--s3) 0 0; }
+.hero-actions .btn-primary, .hero-actions .btn-secondary { width: 100%; }
+.cta-row { display: flex; flex-direction: column; gap: var(--s3); }
+.phone-block { display: flex; flex-direction: column; align-items: stretch; gap: 6px; }
+.hours { margin: 0; font: 500 15px/1.5 var(--f-body); text-align: center; }
+.reply { margin: var(--s4) 0 0; font: 500 16px/1.5 var(--f-body); max-width: 60ch; }
+.facts { list-style: none; display: grid; gap: var(--s2); padding: 0; margin: var(--s3) 0 var(--s4); }
+.facts li { display: flex; gap: var(--s3); align-items: flex-start; font: 600 18px/1.4 var(--f-body); }
+.facts li > span:last-child { padding-top: 4px; line-height: 1.35; }
+.facts .vat { display: block; margin: 4px 0 0; font: 500 15px/1.5 var(--f-body); }
+.fic {
+  flex: none; display: grid; place-items: center;
+  width: 36px; height: 36px; border-radius: 50%; background: var(--tint); color: var(--navy);
+}
+.hero-photo { margin: 0; }
+.hero-photo .pair { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s4); }
+.hero-photo img { border-radius: var(--radius-card); }
+.cap { margin: var(--s2) 0 0; font: 500 15px/1.5 var(--f-body); }
+@media (max-width: 600px) {
+  .eyebrow { display: none; }
+  .hero h1 { font-size: 28px; }
+  .hero-grid { gap: var(--s3); }
+  .lead { margin-top: 0; font-size: 17px; line-height: 1.5; }
+  .facts { gap: 6px; margin: var(--s3) 0 var(--s3); }
+  .facts li { font-size: 16px; gap: 10px; }
+  .facts li > span:last-child { padding-top: 3px; }
+  .fic { width: 32px; height: 32px; }
+  .fic .ic { width: 20px; height: 20px; }
+  .cta-row { gap: var(--s2); }
+  .reply { margin-top: var(--s3); }
+}
+@media (min-width: 601px) {
+  .hero { padding-block: var(--s6) var(--s7); }
+  .hero-grid { gap: var(--s5); }
+  .lead { margin-top: var(--s4); }
+  .eyebrow { font-size: 15px; }
+  .cta-row { flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
+  .hero-actions .btn-primary, .hero-actions .btn-secondary { width: auto; }
+  .hours { text-align: center; }
+  .hero-photo .pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 768px) {
+  .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s5); padding: var(--s5) 0 0; border-top: 1px solid var(--rule); margin: var(--s5) 0; }
+}
+@media (min-width: 1024px) {
+  .hero { padding-block: var(--s7) var(--s8); }
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: "head head" "lead photo" "actions photo" "facts facts";
+    column-gap: var(--s7); row-gap: 0; align-items: start;
+  }
+  .hero-head { grid-area: head; margin-bottom: var(--s5); }
+  .hero-body { display: contents; }
+  .lead { grid-area: lead; margin-top: 0; }
+  .hero-actions { grid-area: actions; margin-top: var(--s5); }
+  .facts { grid-area: facts; margin: var(--s6) 0 0; }
+  .hero-photo { grid-area: photo; }
+  .hero-photo .pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-photo img { aspect-ratio: 4 / 3; object-fit: cover; }
+}
+
+/* proof strip */
+.proof { background: var(--navy); padding-block: var(--s5); }
+.proof-list { list-style: none; display: grid; gap: var(--s4); }
+.proof-list li { display: flex; gap: var(--s3); align-items: flex-start; font: 500 16px/1.5 var(--f-body); }
+.proof-list .ic { stroke: var(--accent); width: 24px; height: 24px; margin-top: 0; }
+@media (min-width: 900px) { .proof-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s6); } }
+
+/* event dates (component 22) */
+.dates {
+  list-style: none; margin: var(--s5) 0 0;
+  background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-card);
+}
+.dates li {
+  display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: var(--s4); row-gap: 2px;
+  align-items: start; padding: var(--s4); border-bottom: 1px solid var(--rule);
+}
+.dates li:last-child { border-bottom: 0; }
+.dates .dt { grid-column: 1; grid-row: 1 / span 4; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.dates .mo { display: block; font: 700 26px/1 var(--f-cond); color: var(--navy); font-variant-numeric: tabular-nums lining-nums; }
+.dates .yr { display: block; margin-top: 4px; font: 600 14px/1.3 var(--f-body); color: var(--ink); font-variant-numeric: tabular-nums lining-nums; }
+.dates .fmt, .dates .where, .dates .when, .dates .status { grid-column: 2; margin: 0; }
+.dates .fmt { font: 700 22px/1.2 var(--f-cond); color: var(--navy); }
+.dates .where, .dates .when { font: 600 17px/1.4 var(--f-body); }
+.dates .when { font-variant-numeric: tabular-nums lining-nums; }
+.dates .status { margin-top: 4px; font-size: 17px; line-height: 1.5; }
+.dates-note { margin: var(--s4) 0 0; max-width: var(--measure); }
+@media (min-width: 768px) {
+  .dates li { grid-template-columns: 96px minmax(0, 1.1fr) minmax(0, 1.2fr) minmax(0, 1.3fr); column-gap: var(--s5); align-items: center; padding: var(--s4) var(--s5); }
+  .dates .dt { grid-row: 1 / span 2; }
+  .dates .mo { font-size: 32px; }
+  .dates .fmt { grid-column: 2; grid-row: 1 / span 2; }
+  .dates .where { grid-column: 3; grid-row: 1; }
+  .dates .when { grid-column: 3; grid-row: 2; }
+  .dates .status { grid-column: 4; grid-row: 1 / span 2; margin-top: 0; }
+}
+
+/* timeline (Aikajana): two lanes */
+.days { display: grid; gap: var(--s7); grid-template-columns: minmax(0, 1fr); margin-top: var(--s6); }
+.lane-head {
+  background: var(--tint); border-left: 4px solid var(--accent-strong); border-radius: 0 var(--radius-card) var(--radius-card) 0;
+  padding: var(--s3) var(--s4); margin-bottom: var(--s5);
+}
+.lane-head h3 { font-size: 22px; line-height: 1.2; }
+.lane-head p { margin: 4px 0 0; font: 600 16px/1.4 var(--f-body); }
+.track { list-style: none; --tcol: 5rem; --tgap: 14px; }
+.track li {
+  position: relative; display: grid; grid-template-columns: var(--tcol) 12px minmax(0, 1fr);
+  column-gap: var(--tgap); padding-bottom: var(--s5); line-height: 28px;
+}
+.track li:last-child { padding-bottom: 0; }
+.track li::before {
+  content: ""; grid-column: 2; grid-row: 1; justify-self: center;
+  width: 12px; height: 12px; margin-top: 8px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 0 3px var(--surface); position: relative; z-index: 1;
+}
+.track li::after {
+  content: ""; position: absolute; top: 14px; bottom: -8px; width: 3px;
+  left: calc(var(--tcol) + var(--tgap) + 6px - 1.5px); background: var(--accent);
+}
+.track li:last-child::after { display: none; }
+.track li:first-child::before { background: var(--navy); }
+.track time {
+  grid-column: 1; grid-row: 1; white-space: nowrap;
+  font: 600 20px/28px var(--f-cond); color: var(--navy); font-variant-numeric: tabular-nums lining-nums;
+}
+.track time .klo { font-size: 15px; margin-right: 3px; }
+.track .ev { grid-column: 3; grid-row: 1; }
+@media (min-width: 768px) {
+  .days { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s7); }
+}
+
+/* price cards */
+.cards { display: grid; column-gap: var(--s5); grid-template-columns: minmax(0, 1fr); margin-top: var(--s5); }
+.card {
+  display: flex; flex-direction: column;
+  background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-card);
+  padding: var(--s5) 20px; margin-bottom: var(--s5);
+}
+.card--primary { border-top: 4px solid var(--accent-strong); box-shadow: var(--shadow-card); }
+.card h3 { margin-bottom: var(--s2); }
+.dur { display: flex; align-items: flex-start; gap: var(--s2); margin: 0 0 var(--s3); font: 600 15px/1.5 var(--f-body); }
+.dur .ic { width: 18px; height: 18px; color: var(--navy); margin-top: 3px; }
+.card .desc { margin-bottom: var(--s4); }
+.incl-label { margin: 0 0 var(--s2); font: 700 16px/1.4 var(--f-body); }
+.checks { list-style: none; display: grid; gap: var(--s2); margin-bottom: var(--s4); }
+.checks li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; align-items: start; }
+.checks .ic { width: 16px; height: 16px; color: var(--navy); margin-top: 6px; }
+.price { margin: 0 0 var(--s1); font: 700 24px/1.25 var(--f-cond); color: var(--navy); font-variant-numeric: tabular-nums lining-nums; }
+.price .vahvista { font-size: 15px; }
+.nw { white-space: nowrap; }
+.vat { margin: 0 0 var(--s3); font: 500 15px/1.5 var(--f-body); }
+.personal { margin: 0 0 var(--s3); font: 600 16px/1.4 var(--f-body); }
+.extra { margin: 0 0 var(--s1); font: 500 15px/1.5 var(--f-body); }
+.meta { margin: 0 0 var(--s3); }
+.card > .btn { width: 100%; margin-top: auto; }
+@supports (grid-template-rows: subgrid) {
+  .card { display: grid; grid-template-rows: subgrid; grid-row: span 9; row-gap: 0; }
+  .card > .c-name { grid-row: 1; }
+  .card > .dur { grid-row: 2; }
+  .card > .desc { grid-row: 3; }
+  .card > .incl { grid-row: 4; }
+  .card > .price { grid-row: 5; }
+  .card > .vat { grid-row: 6; }
+  .card > .personal, .card > .extra-top { grid-row: 7; }
+  .card > .meta { grid-row: 8; }
+  .card > .btn { grid-row: 9; align-self: end; }
+}
+.addon { margin: var(--s2) 0 0; font: 500 15px/1.5 var(--f-body); max-width: var(--measure); }
+@media (min-width: 640px) {
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .card--primary { grid-column: 1 / -1; }
+  .card { padding: var(--s5) var(--s6); }
+}
+@media (min-width: 1024px) {
+  .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .card--primary { grid-column: auto; }
+  .card { padding: var(--s5); margin-bottom: 0; }
+  .addon { margin-top: var(--s5); }
+}
+@media (min-width: 1280px) { .card { padding: var(--s5) var(--s6); } }
+.card.card--primary { padding-top: calc(var(--s5) - 3px); }
+
+/* how tickets work */
+.steps { list-style: none; display: grid; gap: var(--s4); margin: var(--s5) 0; }
+.tile { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-card); padding: var(--s5); box-shadow: var(--shadow-card); }
+.tile .num {
+  display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: var(--s3);
+  border-radius: 50%; background: var(--tint); color: var(--navy);
+  font: 700 26px/1 var(--f-cond);
+}
+.tile p { margin: 0; }
+.tile strong { display: block; margin-bottom: var(--s2); font: 700 22px/1.2 var(--f-cond); color: var(--navy); }
+.notice {
+  display: flex; gap: var(--s3); align-items: flex-start; max-width: 820px;
+  background: var(--surface); border-left: 4px solid var(--accent-strong);
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
+  padding: var(--s4) var(--s5); margin-bottom: var(--s6);
+}
+.notice .ic { color: var(--navy); margin-top: 3px; }
+.notice p { margin: 0; }
+.all-staff { max-width: var(--measure); }
+.all-staff h3 { margin-bottom: var(--s3); }
+.all-staff p:last-child { margin-bottom: 0; }
+@media (min-width: 768px) { .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s5); } }
+
+/* arrival */
+.arr-grid { display: grid; gap: var(--s6); grid-template-columns: minmax(0, 1fr); margin-top: var(--s5); }
+.arr-grid h3 { display: flex; align-items: center; gap: var(--s3); margin-bottom: var(--s5); }
+.arr-grid h3 .fic { width: 44px; height: 44px; background: var(--tint); }
+.iconlist { list-style: none; display: grid; gap: var(--s4); }
+.iconlist li { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: var(--s3); align-items: start; }
+.iconlist .ic { width: 22px; height: 22px; color: var(--navy); margin-top: 3px; }
+.maplink { display: inline-flex; align-items: center; min-height: 44px; margin-top: var(--s3); font-weight: 600; }
+.section-cta { margin: var(--s6) 0 0; }
+@media (min-width: 768px) {
+  .arr-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--s7); }
+}
+
+/* FAQ */
+.faq { max-width: 820px; border-top: 1px solid var(--rule); margin-top: var(--s5); }
+.faq details { border-bottom: 1px solid var(--rule); }
+.faq summary {
+  list-style: none; cursor: pointer; min-height: 48px; padding: 12px 0;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s4);
+  font: 600 18px/1.4 var(--f-body);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary .ic { width: 24px; height: 24px; color: var(--navy); transition: transform .15s ease-out; }
+.faq details[open] summary .ic { transform: rotate(180deg); }
+.faq summary:focus-visible { outline-offset: 2px; }
+.faq-a { padding: 0 0 var(--s4); max-width: var(--measure); }
+.faq-a p:last-child { margin-bottom: 0; }
+
+/* official quote box (component 23) */
+.quote {
+  margin: 0 0 var(--s4); background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--accent-strong);
+  border-radius: 0 var(--radius-card) var(--radius-card) 0; padding: var(--s5);
+}
+.quote blockquote { margin: 0; font: 400 18px/1.6 var(--f-body); color: var(--ink); }
+.quote blockquote p { margin: 0; }
+.quote figcaption { margin-top: var(--s2); font: 500 15px/1.5 var(--f-body); }
+.quote figcaption a { display: inline-flex; align-items: center; min-height: 44px; }
+
+/* contact + form */
+.cf { display: grid; gap: var(--s7); grid-template-columns: minmax(0, 1fr); align-items: start; }
+.contact { background: var(--surface); border-radius: var(--radius-card); padding: 20px; box-shadow: var(--shadow-card); }
+.contact .kuva { margin-bottom: var(--s4); }
+.contact .kuva .ic { width: 28px; height: 28px; }
+.face { flex: none; display: grid; place-items: center; width: 96px; height: 96px; border-radius: 50%; background: var(--kuva-bg); border: 2px dashed var(--vahvista-border); }
+.contact h3 { margin: 0 0 var(--s1); }
+.contact p { margin: 0 0 var(--s3); overflow-wrap: anywhere; }
+.contact .mail { font-size: 17px; }
+.contact .role { font-weight: 600; }
+.contact p:last-child { margin-bottom: 0; }
+.form-panel { max-width: 640px; background: var(--surface); border-radius: var(--radius-card); padding: var(--s5); box-shadow: var(--shadow-card); }
+.form-panel > p:first-of-type { margin-bottom: var(--s4); }
+.req-note { font: 500 15px/1.5 var(--f-body); margin: 0 0 var(--s5); }
+.field { margin: 0 0 var(--s5); }
+.field > label:not(.choice), .field > legend { display: block; margin: 0 0 4px; padding: 0; font: 600 17px/1.4 var(--f-body); }
+.field > .help { margin: 0 0 8px; font: 500 15px/1.5 var(--f-body); }
+.field input[type=text], .field input[type=email], .field input[type=tel], .field textarea {
+  display: block; width: 100%; min-height: 52px; padding: 12px 14px;
+  border: 2px solid var(--field); border-radius: var(--radius-field);
+  background: var(--surface); color: var(--ink); font: 400 18px/1.4 var(--f-body);
+  scroll-margin-top: 140px;
+}
+.field textarea { min-height: 132px; resize: vertical; }
+.field input[type=text]:focus, .field input[type=email]:focus, .field input[type=tel]:focus, .field textarea:focus {
+  border-color: var(--navy); outline: 3px solid var(--focus); outline-offset: 2px;
+}
+.field input[aria-invalid=true] { border-color: var(--error); }
+.err { display: flex; gap: 8px; align-items: flex-start; margin: 6px 0 0; font: 600 16px/1.4 var(--f-body); color: var(--error); }
+.err .ic { width: 16px; height: 16px; margin-top: 3px; }
+fieldset.field { border: 0; min-width: 0; padding: 0; }
+.choice { display: flex; gap: 12px; align-items: flex-start; min-height: 44px; padding: 9px 0; cursor: pointer; font: 400 18px/1.4 var(--f-body); }
+.choice input {
+  -webkit-appearance: none; appearance: none; flex: none;
+  width: 24px; height: 24px; margin: 1px 0 0; border: 2px solid var(--field); background-color: var(--surface);
+}
+.choice input[type=radio] { border-radius: 50%; }
+.choice input[type=checkbox] { border-radius: 6px; }
+.choice input[type=radio]:checked { border-color: var(--navy); background-image: radial-gradient(circle, var(--navy) 0 5px, transparent 6px); }
+.choice input[type=checkbox]:checked {
+  border-color: var(--navy); background-color: var(--navy); background-repeat: no-repeat; background-position: center; background-size: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E");
+}
+.choice input:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.summary {
+  background: var(--error-bg); border-left: 4px solid var(--error); border-radius: 0 var(--radius-field) var(--radius-field) 0;
+  padding: var(--s4) var(--s5); margin: 0 0 var(--s5); scroll-margin-top: 140px;
+}
+.summary:focus { outline: 3px solid var(--focus); outline-offset: 3px; }
+.summary h3 { display: flex; align-items: center; gap: 8px; color: var(--ink); font-size: 20px; }
+.summary h3 .ic { color: var(--error); width: 20px; height: 20px; }
+.summary ul { margin: var(--s2) 0 0; padding-left: 20px; }
+.summary a { color: var(--error); font-weight: 600; }
+.reply-line { margin: 0 0 var(--s4); font: 500 16px/1.5 var(--f-body); }
+.submit-row { display: flex; flex-direction: column; gap: var(--s4); align-items: stretch; }
+.submit-row .btn { width: 100%; cursor: pointer; }
+.submit-row .privacy { margin: 0; font: 500 15px/1.5 var(--f-body); }
+.success {
+  background: var(--success-bg); border-left: 4px solid var(--success); border-radius: 0 var(--radius-card) var(--radius-card) 0;
+  padding: var(--s5); color: var(--ink); scroll-margin-top: 140px;
+}
+.success h3 { display: flex; align-items: center; gap: 10px; color: var(--ink); margin-bottom: var(--s3); }
+.success h3 .ic { color: var(--success); width: 26px; height: 26px; }
+.success h3:focus { outline: 3px solid var(--focus); outline-offset: 3px; }
+.success p:last-child { margin-bottom: 0; font-weight: 600; }
+.success strong { overflow-wrap: anywhere; }
+@media (min-width: 601px) {
+  .form-panel { padding: var(--s6); }
+  .contact { padding: var(--s6); }
+  .contact .mail { font-size: 18px; }
+  .submit-row { flex-direction: row; align-items: center; }
+  .submit-row .btn { width: auto; flex: none; }
+}
+@media (min-width: 1024px) { .cf { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); } }
+
+/* why / privacy */
+.prose { max-width: var(--measure); }
+.plist { list-style: none; display: grid; gap: var(--s3); max-width: 820px; margin-bottom: var(--s4); }
+.plist strong { font-weight: 700; }
+.plain-sec { padding-block: var(--s6); border-top: 1px solid var(--rule); }
+.plain-sec h2 { font-size: 28px; }
+@media (min-width: 768px) { .plain-sec { padding-block: var(--s7); } .plain-sec h2 { font-size: 32px; } }
+
+/* footer */
+.site-footer { background: var(--navy); color: var(--on-dark); padding-block: var(--s7); font: 500 15px/1.6 var(--f-body); }
+.site-footer p { margin: 0 0 var(--s2); }
+.site-footer a { color: var(--on-dark); }
+.site-footer :focus-visible { outline-color: var(--focus-on-dark); }
+.foot-links { list-style: none; display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); margin: var(--s4) 0; }
+.foot-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.foot-credit { margin-top: var(--s4); }
+.foot-label { font-weight: 700; margin-top: var(--s4); margin-bottom: 0; }
+
+/* sticky mobile bar */
+.sticky-bar { display: none; }
+@media (max-width: 767.98px) {
+  body { padding-bottom: 80px; }
+  html { scroll-padding-bottom: 96px; }
+  .sticky-bar {
+    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 80;
+    min-height: 64px; padding: 8px var(--gutter); gap: var(--s3);
+    background: var(--surface); border-top: 1px solid var(--rule);
+    box-shadow: 0 -1px 2px rgba(31,44,83,.08), 0 -4px 16px rgba(31,44,83,.06);
+    transform: translateY(100%); visibility: hidden;
+    transition: transform .15s ease-out, visibility 0s linear .15s;
+  }
+  .sticky-bar.is-visible { transform: none; visibility: visible; transition: transform .15s ease-out; }
+  .sticky-bar .btn { flex: 1 1 0; min-width: 0; padding: 0 10px; font-size: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+mark.vahvista { overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></symbol>
+  <symbol id="i-euro" viewBox="0 0 24 24"><path d="M17.5 7.5A6.5 6.5 0 1 0 17.5 16.5"/><path d="M5 10.2h8.5M5 13.8h8.5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s-6.5-5.7-6.5-11.2a6.5 6.5 0 0 1 13 0c0 5.5-6.5 11.2-6.5 11.2z"/><circle cx="12" cy="10.3" r="2.3"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5.5 4h3.3l1.9 4.6-2.3 1.5a11 11 0 0 0 5.5 5.5l1.5-2.3 4.6 1.9v3.3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 3.5 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.5-3.2 8.1-7.5 9.5-4.3-1.4-7.5-5-7.5-9.5V6z"/><path d="M9 12l2.2 2.2L15.2 10"/></symbol>
+  <symbol id="i-train" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14" r=".6"/><circle cx="15" cy="14" r=".6"/><path d="M8 21l2-4M16 21l-2-4"/></symbol>
+  <symbol id="i-bus" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="13" rx="2.5"/><path d="M4 11h16"/><circle cx="8" cy="14" r=".6"/><circle cx="16" cy="14" r=".6"/><path d="M6.5 17v3M17.5 17v3"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5.5 17H4.5a1 1 0 0 1-1-1v-3.5L5.5 7h13l2 5.5V16a1 1 0 0 1-1 1h-1"/><path d="M3.5 12.5h17"/><circle cx="8" cy="16.5" r="1.6"/><circle cx="16" cy="16.5" r="1.6"/></symbol>
+  <symbol id="i-parking" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M10 16.5V8h3a2.6 2.6 0 0 1 0 5.2h-3"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5M12 17.4h.01"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M21 16l-5-5-8 9"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+</svg>
+
+<a class="skip" href="#sisalto">Siirry sisältöön</a>
+
+<div class="bar" role="note" aria-label="Konseptiluonnos">Konseptiluonnos – ei julkaistu. [VAHVISTA]-merkityt tiedot odottavat Kolmen kampuksen urheiluopiston vahvistusta.</div>
+
+<header class="site-header">
+  <div class="wrap hdr">
+    <div class="brand">
+      <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <a class="wordmark" href="https://www.kolmekampusta.fi/fi">Kolmen kampuksen urheiluopisto</a>
+      <span class="campus">Kisakallio ja Pajulahti</span>
+    </div>
+    <nav class="hdr-nav" aria-label="Sivun osiot">
+      <ul>
+        <li><a href="#tilaisuudet">Tilaisuudet</a></li>
+        <li><a href="#hinnat">Hinnat</a></li>
+        <li><a href="#saapuminen">Saapuminen</a></li>
+      </ul>
+    </nav>
+    <a class="hdr-phone" href="tel:+358447755777" aria-label="Soita myyntipalveluun 044 77 55 777"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg><span class="num">044&nbsp;77&nbsp;55&nbsp;777</span></a>
+  </div>
+</header>
+
+<main id="sisalto" tabindex="-1">
+
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap hero-grid">
+      <div class="hero-head">
+        <p class="eyebrow">Yrityksille · Avoimet tilaisuudet syksyllä 2027</p>
+        <h1 id="h1">Hyvinvointiaamut Kisakalliossa, palautumisillat Pajulahdessa</h1>
+      </div>
+      <div class="hero-body">
+        <p class="lead">Ostatte henkilöstöllenne liput, ja jokainen voi valita itselleen sopivan päivän: aamun Kisakalliossa Lohjalla tai illan Pajulahdessa Lahden Nastolassa.</p>
+        <ul class="facts">
+          <li><span class="fic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-euro"/></svg></span><span>Yritysliput <mark class="vahvista">[VAHVISTA: 49]</mark> <span class="nw">€/lippu (alv&nbsp;0&nbsp;%)</span><span class="vat">Hintoihin lisätään arvonlisävero 13,5&nbsp;% tai 25,5&nbsp;% palvelun mukaan. Erittely tarjouksessa.</span></span></li>
+          <li><span class="fic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg></span><span>Kisakallio aamuisin, Pajulahti iltaisin</span></li>
+          <li><span class="fic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-calendar"/></svg></span><span>Neljä aamua ja neljä iltaa syys–marraskuussa 2027 <mark class="vahvista">[VAHVISTA: 15.9.–18.11.2027]</mark></span></li>
+        </ul>
+        <div class="hero-actions">
+          <div class="cta-row">
+            <a id="hero-cta" class="btn btn-primary" href="#varauspyynto">Pyydä lippuvaraus</a>
+            <div class="phone-block">
+              <a class="btn btn-secondary" href="tel:+358447755777">Soita 044&nbsp;77&nbsp;55&nbsp;777</a>
+              <p class="hours">arkisin klo 9.00–16.00</p>
+            </div>
+          </div>
+          <p class="reply">Vastaamme varauspyyntöihin kahden arkipäivän kuluessa.</p>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <div class="pair">
+          <div>
+            <img src="https://www.kolmekampusta.fi/sites/default/files/styles/16_9_1312x738_focal_point_webp/public/2025-08/rantamakasiini-8.jpg.webp?h=4362216e&amp;itok=EeCGYBI_" width="1312" height="738" alt="Rantamakasiinin ravintolasali, jonka ikkunoista näkyy Lohjanjärvi." fetchpriority="high" decoding="async">
+            <p class="cap">Aamut: Rantamakasiini, Kisakallio</p>
+          </div>
+          <div>
+            <img src="https://www.kolmekampusta.fi/sites/default/files/styles/16_9_1312x738_focal_point_webp/public/2025-08/pajulahti_palautumishuone.jpg.webp?h=307624f5&amp;itok=n-KmSlym" width="1312" height="738" alt="Pajulahden palautumishuone ja hierontadivaani." loading="lazy" decoding="async">
+            <p class="cap">Illat: palautumiskeskus, Pajulahti <mark class="vahvista">[VAHVISTA: ryhmäkäyttö sisältyy]</mark></p>
+          </div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <div class="proof on-dark">
+    <ul class="wrap proof-list">
+      <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Kolmen kampuksen urheiluopisto on Suomen ainoa olympia- ja paralympiavalmennuskeskus</span></li>
+      <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Ekokompassi-sertifikaatti 24.4.2025–24.4.2028</span></li>
+      <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Google-arviot: Kisakallio 4,4/5 (noin 285 arviota) ja Pajulahti 4,3/5 (noin 1&nbsp;330 arviota), tilanne 4.10.2026</span></li>
+    </ul>
+  </div>
+
+  <section id="tilaisuudet" class="section" aria-labelledby="h-tilaisuudet">
+    <div class="wrap">
+      <h2 id="h-tilaisuudet">Tulevat tilaisuudet syksyllä 2027</h2>
+      <p class="intro">Syksyllä 2027 järjestämme neljä hyvinvointiaamua Kisakalliossa ja neljä palautumisiltaa Pajulahdessa. Jokaisessa tilaisuudessa on mukana eri yritysten työntekijöitä. Aamut ovat klo 8.00–11.00 ja illat klo 17.00–20.00. <mark class="vahvista">[VAHVISTA: klo 8.00–11.00 ja 17.00–20.00]</mark> Paikkoja on <mark class="vahvista">[VAHVISTA: 60]</mark> tilaisuutta kohden.</p>
+      <ol class="dates">
+        <li>
+          <time class="dt" datetime="2027-09"><span class="mo">syys</span> <span class="yr">2027</span></time>
+          <p class="fmt">Hyvinvointiaamu</p>
+          <p class="where">Kisakallio, Lohja</p>
+          <p class="when">klo 8.00–11.00</p>
+          <p class="status"><mark class="vahvista">[VAHVISTA: ke 15.9.2027]</mark></p>
+        </li>
+        <li>
+          <time class="dt" datetime="2027-09"><span class="mo">syys</span> <span class="yr">2027</span></time>
+          <p class="fmt">Palautumisilta</p>
+          <p class="where">Pajulahti, Lahden Nastola</p>
+          <p class="when">klo 17.00–20.00</p>
+          <p class="status"><mark class="vahvista">[VAHVISTA: to 23.9.2027]</mark></p>
+        </li>
+        <li>
+          <time class="dt" datetime="2027-10"><span class="mo">loka</span> <span class="yr">2027</span></time>
+          <p class="fmt">Hyvinvointiaamu</p>
+          <p class="where">Kisakallio, Lohja</p>
+          <p class="when">klo 8.00–11.00</p>
+          <p class="status"><mark class="vahvista">[VAHVISTA: ke 6.10.2027]</mark></p>
+        </li>
+        <li>
+          <time class="dt" datetime="2027-10"><span class="mo">loka</span> <span class="yr">2027</span></time>
+          <p class="fmt">Palautumisilta</p>
+          <p class="where">Pajulahti, Lahden Nastola</p>
+          <p class="when">klo 17.00–20.00</p>
+          <p class="status"><mark class="vahvista">[VAHVISTA: to 14.10.2027]</mark></p>
+        </li>
+        <li>
+          <time class="dt" datetime="2027-10"><span class="mo">loka</span> <span class="yr">2027</span></time>
+          <p class="fmt">Hyvinvointiaamu</p>
+          <p class="where">Kisakallio, Lohja</p>
+          <p class="when">klo 8.00–11.00</p>
+          <p class="status"><mark class="vahvista">[VAHVISTA: ke 20.10.2027]</mark></p>
+        </li>
+        <li>
+          <time class="dt" datetime="2027-10"><span class="mo">loka</span> <span class="yr">2027</span></time>
+          <p class="fmt">Palautumisilta</p>
+          <p class="where">Pajulahti, Lahden Nastola</p>
+          <p class="when">klo 17.00–20.00</p>
+          <p class="status"><mark class="vahvista">[VAHVISTA: to 28.10.2027]</mark></p>
+        </li>
+        <li>
+          <time class="dt" datetime="2027-11"><span class="mo">marras</span> <span class="yr">2027</span></time>
+          <p class="fmt">Hyvinvointiaamu</p>
+          <p class="where">Kisakallio, Lohja</p>
+          <p class="when">klo 8.00–11.00</p>
+          <p class="status"><mark class="vahvista">[VAHVISTA: ke 10.11.2027]</mark></p>
+        </li>
+        <li>
+          <time class="dt" datetime="2027-11"><span class="mo">marras</span> <span class="yr">2027</span></time>
+          <p class="fmt">Palautumisilta</p>
+          <p class="where">Pajulahti, Lahden Nastola</p>
+          <p class="when">klo 17.00–20.00</p>
+          <p class="status"><mark class="vahvista">[VAHVISTA: to 18.11.2027]</mark></p>
+        </li>
+      </ol>
+      <p class="dates-note">Liput voi varata yhteen tai useampaan tilaisuuteen samalla lomakkeella.</p>
+    </div>
+  </section>
+
+  <section id="aikajana" class="section band-surface" aria-labelledby="ohjelma">
+    <div class="wrap">
+      <h2 id="ohjelma">Hyvinvointiaamun ja palautumisillan ohjelma</h2>
+      <p class="intro">Molemmat kestävät noin kolme tuntia. Kummassakin on ensin luento ja sen jälkeen palautumista: aamulla kehonhuoltoa, illalla palautumiskeskus <mark class="vahvista">[VAHVISTA: ryhmäkäyttö sisältyy]</mark> ja rantasauna.</p>
+      <div class="days">
+        <div class="day">
+          <div class="lane-head">
+            <h3>Kisakallio, Lohja</h3>
+            <p>Hyvinvointiaamu klo 8.00–11.00 <mark class="vahvista">[VAHVISTA: klo 8.00–11.00]</mark></p>
+          </div>
+          <ol class="track">
+            <li><time datetime="08:00"><span class="klo">klo</span> 8.00</time><span class="ev">Aamiainen Rantamakasiinissa Lohjanjärven rannalla, esimerkiksi tuoretta leipää, croissantteja, tuorepuuroa, hedelmiä ja tuoremehua sekä kahvia tai teetä</span></li>
+            <li><time datetime="09:00"><span class="klo">klo</span> 9.00</time><span class="ev">Luento (45 min), esimerkiksi Tavoitteista totta tai Liikuttavia ajatuksia <mark class="vahvista">[VAHVISTA: aihe vaihtuu kuukausittain]</mark></span></li>
+            <li><time datetime="10:00"><span class="klo">klo</span> 10.00</time><span class="ev">Kehonhuolto (45 min) <mark class="vahvista">[VAHVISTA: kevyt, taso 1/3]</mark></span></li>
+            <li><time datetime="11:00"><span class="klo">klo</span> 11.00</time><span class="ev">Aamu päättyy</span></li>
+          </ol>
+        </div>
+        <div class="day">
+          <div class="lane-head">
+            <h3>Pajulahti, Lahden Nastola</h3>
+            <p>Palautumisilta klo 17.00–20.00 <mark class="vahvista">[VAHVISTA: klo 17.00–20.00]</mark></p>
+          </div>
+          <ol class="track">
+            <li><time datetime="17:00"><span class="klo">klo</span> 17.00</time><span class="ev">Luento: Ne väsyy, ketkä hosuu (30 min) <mark class="vahvista">[VAHVISTA: Esimerkki Luennoitsija]</mark></span></li>
+            <li><time datetime="17:45"><span class="klo">klo</span> 17.45</time><span class="ev">Palautumiskeskus: kylmä-kuuma allashuone, infrapunasaunat ja Normatec 3 -palautumislahkeet <mark class="vahvista">[VAHVISTA: ryhmäkäyttö sisältyy]</mark></span></li>
+            <li><time datetime="18:30"><span class="klo">klo</span> 18.30</time><span class="ev">Rantasauna</span></li>
+            <li><time datetime="19:15"><span class="klo">klo</span> 19.15</time><span class="ev">Kevyt illallinen <mark class="vahvista">[VAHVISTA: keitto ja leipä]</mark></span></li>
+            <li><time datetime="20:00"><span class="klo">klo</span> 20.00</time><span class="ev">Ilta päättyy</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hinnat" class="section band-tint" aria-labelledby="h-hinnat">
+    <div class="wrap">
+      <h2 id="h-hinnat">Liput ja hinnat</h2>
+      <p class="intro">Yritys ostaa liput henkilöstölleen, ja yritysliput laskutetaan yritykseltä. Työntekijä voi ostaa myös oman lipun itse.</p>
+      <div class="cards">
+        <article class="card card--primary">
+          <h3 class="c-name" id="c1-name">Hyvinvointiaamu Kisakalliossa</h3>
+          <p class="dur"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg><span>Klo 8.00–11.00 <mark class="vahvista">[VAHVISTA: klo 8.00–11.00]</mark></span></p>
+          <p class="desc">Avoin aamu Kisakalliossa Lohjalla. Mukana on eri yritysten työntekijöitä.</p>
+          <div class="incl">
+            <p class="incl-label">Hinta sisältää:</p>
+            <ul class="checks">
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>aamiainen Rantamakasiinissa</span></li>
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>luento (45 min)</span></li>
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>kehonhuolto (45 min)</span></li>
+            </ul>
+          </div>
+          <p class="price"><mark class="vahvista">[VAHVISTA: 49]</mark> <span class="nw">€/lippu (alv&nbsp;0&nbsp;%)</span></p>
+          <p class="vat">Hintoihin lisätään arvonlisävero 13,5&nbsp;% tai 25,5&nbsp;% palvelun mukaan. Erittely tarjouksessa.</p>
+          <p class="personal">Henkilökohtainen lippu <mark class="vahvista">[VAHVISTA: 59]</mark>&nbsp;€/lippu (sis.&nbsp;alv)</p>
+          <div class="meta">
+            <p class="extra">Vähimmäisryhmä: yksi lippu <mark class="vahvista">[VAHVISTA]</mark></p>
+            <p class="extra">Paikkoja: <mark class="vahvista">[VAHVISTA: 60]</mark> tilaisuutta kohden</p>
+          </div>
+          <a class="btn btn-primary" href="#varauspyynto" data-package="hyvinvointiaamu-kisakallio" aria-describedby="c1-name">Pyydä lippuvaraus</a>
+        </article>
+        <article class="card">
+          <h3 class="c-name" id="c2-name">Palautumisilta Pajulahdessa</h3>
+          <p class="dur"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg><span>Klo 17.00–20.00 <mark class="vahvista">[VAHVISTA: klo 17.00–20.00]</mark></span></p>
+          <p class="desc">Avoin ilta Pajulahdessa Lahden Nastolassa. Mukana on eri yritysten työntekijöitä.</p>
+          <div class="incl">
+            <p class="incl-label">Hinta sisältää:</p>
+            <ul class="checks">
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>luento</span></li>
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>palautumiskeskus <mark class="vahvista">[VAHVISTA: ryhmäkäyttö sisältyy]</mark></span></li>
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>rantasauna</span></li>
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>kevyt illallinen <mark class="vahvista">[VAHVISTA: keitto ja leipä]</mark></span></li>
+            </ul>
+          </div>
+          <p class="price"><mark class="vahvista">[VAHVISTA: 49]</mark> <span class="nw">€/lippu (alv&nbsp;0&nbsp;%)</span></p>
+          <p class="vat">Hintoihin lisätään arvonlisävero 13,5&nbsp;% tai 25,5&nbsp;% palvelun mukaan. Erittely tarjouksessa.</p>
+          <p class="personal">Henkilökohtainen lippu <mark class="vahvista">[VAHVISTA: 59]</mark>&nbsp;€/lippu (sis.&nbsp;alv)</p>
+          <div class="meta">
+            <p class="extra">Vähimmäisryhmä: yksi lippu <mark class="vahvista">[VAHVISTA]</mark></p>
+            <p class="extra">Paikkoja: <mark class="vahvista">[VAHVISTA: 60]</mark> tilaisuutta kohden</p>
+          </div>
+          <a class="btn btn-primary" href="#varauspyynto" data-package="palautumisilta-pajulahti" aria-describedby="c2-name">Pyydä lippuvaraus</a>
+        </article>
+        <article class="card">
+          <h3 class="c-name" id="c3-name">Lippupaketti henkilöstölle</h3>
+          <p class="dur"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg><span>Syys–marraskuu 2027</span></p>
+          <p class="desc">Henkilöstö käyttää liput vapaasti valitsemiinsa aamuihin ja iltoihin, ja osallistujien nimet ilmoitatte tilaisuus kerrallaan. <mark class="vahvista">[VAHVISTA: voimassa 30.11.2027]</mark></p>
+          <div class="incl">
+            <p class="incl-label">Hinta sisältää:</p>
+            <ul class="checks">
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>liput hyvinvointiaamuihin tai palautumisiltoihin</span></li>
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>ohjelma ja ruokailut kuten korteissa 1 ja 2</span></li>
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>päivien valinta myöhemmin syksyn tilaisuuksista</span></li>
+            </ul>
+          </div>
+          <p class="price"><mark class="vahvista">[VAHVISTA: 490]</mark> <span class="nw">€ / 10 lippua (alv&nbsp;0&nbsp;%)</span></p>
+          <p class="vat">Hintoihin lisätään arvonlisävero 13,5&nbsp;% tai 25,5&nbsp;% palvelun mukaan. Erittely tarjouksessa.</p>
+          <p class="extra extra-top">Suuremman lippumäärän hinnan kerromme tarjouksessa. <mark class="vahvista">[VAHVISTA]</mark></p>
+          <a class="btn btn-primary" href="#varauspyynto" data-package="lippupaketti-10" aria-describedby="c3-name">Pyydä lippuvaraus</a>
+        </article>
+      </div>
+      <p class="addon">Henkilökohtaisen lipun ostaa ja maksaa työntekijä itse, joten sen hinta sisältää arvonlisäveron. <mark class="vahvista">[VAHVISTA: myynti alkaa 1.4.2027]</mark></p>
+    </div>
+  </section>
+
+  <section id="miten-liput-toimivat" class="section" aria-labelledby="h-miten">
+    <div class="wrap">
+      <h2 id="h-miten">Miten liput toimivat</h2>
+      <ol class="steps">
+        <li class="tile"><span class="num" aria-hidden="true">1</span><p><strong>Varaatte liput.</strong> Lomakkeella kerrotte arvion lippujen määrästä ja toivotut tilaisuudet. Pidämme liput alustavasti varattuna 14 vuorokautta, jotta ehditte kysyä henkilöstöltä, kuka haluaa mukaan. <mark class="vahvista">[VAHVISTA]</mark></p></li>
+        <li class="tile"><span class="num" aria-hidden="true">2</span><p><strong>Henkilöstö valitsee päivän.</strong> Kerrotte henkilöstölle syksyn päivät, ja jokainen valitsee itselleen sopivan aamun tai illan. Osallistuminen on vapaaehtoista.</p></li>
+        <li class="tile"><span class="num" aria-hidden="true">3</span><p><strong>Ilmoitatte nimet.</strong> Lähetätte osallistujien nimet ja erikoisruokavaliot viikkoa ennen tilaisuutta. <mark class="vahvista">[VAHVISTA]</mark> Laskutamme yritysliput tilaisuuden jälkeen ja lippupaketin <mark class="vahvista">[VAHVISTA: ensimmäisen käytön jälkeen]</mark>. <mark class="vahvista">[VAHVISTA]</mark></p></li>
+      </ol>
+      <div class="notice">
+        <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg>
+        <p>Käytämme osallistujien nimiä ja ruokavaliotietoja vain tilaisuuden järjestämiseen. <mark class="vahvista">[VAHVISTA: poisto 30 vrk tilaisuuden jälkeen]</mark></p>
+      </div>
+      <div class="all-staff">
+        <h3>Liput koko henkilöstölle</h3>
+        <p>Suosittelemme tarjoamaan liput koko henkilöstölle. Silloin jokainen voi itse päättää, osallistuuko, ja valita päivän, joka sopii omiin työaikoihin. Luento, kehonhuolto ja palautuminen eivät vaadi liikuntataustaa. <mark class="vahvista">[VAHVISTA: kevyt, taso 1/3]</mark></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="saapuminen" class="section band-surface" aria-labelledby="h-saapuminen">
+    <div class="wrap">
+      <h2 id="h-saapuminen">Saapuminen</h2>
+      <p class="intro">Aamut ovat Kisakalliossa Lohjalla ja illat Pajulahdessa Lahden Nastolassa.</p>
+      <div class="arr-grid">
+        <div class="arr">
+          <h3><span class="fic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg></span>Kisakallio, Lohja</h3>
+          <ul class="iconlist">
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span>Kaarina Karin tie 4, 08360 Lohja.</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-car"/></svg><span>Ajomatka Helsingin keskustasta on noin tunti.</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-bus"/></svg><span>Kisakallioon ei pääse kätevästi julkisilla liikennevälineillä, joten suosittelemme autoa.</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-parking"/></svg><span>Kampuksella voi pysäköidä. <mark class="vahvista">[VAHVISTA: maksuton, 120 paikkaa]</mark></span></li>
+          </ul>
+          <p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Kaarina%20Karin%20tie%204%2C%2008360%20Lohja">Avaa Kisakallio kartalla</a></p>
+        </div>
+        <div class="arr">
+          <h3><span class="fic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg></span>Pajulahti, Lahden Nastola</h3>
+          <ul class="iconlist">
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span>Pajulahdentie 167, 15560 Nastola.</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-car"/></svg><span>Ajomatka Lahden keskustasta on noin 20 minuuttia ja Helsingistä noin puolitoista tuntia.</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-train"/></svg><span>Lahden matkakeskukselle pääsee junalla, ja sieltä bussi 11 kulkee Pajulahteen kerran tunnissa. Matka kestää noin 35 minuuttia. <mark class="vahvista">[VAHVISTA: voimassa 1.1.2027 alk.]</mark></span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-parking"/></svg><span>Pysäköinti on maksutonta.</span></li>
+          </ul>
+          <p><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Pajulahdentie%20167%2C%2015560%20Nastola">Avaa Pajulahti kartalla</a></p>
+        </div>
+      </div>
+      <p class="section-cta"><a class="btn btn-primary" href="#varauspyynto">Pyydä lippuvaraus</a></p>
+    </div>
+  </section>
+
+  <section id="ukk" class="section" aria-labelledby="h-ukk">
+    <div class="wrap">
+      <h2 id="h-ukk">Usein kysyttyä</h2>
+      <div class="faq">
+        <details>
+          <summary><span>Kuka tilaisuuksiin voi osallistua?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a"><p>Tilaisuudet ovat avoimia, joten mukana on eri yritysten työntekijöitä. Yritys ostaa liput henkilöstölleen, ja työntekijä voi ostaa myös oman lipun.</p></div>
+        </details>
+        <details>
+          <summary><span>Voiko liput varata alustavasti?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a"><p>Kyllä. Pidämme liput alustavasti varattuna, jotta ehditte kysyä henkilöstöltä, kuka haluaa mukaan. Alustava varaus on maksuton ja voimassa 14 vuorokautta. <mark class="vahvista">[VAHVISTA]</mark></p></div>
+        </details>
+        <details>
+          <summary><span>Entä jos osallistuja ei pääsekään paikalle?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a"><p>Nimen voi vaihtaa maksutta, kun ilmoitatte siitä viimeistään tilaisuutta edeltävänä arkipäivänä. Lipun voi myös siirtää toiseen syksyn tilaisuuteen, jos siinä on tilaa. Yritys voi perua varatut liput maksutta viimeistään 14 vuorokautta ennen tilaisuutta, ja sen jälkeen liput laskutetaan. <mark class="vahvista">[VAHVISTA: voimassa 2027]</mark></p></div>
+        </details>
+        <details>
+          <summary><span>Sisältävätkö hinnat arvonlisäveron?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a"><p>Yritysliput ilmoitamme arvonlisäverottomina (alv&nbsp;0&nbsp;%), ja hintaan lisätään arvonlisävero. Henkilökohtaisen lipun hinta sisältää arvonlisäveron. <mark class="vahvista">[VAHVISTA: vahvistettu 15.12.2026]</mark> Majoitukseen, ravintola- ja ateriapalveluihin, ohjattuun liikuntaan ja liikuntatilojen käyttöön sovelletaan 13,5&nbsp;%:n verokantaa. Esimerkiksi valmennukseen, opetukseen, testaukseen, elämyspalveluihin ja alkoholijuomiin sovelletaan 25,5&nbsp;%:n verokantaa. Tarjouksessa näkyy verokantojen erittely. <mark class="vahvista">[VAHVISTA: rivikohtainen erittely]</mark></p></div>
+        </details>
+        <details>
+          <summary><span>Mitä Verohallinto sanoo henkilöstölle tarjottavasta virkistystoiminnasta?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a">
+            <p>Verohallinnon ohjeen mukaan:</p>
+            <figure class="quote">
+              <blockquote><p>”Työnantajan järjestämä tavanomainen ja kohtuullinen, koko henkilökunnalle suunnattu virkistys- ja harrastustoiminta on työntekijöille verovapaa etu.”</p></blockquote>
+              <figcaption><a href="https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/62486/henkilokuntaedut-verotuksessa9/">Verohallinnon ohje: Henkilökuntaedut verotuksessa</a></figcaption>
+            </figure>
+            <p>Oman organisaationne verokohtelun varmistaa kirjanpitäjänne.</p>
+          </div>
+        </details>
+        <details>
+          <summary><span>Miten erikoisruokavaliot huomioidaan?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a"><p>Erikoisruokavaliot huomioidaan. Kerro ne osallistujien nimien yhteydessä viikkoa ennen tilaisuutta. <mark class="vahvista">[VAHVISTA]</mark></p></div>
+        </details>
+        <details>
+          <summary><span>Sopiiko tilaisuus kaikille kuntotasoille?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a"><p>Kyllä. Luento ja ruokailut eivät vaadi liikkumista, ja aamun kehonhuoltoon voi osallistua ilman liikuntataustaa. <mark class="vahvista">[VAHVISTA: kevyt, taso 1/3]</mark> Illalla jokainen päättää itse, mitä palautumiskeskuksessa <mark class="vahvista">[VAHVISTA: ryhmäkäyttö sisältyy]</mark> ja saunassa tekee.</p></div>
+        </details>
+        <details>
+          <summary><span>Miten laskutatte?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a"><p>Laskutamme tilaisuuden jälkeen verkkolaskuna tai sähköpostilla, maksuehto 14 päivää netto. <mark class="vahvista">[VAHVISTA]</mark></p></div>
+        </details>
+        <details>
+          <summary><span>Voiko työntekijä ostaa lipun itse?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a"><p>Kyllä. Henkilökohtainen lippu maksaa <mark class="vahvista">[VAHVISTA: 59]</mark>&nbsp;€/lippu (sis.&nbsp;alv), ja sen ostaa ja maksaa työntekijä itse. <mark class="vahvista">[VAHVISTA: myynti alkaa 1.4.2027]</mark></p></div>
+        </details>
+        <details>
+          <summary><span>Voiko aamun tai illan varata vain omalle henkilöstöllemme?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a"><p>Kyllä. Aamun tai illan ohjelman voi varata myös omaksi tilaisuudeksenne, esimerkiksi tyky-päivän osaksi. Ohjelman voi koota ryhmän toiveiden mukaan. Hinta määräytyy valittujen palvelujen ja osallistujamäärän mukaan. <mark class="vahvista">[VAHVISTA]</mark></p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <div class="section band-tint">
+    <div class="wrap cf">
+      <section id="yhteyshenkilo" aria-labelledby="h-yhteys">
+        <h2 id="h-yhteys">Yhteyshenkilö</h2>
+        <div class="contact">
+          <div class="kuva" role="img" aria-label="[KUVA: yhteyshenkilön kasvokuva]">
+            <span class="face"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-image"/></svg></span>
+            <span aria-hidden="true">[KUVA: yhteyshenkilön kasvokuva]</span>
+          </div>
+          <h3><mark class="vahvista">[Etunimi Sukunimi]</mark></h3>
+          <p class="role">avainasiakasvastaava, Pajulahti</p>
+          <p><mark class="vahvista">[VAHVISTA: 040&nbsp;123&nbsp;4567]</mark></p>
+          <p class="mail">etunimi.sukunimi@kolmekampusta.fi</p>
+          <p>Vastaan varauspyyntöihin kahden arkipäivän kuluessa.</p>
+          <p>Myyntipalvelu 044&nbsp;77&nbsp;55&nbsp;777, arkisin klo 9.00–16.00</p>
+        </div>
+      </section>
+
+      <section id="varauspyynto" aria-labelledby="h-lomake">
+        <h2 id="h-lomake">Pyydä lippuvaraus</h2>
+        <div class="form-panel" id="lomake-paneeli">
+          <form id="varaus-lomake" novalidate>
+            <p>Kerro arvio lippujen määrästä ja toivotut tilaisuudet, niin varaamme liput alustavasti ja lähetämme syksyn päivämäärät ja hinnat. Alustava varaus on maksuton ja voimassa 14 vuorokautta. <mark class="vahvista">[VAHVISTA]</mark></p>
+            <p class="req-note">Tähdellä (*) merkityt kentät ovat pakollisia.</p>
+
+            <div id="virheyhteenveto" class="summary" tabindex="-1" hidden>
+              <h3 id="virheyhteenveto-otsikko"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></h3>
+              <ul id="virheyhteenveto-lista"></ul>
+            </div>
+
+            <div class="field">
+              <label for="f-nimi">Nimi *</label>
+              <input type="text" id="f-nimi" name="nimi" autocomplete="name" required aria-required="true" data-empty="Nimi puuttuu. Kirjoita etu- ja sukunimesi.">
+              <p class="err field-error" id="e-nimi" hidden><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></p>
+            </div>
+
+            <div class="field">
+              <label for="f-email">Sähköpostiosoite *</label>
+              <p class="help" id="h-email">Lähetämme päivämäärät ja varausvahvistuksen tähän osoitteeseen.</p>
+              <input type="email" id="f-email" name="sahkoposti" autocomplete="email" required aria-required="true" aria-describedby="h-email" data-empty="Sähköpostiosoite puuttuu. Kirjoita osoite muodossa nimi@yritys.fi." data-invalid="Sähköpostiosoite on puutteellinen. Tarkista, että siinä on @-merkki ja verkkotunnus, esim. nimi@yritys.fi.">
+              <p class="err field-error" id="e-email" hidden><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></p>
+            </div>
+
+            <div class="field">
+              <label for="f-org">Organisaatio *</label>
+              <p class="help" id="h-org">Yrityksen nimi</p>
+              <input type="text" id="f-org" name="organisaatio" autocomplete="organization" required aria-required="true" aria-describedby="h-org" data-empty="Organisaation nimi puuttuu. Kirjoita yrityksen nimi.">
+              <p class="err field-error" id="e-org" hidden><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></p>
+            </div>
+
+            <div class="field">
+              <label for="f-maara">Lippujen määrä *</label>
+              <p class="help" id="h-maara">Arvio riittää, esim. 15.</p>
+              <input type="text" id="f-maara" name="lippujen_maara" inputmode="numeric" required aria-required="true" aria-describedby="h-maara" data-empty="Lippujen määrä puuttuu. Kirjoita arvio numeroina, esim. 15." data-invalid="Kirjoita lippujen määrä numeroina, esim. 15 tai 10–20.">
+              <p class="err field-error" id="e-maara" hidden><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></p>
+            </div>
+
+            <fieldset class="field">
+              <legend>Mihin tilaisuuksiin?</legend>
+              <label class="choice"><input type="radio" name="tilaisuudet" value="hyvinvointiaamu-kisakallio"><span>Hyvinvointiaamu, Kisakallio</span></label>
+              <label class="choice"><input type="radio" name="tilaisuudet" value="palautumisilta-pajulahti"><span>Palautumisilta, Pajulahti</span></label>
+              <label class="choice"><input type="radio" name="tilaisuudet" value="molempiin"><span>Molempiin</span></label>
+            </fieldset>
+
+            <div class="field">
+              <label for="f-aika">Toivottu ajankohta *</label>
+              <p class="help" id="h-aika">Esim. lokakuun aamut tai syyskuun ilta</p>
+              <input type="text" id="f-aika" name="ajankohta" required aria-required="true" aria-describedby="h-aika" data-empty="Ajankohta puuttuu. Kirjoita kuukausi tai tilaisuus, esim. lokakuun aamut.">
+              <p class="err field-error" id="e-aika" hidden><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></p>
+            </div>
+
+            <div class="field">
+              <label for="f-puh">Puhelinnumero (vapaaehtoinen)</label>
+              <p class="help" id="h-puh">Soitamme vain, jos se nopeuttaa varausta.</p>
+              <input type="tel" id="f-puh" name="puhelin" autocomplete="tel" aria-describedby="h-puh" data-invalid="Puhelinnumerossa on kirjaimia tai muita merkkejä. Kirjoita numero muodossa 040 123 4567 tai +358 40 123 4567.">
+              <p class="err field-error" id="e-puh" hidden><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></p>
+            </div>
+
+            <div class="field">
+              <label for="f-lisatiedot">Lisätiedot (vapaaehtoinen)</label>
+              <p class="help" id="h-lisatiedot">Esim. lippupaketti, toive omasta tilaisuudesta tai erikoisruokavaliot</p>
+              <textarea id="f-lisatiedot" name="lisatiedot" rows="4" aria-describedby="h-lisatiedot"></textarea>
+            </div>
+
+            <div class="field">
+              <label class="choice"><input type="checkbox" name="uutiskirje" value="kylla"><span>Haluan saada Kolmen kampuksen urheiluopiston yritysasiakkaiden uutiskirjeen. Voin perua tilauksen milloin tahansa.</span></label>
+            </div>
+
+            <div class="hp" aria-hidden="true">
+              <label for="f-hp">Jätä tämä kenttä tyhjäksi</label>
+              <input type="text" id="f-hp" name="hp_kentta" tabindex="-1" autocomplete="off">
+            </div>
+
+            <input type="hidden" name="campaign_id" value="2027-03-S2-hyvinvointiaamut">
+            <input type="hidden" name="page_path" value="/fi/yritykset/hyvinvointiaamut-ja-palautumisillat">
+            <input type="hidden" name="campus" value="molemmat">
+            <input type="hidden" name="occasion" value="hyvinvointiaamu">
+            <input type="hidden" name="package" id="f-package" value="">
+            <input type="hidden" name="form_variant" value="A">
+
+            <p class="reply-line">Vastaamme kahden arkipäivän kuluessa. Kiireellisissä asioissa soita 044&nbsp;77&nbsp;55&nbsp;777 (arkisin klo 9.00–16.00).</p>
+            <div class="submit-row">
+              <button type="submit" class="btn btn-primary">Lähetä varauspyyntö</button>
+              <p class="privacy">Käytämme tietoja varauspyyntösi käsittelyyn. Lue <a href="#tietosuoja">tietosuojaseloste</a>.</p>
+            </div>
+          </form>
+
+          <div id="onnistui" class="success" role="status" hidden>
+            <h3 id="onnistui-otsikko" tabindex="-1"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Kiitos, varauspyyntö on lähetetty.</span></h3>
+            <p><mark class="vahvista">[Etunimi Sukunimi]</mark> vastaa osoitteeseen <strong id="onnistui-osoite"></strong> kahden arkipäivän kuluessa ja kertoo, mihin tilaisuuksiin liput on varattu alustavasti. Kiireellisissä asioissa soita 044&nbsp;77&nbsp;55&nbsp;777 (arkisin klo 9.00–16.00).</p>
+            <p>Konseptiluonnos: tietoja ei lähetetty minnekään.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section id="miksi-sain-viestin" class="plain-sec" aria-labelledby="h-miksi">
+    <div class="wrap prose">
+      <h2 id="h-miksi">Miksi sain tämän viestin?</h2>
+      <p>Sait viestin, koska tehtäväsi liittyy henkilöstön työhyvinvointiin. Yhteystietosi on saatu yrityksenne verkkosivuilta tai muusta lähteestä, jonka tarkka nimi ja päivämäärä on mainittu saamassasi viestissä. Henkilötietojen rekisterinpitäjä on Kolmen kampuksen urheiluopisto oy. Käsittelemme tietoja oikeutetun edun perusteella yritysmyyntiä varten ja poistamme ne <mark class="vahvista">[VAHVISTA: 12 kuukauden]</mark> kuluttua viimeisestä yhteydenotosta, ellei yhteistyötä aloiteta.</p>
+      <p>Voit milloin tahansa kieltää yhteystietojesi käytön suoramarkkinointiin vastaamalla saamaasi viestiin ”ei kiitos” tai kirjoittamalla osoitteeseen <mark class="vahvista">[VAHVISTA: tietosuoja@esimerkki.fi]</mark>.</p>
+      <p>Lisätietoja: Markkinointi- ja asiakasrekisterin tietosuojaseloste <mark class="vahvista">[VAHVISTA: esimerkki.fi/tietosuoja]</mark></p>
+    </div>
+  </section>
+
+  <section id="tietosuoja" class="plain-sec" aria-labelledby="h-tietosuoja">
+    <div class="wrap">
+      <h2 id="h-tietosuoja">Tietosuojaseloste: varauspyyntö</h2>
+      <ul class="plist">
+        <li><strong>Rekisterinpitäjä:</strong> Kolmen kampuksen urheiluopisto oy, Y-tunnus 3250102-9. Yhteys tietosuoja-asioissa: <mark class="vahvista">[VAHVISTA: tietosuoja@esimerkki.fi]</mark></li>
+        <li><strong>Mihin tietoja käytetään:</strong> Varauspyyntösi käsittelyyn, alustavaan lippuvaraukseen, varausvahvistukseen ja niihin liittyvään yhteydenpitoon.</li>
+        <li><strong>Osallistujien tiedot:</strong> Osallistujien nimiä ja ruokavaliotietoja käytetään vain tilaisuuden järjestämiseen. <mark class="vahvista">[VAHVISTA: poisto 30 vrk tilaisuuden jälkeen]</mark></li>
+        <li><strong>Peruste:</strong> Sopimusta edeltävät toimenpiteet, joihin ryhdymme pyynnöstäsi. <mark class="vahvista">[VAHVISTA: hyväksytty 1.12.2026]</mark> Uutiskirje lähetetään vain suostumuksella, jonka voit perua milloin tahansa.</li>
+        <li><strong>Säilytys:</strong> <mark class="vahvista">[VAHVISTA: 12 kuukautta]</mark>, ellei varauksesta synny sopimusta.</li>
+        <li><strong>Vastaanottajat:</strong> Asiakkuudenhallinnan palveluntarjoaja <mark class="vahvista">[VAHVISTA: Esimerkki CRM Oy]</mark>. Tietoja ei luovuteta markkinointiin.</li>
+        <li><strong>Oikeutesi:</strong> Voit pyytää omat tietosi nähtäväksi, oikaistavaksi tai poistettavaksi ja tehdä valituksen tietosuojavaltuutetulle.</li>
+      </ul>
+      <p>Koko tietosuojaseloste <mark class="vahvista">[VAHVISTA: esimerkki.fi/tietosuoja]</mark></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer on-dark">
+  <div class="wrap">
+    <p>Kolmen kampuksen urheiluopisto oy · Y-tunnus 3250102-9 · Kotipaikka Lahti · Postiosoite Pajulahdentie 167, 15560 Nastola</p>
+    <p>Kisakallio: Kaarina Karin tie 4, 08360 Lohja · Pajulahti: Pajulahdentie 167, 15560 Nastola</p>
+    <p>Myyntipalvelu 044&nbsp;77&nbsp;55&nbsp;777 (arkisin klo 9.00–16.00) · sales.kisakallio@kolmekampusta.fi · sales.pajulahti@kolmekampusta.fi</p>
+    <ul class="foot-links">
+      <li><a href="#tietosuoja">Tietosuojaseloste</a></li>
+      <li><a href="https://www.kolmekampusta.fi/fi/yritysasiakkaiden-jarjestojen-ja-rippileirien-varaus-ja-peruutusehdot">Varaus- ja peruutusehdot</a></li>
+      <li>Saavutettavuusseloste <mark class="vahvista">[VAHVISTA: esimerkki.fi/saavutettavuus]</mark></li>
+      <li>Evästeet: tämä konseptiluonnos ei käytä evästeitä.</li>
+    </ul>
+    <p class="foot-credit">Kuvat: Kolmen kampuksen urheiluopisto, kolmekampusta.fi. Kuvia käytetään tässä konseptiluonnoksessa vain havainnollistamiseen.</p>
+    <p class="foot-label">Konseptiluonnos – ei julkaistu.</p>
+  </div>
+</footer>
+
+<div class="sticky-bar" id="sticky-bar">
+  <a class="btn btn-primary" href="#varauspyynto">Pyydä lippuvaraus</a>
+  <a class="btn btn-secondary" href="tel:+358447755777" aria-label="Soita myyntipalveluun 044 77 55 777">Soita</a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+
+  var pkg = $('f-package');
+  Array.prototype.forEach.call(document.querySelectorAll('a[href="#varauspyynto"]'), function (a) {
+    a.addEventListener('click', function () { pkg.value = a.getAttribute('data-package') || ''; });
+  });
+
+  var bar = $('sticky-bar');
+  var heroOut = false, formIn = false;
+  function syncBar() { bar.classList.toggle('is-visible', heroOut && !formIn); }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      heroOut = !entries[entries.length - 1].isIntersecting;
+      syncBar();
+    }).observe($('hero-cta'));
+    new IntersectionObserver(function (entries) {
+      formIn = entries[entries.length - 1].isIntersecting;
+      syncBar();
+    }, { rootMargin: '0px 0px -64px 0px' }).observe($('varauspyynto'));
+  }
+
+  var form = $('varaus-lomake');
+  var summary = $('virheyhteenveto');
+  var summaryTitle = summary.querySelector('h3 span');
+  var summaryList = $('virheyhteenveto-lista');
+  var inputs = ['f-nimi', 'f-email', 'f-org', 'f-maara', 'f-aika', 'f-puh'].map($);
+  var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var COUNT = /^\d{1,5}(\s*[–-]\s*\d{1,5})?$/;
+  var PHONE = /^\+?\d[\d\s\-()]*$/;
+
+  function messageFor(el) {
+    var v = el.value.trim();
+    if (!v) return el.required ? el.getAttribute('data-empty') : '';
+    if (el.type === 'email' && !EMAIL.test(v)) return el.getAttribute('data-invalid');
+    if (el.id === 'f-maara' && !COUNT.test(v)) return el.getAttribute('data-invalid');
+    if (el.type === 'tel' && !PHONE.test(v)) return el.getAttribute('data-invalid');
+    return '';
+  }
+
+  function showError(el, msg) {
+    var err = $(el.id.replace('f-', 'e-'));
+    var help = $(el.id.replace('f-', 'h-'));
+    if (msg) {
+      err.querySelector('span').textContent = msg;
+      err.hidden = false;
+      el.setAttribute('aria-invalid', 'true');
+      el.setAttribute('aria-describedby', (help ? help.id + ' ' : '') + err.id);
+    } else {
+      err.hidden = true;
+      el.removeAttribute('aria-invalid');
+      if (help) el.setAttribute('aria-describedby', help.id); else el.removeAttribute('aria-describedby');
+    }
+  }
+
+  function renderSummary() {
+    var bad = inputs.filter(function (el) { return el.getAttribute('aria-invalid') === 'true'; });
+    summaryList.textContent = '';
+    if (!bad.length) { summary.hidden = true; return; }
+    summaryTitle.textContent = bad.length === 1 ? 'Tarkista 1 kenttä:' : 'Tarkista ' + bad.length + ' kenttää:';
+    bad.forEach(function (el) {
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + el.id;
+      a.textContent = $(el.id.replace('f-', 'e-')).querySelector('span').textContent;
+      a.addEventListener('click', function (ev) { ev.preventDefault(); el.focus(); });
+      li.appendChild(a);
+      summaryList.appendChild(li);
+    });
+    summary.hidden = false;
+  }
+
+  inputs.forEach(function (el) {
+    el.addEventListener('input', function () {
+      if (el.getAttribute('aria-invalid') !== 'true') return;
+      showError(el, messageFor(el));
+      renderSummary();
+    });
+  });
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var first = null;
+    inputs.forEach(function (el) {
+      var msg = messageFor(el);
+      showError(el, msg);
+      if (msg && !first) first = el;
+    });
+    if (first) {
+      renderSummary();
+      summary.focus();
+      return;
+    }
+    summary.hidden = true;
+    $('onnistui-osoite').textContent = $('f-email').value.trim();
+    form.hidden = true;
+    $('onnistui').hidden = false;
+    $('onnistui-otsikko').focus();
+  });
+})();
+</script>
+</body>
+</html>

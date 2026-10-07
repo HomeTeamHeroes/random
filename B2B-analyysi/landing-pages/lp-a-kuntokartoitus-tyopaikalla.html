@@ -1,0 +1,1150 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kuntokartoitus työpaikalla | Kolmen kampuksen urheiluopisto</title>
+<meta name="description" content="Henkilöstön kuntokartoitus teidän tiloissanne: kehonkoostumus, kuntoarvio ja puristusvoima vapaaehtoisille ja ryhmätason raportti yritykselle. Pyydä tarjous.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;family=Barlow+Semi+Condensed:wght@600;700;800&amp;display=swap">
+<style>
+:root {
+  color-scheme: light;
+  /* text */
+  --ink: #0A0A0A;            /* all body text on light */
+  --on-dark: #FFFFFF;        /* all text on navy / ink */
+  /* brand */
+  --navy: #1F2C53;           /* headings, primary buttons, dark bands */
+  --blue: #486499;           /* logo dot 1; page A accent; links on light allowed (5.5:1) */
+  --green: #94A67C;          /* logo dot 2; page B accent – CHROME ONLY on light (2.5:1) */
+  --violet: #A18BB6;         /* logo dot 3; page C accent – CHROME ONLY on light (2.9:1) */
+  --green-strong: #6B7F52;   /* meaningful non-text graphics on light, page B (4.1:1) */
+  --violet-strong: #7A5F96;  /* meaningful non-text graphics on light, page C (5.1:1) */
+  /* surfaces */
+  --paper: #F6F8F8;          /* page background (3K) */
+  --surface: #FFFFFF;        /* cards, form */
+  --tint-a: #E8EDF6;         /* page A section tint */
+  --tint-b: #EEF1E8;         /* page B section tint */
+  --tint-c: #F1EDF5;         /* page C section tint */
+  /* chrome */
+  --rule: #C9D1DC;           /* dividers, card borders (decorative) */
+  --field: #5E6B7E;          /* input borders, radio/checkbox outlines (5.1:1 on paper) */
+  /* states */
+  --focus: #1F2C53;          /* focus ring on light */
+  --focus-on-dark: #FFE58A;  /* focus ring on navy / ink */
+  --error: #B3261E;          /* error text + icon (6.5:1 on white) */
+  --error-bg: #FDECEA;
+  --success: #1E6B3A;        /* success icon/border; success text stays --ink */
+  --success-bg: #E6F2EA;
+  /* placeholders */
+  --vahvista-bg: #FFE58A;    /* [VAHVISTA: …] chip */
+  --vahvista-border: #8A6D00;
+  --kuva-bg: #FFF6CC;        /* [KUVA: …] image placeholder block */
+  /* per-page accent: set ONE of these on <body> */
+  --accent: var(--blue);           /* page A */
+  /* --accent: var(--green);       page B */
+  /* --accent: var(--violet);      page C */
+  --accent-strong: var(--blue);    /* A: --blue · B: --green-strong · C: --violet-strong */
+  --tint: var(--tint-a);           /* A: --tint-a · B: --tint-b · C: --tint-c */
+}
+
+:root {
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px;
+  --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px;
+  --gutter: 16px;            /* ≤ 600 px; 32px from 601; 48px from 1024 */
+  --container: 1200px;       /* content max width; page bg runs full width */
+  --measure: 68ch;
+  --radius-card: 10px; --radius-field: 8px; --radius-pill: 999px; --radius-chip: 4px;
+  --tap: 48px;               /* min height of buttons; links/targets ≥ 44 × 44 */
+  --shadow-card: 0 1px 2px rgba(31,44,83,.08), 0 4px 16px rgba(31,44,83,.06); /* chrome only */
+}
+
+:root {
+  --f-body: "Barlow", "Segoe UI", Arial, sans-serif;
+  --f-head: "Barlow Semi Condensed", "Arial Narrow", "Segoe UI", sans-serif;
+}
+@media (min-width: 601px) { :root { --gutter: 32px; } }
+@media (min-width: 1024px) { :root { --gutter: 48px; } }
+
+/* ---------- base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 72px; scroll-padding-bottom: 96px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 18px/1.6 var(--f-body);
+  overflow-wrap: break-word;
+}
+@media (max-width: 767px) { body { padding-bottom: 80px; } }
+main:focus { outline: none; }
+h1, h2, h3 { font-family: var(--f-head); color: var(--navy); margin: 0; }
+h1 { font-weight: 800; font-size: 32px; line-height: 1.04; letter-spacing: -0.01em; text-wrap: balance; }
+h2 { font-weight: 700; font-size: 28px; line-height: 1.1; text-wrap: balance; }
+h3 { font-weight: 700; font-size: 20px; line-height: 1.2; }
+@media (min-width: 601px) { h1 { font-size: 44px; } h2 { font-size: 38px; } h3 { font-size: 22px; } }
+@media (min-width: 1024px) { h1 { font-size: clamp(46px, 4.4vw, 56px); } }
+p { margin: 0 0 1em; }
+ul, ol { margin: 0; padding: 0; }
+a { color: var(--navy); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+img { display: block; max-width: 100%; height: auto; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+.wrap { width: min(100% - 2 * var(--gutter), var(--container)); margin-inline: auto; }
+.measure { max-width: var(--measure); }
+
+svg.i { width: 1.25em; height: 1.25em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- placeholder chips and blocks ---------- */
+mark.vahvista {
+  background: var(--vahvista-bg);
+  color: var(--ink);
+  border: 1px dashed var(--vahvista-border);
+  border-radius: var(--radius-chip);
+  padding: 0 4px;
+  font: 600 0.85em/1.5 var(--f-body);
+  white-space: normal;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.kuva {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  text-align: center; padding: 16px;
+  background: var(--kuva-bg);
+  border: 2px dashed var(--vahvista-border);
+  border-radius: var(--radius-card);
+  font: 600 16px/1.4 var(--f-body);
+  color: var(--ink);
+}
+.kuva svg.i { width: 32px; height: 32px; }
+.kuva--169 { aspect-ratio: 704 / 396; }
+.photo { width: 100%; border-radius: var(--radius-card); background: var(--tint); }
+
+/* ---------- skip link, bar, header ---------- */
+.skip {
+  position: absolute; left: 8px; top: -100px; z-index: 100;
+  background: var(--navy); color: var(--on-dark);
+  padding: 12px 20px; border-radius: 999px;
+  font: 700 19px/1 var(--f-head); text-decoration: none;
+}
+.skip:focus { top: 8px; outline: 3px solid var(--focus-on-dark); outline-offset: -6px; }
+
+.bar {
+  background: var(--ink); color: var(--vahvista-bg);
+  font: 600 14px/1.4 var(--f-body);
+  text-align: center;
+  padding: 8px var(--gutter);
+}
+.bar p { margin: 0; }
+@media (min-width: 768px) {
+  .bar { position: sticky; top: 0; z-index: 60; padding-inline: 12px; }
+}
+
+.site-header { background: var(--surface); border-bottom: 1px solid var(--rule); }
+.header-in { display: flex; align-items: center; justify-content: space-between; gap: var(--s4); min-height: 64px; padding-block: 8px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); min-width: 0; min-height: 44px; }
+.dots { display: inline-flex; gap: 4px; flex: none; }
+.dots i { display: block; width: 10px; height: 10px; border-radius: 50%; }
+.dots i:nth-child(1) { background: var(--green); }
+.dots i:nth-child(2) { background: var(--blue); }
+.dots i:nth-child(3) { background: var(--violet); }
+.brand-name { font: 700 15px/1.15 var(--f-head); text-transform: uppercase; letter-spacing: .02em; color: var(--ink); }
+.brand:hover .brand-name { text-decoration: underline; }
+.hdr-nav { display: none; margin-left: auto; }
+.hdr-nav ul { list-style: none; display: flex; gap: var(--s5); }
+.hdr-nav a { display: inline-flex; align-items: center; min-height: 44px; font: 600 16px/1.2 var(--f-body); text-decoration: none; color: var(--navy); }
+.hdr-nav a:hover { text-decoration: underline; }
+.hdr-phone {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-width: 44px; min-height: 44px;
+  border: 2px solid var(--navy); border-radius: 999px;
+  color: var(--navy); text-decoration: none;
+  font: 600 16px/1 var(--f-body);
+  flex: none;
+}
+.hdr-phone:hover { background: var(--tint); }
+.hdr-phone svg.i { width: 22px; height: 22px; }
+.hdr-phone-text { display: none; white-space: nowrap; }
+@media (min-width: 768px) {
+  .hdr-nav { display: block; }
+  .hdr-phone { padding: 0 16px; }
+  .hdr-phone-text { display: inline; }
+  .header-in { gap: var(--s5); }
+}
+@media (min-width: 1024px) { .brand-name { font-size: 18px; } }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: var(--tap); padding: 0 28px;
+  border: 2px solid var(--navy); border-radius: var(--radius-pill);
+  font: 700 19px/1 var(--f-head);
+  text-decoration: none; cursor: pointer;
+  text-align: center;
+}
+.btn svg.i { width: 20px; height: 20px; }
+.btn-primary { background: var(--navy); color: var(--on-dark); }
+.btn-primary:hover { background: var(--blue); border-color: var(--blue); text-decoration: none; }
+.btn-secondary { background: transparent; color: var(--navy); }
+.btn-secondary:hover { background: var(--tint); text-decoration: none; }
+
+/* ---------- sections ---------- */
+.section { padding-block: var(--s7); }
+@media (min-width: 768px) { .section { padding-block: var(--s8); } }
+.section--tint { background: var(--tint); }
+.section h2 { margin-bottom: var(--s5); }
+.section-cta { margin-top: var(--s7); }
+
+/* hero */
+.hero { padding-block: var(--s6) var(--s7); }
+.hero-grid { display: grid; gap: var(--s6); }
+.eyebrow { margin: 0 0 var(--s3); font: 600 14px/1.3 var(--f-head); letter-spacing: .08em; text-transform: uppercase; color: var(--navy); }
+@media (min-width: 601px) { .eyebrow { font-size: 15px; } }
+.hero h1 { margin-bottom: var(--s4); }
+.sub { max-width: 52ch; margin-bottom: 0; }
+.facts { list-style: none; display: grid; gap: var(--s3); margin: var(--s5) 0; }
+.facts li { display: flex; align-items: center; gap: var(--s3); font: 600 18px/1.4 var(--f-body); }
+/* mobile first screen: CTA bottom ≤ 600 px at 375 × 667 without the prototype bar (LP §3.2) */
+@media (max-width: 600px) {
+  .hero { padding-top: 20px; }
+  .hero .eyebrow { display: none; }
+  .facts { margin: var(--s4) 0; }
+}
+.ico-circle { flex: none; width: 36px; height: 36px; border-radius: 50%; background: var(--tint); color: var(--navy); display: grid; place-items: center; }
+.ico-circle svg.i { width: 24px; height: 24px; }
+.cta-row { display: flex; flex-direction: column; gap: var(--s3); margin-bottom: var(--s4); }
+.cta-phone { display: flex; flex-direction: column; gap: var(--s2); }
+.hours { font: 500 15px/1.5 var(--f-body); }
+.cta-row .btn { width: 100%; }
+.reply { max-width: 52ch; margin: 0; }
+.hero-photo img { aspect-ratio: 704 / 396; object-fit: cover; }
+@media (min-width: 601px) {
+  .cta-row { flex-direction: row; align-items: flex-start; gap: var(--s4); }
+  .cta-row .btn { width: auto; }
+  .cta-phone { align-items: flex-start; }
+}
+@media (min-width: 1024px) {
+  .hero { padding-block: var(--s8); }
+  .hero-grid { grid-template-columns: minmax(0, 11fr) minmax(0, 9fr); gap: var(--s7); align-items: center; }
+}
+
+/* proof */
+.proof { background: var(--navy); color: var(--on-dark); }
+.proof ul { list-style: none; display: grid; gap: var(--s4); padding-block: var(--s5); }
+.proof li { display: flex; gap: var(--s3); align-items: flex-start; font: 500 16px/1.5 var(--f-body); }
+.proof li svg.i { width: 24px; height: 24px; color: var(--accent); margin-top: 0; }
+@media (min-width: 768px) { .proof ul { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.5fr); gap: var(--s6); } }
+
+/* mitä mitataan */
+.tiles { list-style: none; display: grid; gap: var(--s4); margin: var(--s5) 0; }
+.tile { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-card); padding: var(--s5); box-shadow: var(--shadow-card); }
+.tile .ico-circle { width: 48px; height: 48px; margin-bottom: var(--s3); }
+.tile .ico-circle svg.i { width: 28px; height: 28px; }
+.tile p { margin: 0; }
+.tile strong { font: 700 22px/1.2 var(--f-head); color: var(--navy); }
+@media (min-width: 768px) { .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s5); } }
+.duration { display: flex; gap: var(--s3); align-items: flex-start; font-weight: 600; margin: 0 0 var(--s6); }
+.duration svg.i { width: 26px; height: 26px; margin-top: 2px; color: var(--navy); }
+.two-col { display: grid; gap: var(--s5); }
+.two-col h3 { margin-bottom: var(--s2); }
+.two-col p { margin: 0; max-width: var(--measure); }
+@media (min-width: 768px) { .two-col { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s7); } }
+
+/* vapaaehtoisuus */
+.notice { background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--accent-strong); border-radius: var(--radius-card); padding: var(--s5); }
+@media (min-width: 768px) { .notice { padding: var(--s6) var(--s7); } }
+.banner { background: var(--kuva-bg); border: 2px dashed var(--vahvista-border); border-radius: var(--radius-field); padding: var(--s3) var(--s4); margin: 0 0 var(--s5); color: var(--ink); }
+.checks { list-style: none; display: grid; gap: var(--s3); }
+.checks li { display: flex; gap: var(--s3); align-items: flex-start; max-width: var(--measure); }
+.checks li svg.i { width: 20px; height: 20px; margin-top: 4px; color: var(--navy); }
+.notice .checks { margin-bottom: var(--s5); }
+.huomio { background: var(--tint); border-radius: var(--radius-field); padding: var(--s4) var(--s5); margin: 0; font-weight: 600; color: var(--ink); }
+
+/* hinnat */
+.lead-in { max-width: var(--measure); }
+.cards { display: grid; gap: var(--s5); margin-top: var(--s6); max-width: 720px; }
+.card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-card); padding: var(--s5); }
+@media (min-width: 768px) { .card { padding: var(--s5) var(--s6); } }
+.card--primary { border: 2px solid var(--navy); border-top-width: 6px; box-shadow: var(--shadow-card); }
+.card h3 { margin-bottom: var(--s3); }
+.card-kesto { display: flex; gap: var(--s2); align-items: flex-start; margin: 0 0 var(--s3); font: 600 15px/1.5 var(--f-body); }
+.card-kesto svg.i { width: 18px; height: 18px; margin-top: 3px; color: var(--navy); }
+.card-desc { margin: 0 0 var(--s4); }
+.incl-label { margin: 0 0 var(--s2); font: 700 16px/1.4 var(--f-body); }
+.incl { margin-bottom: var(--s5); }
+.card .checks { gap: var(--s2); }
+.card .checks li { font-size: 17px; line-height: 1.45; }
+.card .checks li svg.i { width: 16px; height: 16px; margin-top: 5px; }
+.price { margin: auto 0 var(--s3); font: 700 24px/1.25 var(--f-head); color: var(--navy); font-variant-numeric: tabular-nums lining-nums; text-wrap: balance; }
+.price mark.vahvista { font-size: 0.7em; }
+.card-meta { margin: 0 0 var(--s2); font: 500 15px/1.5 var(--f-body); text-wrap: balance; }
+.card .btn { width: 100%; margin-top: var(--s3); align-self: end; }
+@media (min-width: 1024px) {
+  .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: none; align-items: stretch; }
+}
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 1024px) {
+    .cards { column-gap: var(--s5); row-gap: 0; }
+    .card { display: grid; grid-row: span 7; grid-template-rows: subgrid; }
+    .price { margin-top: 0; }
+  }
+}
+
+/* aikajana */
+.panel { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-card); padding: var(--s4); }
+@media (min-width: 768px) { .panel { padding: var(--s5); } }
+.aj-wide { display: none; }
+@media (min-width: 768px) { .aj-wide { display: block; } .aj-narrow { display: none; } }
+.aikajana { width: 100%; table-layout: fixed; border-collapse: separate; border-spacing: 0; }
+.aikajana .c-day { width: 150px; }
+.aikajana .c-n { width: 130px; }
+.aikajana thead th { font: 600 20px/1.2 var(--f-head); font-variant-numeric: tabular-nums lining-nums; color: var(--navy); text-align: left; padding: 0 0 10px 8px; border-left: 1px solid var(--rule); }
+.aikajana tbody th { font: 700 22px/1.2 var(--f-head); color: var(--navy); text-align: left; padding: 0 12px 0 0; border-top: 1px solid var(--rule); }
+.aikajana tbody td { height: 72px; padding: 10px 0; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
+.aikajana td.n { padding-left: 14px; font: 600 22px/1.2 var(--f-head); font-variant-numeric: tabular-nums lining-nums; color: var(--navy); }
+.aikajana .bar-cell { padding-inline: 4px; }
+.blk { display: flex; align-items: center; justify-content: center; min-height: 52px; border-radius: 6px; background: var(--accent); color: var(--on-dark); font: 600 17px/1.2 var(--f-head); font-variant-numeric: tabular-nums lining-nums; text-align: center; padding: 0 8px; }
+@media (forced-colors: active) { .blk { border: 2px solid CanvasText; } }
+
+.track { list-style: none; position: relative; }
+.track > li { position: relative; padding: 0 0 var(--s5) 36px; }
+.track > li:last-child { padding-bottom: 0; }
+.track > li::before { content: ""; position: absolute; left: 0; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--surface); z-index: 1; }
+.track > li:not(:last-child)::after { content: ""; position: absolute; left: 4px; top: 12px; bottom: -12px; width: 3px; background: var(--accent); }
+.track > li:first-child::before { background: var(--navy); }
+.track time, .track .day { display: block; font: 600 20px/1.3 var(--f-head); font-variant-numeric: tabular-nums lining-nums; color: var(--navy); }
+.track .times, .track .count { display: block; }
+.track .count { font: 600 18px/1.4 var(--f-head); font-variant-numeric: tabular-nums lining-nums; color: var(--navy); }
+.aj-after { margin: var(--s4) 0 0; max-width: var(--measure); }
+.tyky { margin-top: var(--s7); display: grid; gap: var(--s4); }
+.tyky h3 { margin: 0; }
+.tyky .aj-after { margin: 0; }
+.tyky-list { max-width: 560px; }
+@media (min-width: 1024px) {
+  .tyky { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto 1fr; grid-template-areas: "h list" "note list"; column-gap: var(--s7); align-items: start; }
+  .tyky h3 { grid-area: h; }
+  .tyky .tyky-list { grid-area: list; }
+  .tyky .aj-after { grid-area: note; }
+}
+
+/* aktiviteetit */
+.acts { list-style: none; display: grid; gap: var(--s4); margin-top: var(--s5); }
+.act { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-card); padding: var(--s4) var(--s5); }
+.act-name { margin: 0 0 var(--s2); font: 700 20px/1.2 var(--f-head); color: var(--navy); }
+.act p { margin: 0 0 var(--s2); font-size: 17px; }
+.act .level { margin: var(--s3) 0 0; }
+.lvl { display: inline-block; border: 2px solid var(--navy); border-radius: var(--radius-pill); padding: 1px 12px; font: 600 15px/1.5 var(--f-body); color: var(--ink); }
+@media (min-width: 601px) { .acts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .acts { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* saapuminen */
+.arrive { display: grid; gap: var(--s7); max-width: 720px; }
+.arrive h3 { margin: var(--s4) 0 var(--s2); }
+.arrive p { margin-bottom: var(--s3); }
+.arrive .map-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
+@media (min-width: 1024px) { .arrive { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s6); max-width: none; } }
+
+/* faq */
+.faq { max-width: 820px; }
+.faq details { border-top: 1px solid var(--rule); }
+.faq details:last-child { border-bottom: 1px solid var(--rule); }
+.faq summary { display: flex; align-items: center; justify-content: space-between; gap: var(--s4); min-height: var(--tap); padding: var(--s3) 0; font: 600 18px/1.4 var(--f-body); color: var(--ink); cursor: pointer; list-style: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary:focus-visible { outline-offset: 2px; }
+.faq summary svg.i { width: 22px; height: 22px; color: var(--navy); transition: transform .15s; }
+.faq details[open] summary svg.i { transform: rotate(180deg); }
+.faq .ans { padding: 0 0 var(--s4); max-width: var(--measure); }
+.faq .ans p { margin: 0 0 .75em; }
+.faq .ans p:last-child { margin-bottom: 0; }
+
+/* contact + form */
+.cf-grid { display: grid; gap: var(--s7); }
+@media (min-width: 1024px) { .cf-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--s8); align-items: start; } }
+.contact { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-card); padding: var(--s5); }
+.contact-top { display: flex; align-items: center; gap: var(--s4); margin-bottom: var(--s4); flex-wrap: wrap; }
+.kuva-circle { flex: none; width: 96px; height: 96px; border-radius: 50%; display: grid; place-items: center; background: var(--kuva-bg); border: 2px dashed var(--vahvista-border); color: var(--ink); }
+.kuva-circle svg.i { width: 36px; height: 36px; }
+.kuva-label { margin: 0; font: 600 16px/1.4 var(--f-body); background: var(--kuva-bg); border: 2px dashed var(--vahvista-border); border-radius: var(--radius-field); padding: 6px 10px; flex: 1 1 140px; }
+.contact h3 { margin-bottom: 2px; }
+.contact-title { margin: 0 0 var(--s4); font-weight: 600; }
+.contact-list { list-style: none; display: grid; gap: var(--s3); margin: 0 0 var(--s4); }
+.contact-list li { display: flex; gap: var(--s3); align-items: flex-start; }
+.contact-list svg.i { width: 22px; height: 22px; margin-top: 3px; color: var(--navy); }
+.contact-list .mail { overflow-wrap: anywhere; }
+.contact p { margin: 0 0 var(--s3); }
+.contact p:last-child { margin-bottom: 0; }
+
+.form-panel { background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-card); padding: var(--s5); max-width: 640px; box-shadow: var(--shadow-card); }
+@media (min-width: 601px) { .form-panel { padding: var(--s6); } }
+.req-legend { margin: 0 0 var(--s5); font: 500 15px/1.5 var(--f-body); }
+.field { margin-bottom: var(--s5); }
+.field label, .field legend { display: block; margin: 0 0 4px; padding: 0; font: 600 17px/1.4 var(--f-body); color: var(--ink); }
+.helper { margin: 0 0 var(--s2); font: 500 15px/1.5 var(--f-body); }
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+  display: block; width: 100%; min-height: 52px; padding: 0 14px;
+  font: 400 18px/1.4 var(--f-body); color: var(--ink);
+  background: var(--surface); border: 2px solid var(--field); border-radius: var(--radius-field);
+  -webkit-appearance: none; appearance: none;
+  scroll-margin-top: 140px;
+}
+textarea { padding: 12px 14px; min-height: 124px; resize: vertical; }
+input[type="text"]:focus-visible, input[type="email"]:focus-visible, input[type="tel"]:focus-visible, textarea:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-color: var(--navy); }
+.has-error input[type="text"], .has-error input[type="email"], .has-error input[type="tel"], .has-error textarea,
+.has-error input[type="text"]:focus-visible, .has-error input[type="email"]:focus-visible, .has-error input[type="tel"]:focus-visible { border-color: var(--error); }
+.err { display: flex; gap: var(--s2); align-items: flex-start; margin: var(--s2) 0 0; font: 600 16px/1.4 var(--f-body); color: var(--error); }
+.err svg.i { width: 20px; height: 20px; margin-top: 1px; }
+fieldset.field { border: 0; margin: 0 0 var(--s5); padding: 0; min-width: 0; scroll-margin-top: 140px; }
+.field .opt { display: flex; align-items: center; gap: var(--s3); min-height: 48px; margin: 0; padding: 4px 0; font: 400 18px/1.4 var(--f-body); cursor: pointer; }
+.opt input { -webkit-appearance: none; appearance: none; flex: none; margin: 0; width: 24px; height: 24px; display: grid; place-content: center; background: var(--surface); border: 2px solid var(--field); }
+.opt input[type="radio"] { border-radius: 50%; }
+.opt input[type="checkbox"] { border-radius: 6px; }
+.opt input[type="radio"]::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--navy); transform: scale(0); }
+.opt input[type="radio"]:checked::before { transform: scale(1); }
+.opt input[type="radio"]:checked { border-color: var(--navy); }
+.opt input[type="checkbox"]::before { content: ""; width: 6px; height: 12px; border: solid var(--on-dark); border-width: 0 3px 3px 0; transform: rotate(45deg) translate(-1px, -1px) scale(0); }
+.opt input[type="checkbox"]:checked { background: var(--navy); border-color: var(--navy); }
+.opt input[type="checkbox"]:checked::before { transform: rotate(45deg) translate(-1px, -1px) scale(1); }
+.opt input:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.field .opt--check { align-items: flex-start; padding: 10px 0; }
+.opt--check input { margin-top: 2px; }
+.hp { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+.reply-line { margin: 0 0 var(--s4); font: 500 16px/1.5 var(--f-body); }
+.submit-row { display: flex; flex-direction: column; gap: var(--s4); }
+.submit-row .btn { width: 100%; }
+.privacy-line { margin: 0; font: 500 15px/1.5 var(--f-body); }
+@media (min-width: 601px) {
+  .submit-row { flex-direction: row; align-items: center; }
+  .submit-row .btn { width: auto; flex: none; }
+}
+.error-summary { background: var(--error-bg); border-left: 4px solid var(--error); border-radius: var(--radius-field); padding: var(--s4) var(--s5); margin-bottom: var(--s5); scroll-margin-top: 140px; }
+.error-summary h3 { color: var(--ink); font-size: 20px; margin-bottom: var(--s2); }
+.error-summary ul { padding-left: 1.2em; }
+.error-summary li { margin-bottom: var(--s2); }
+.error-summary a { color: var(--error); font-weight: 600; }
+.success { background: var(--success-bg); border-left: 4px solid var(--success); border-radius: var(--radius-field); padding: var(--s5); color: var(--ink); scroll-margin-top: 140px; }
+.success-head { display: flex; gap: var(--s3); align-items: flex-start; margin-bottom: var(--s3); }
+.success-head svg.i { width: 28px; height: 28px; color: var(--success); margin-top: 1px; }
+.success h3 { color: var(--ink); }
+.success h3:focus { outline: none; }
+.success p { margin: 0 0 var(--s3); }
+.success p:last-child { margin-bottom: 0; }
+
+/* miksi sain, tietosuoja */
+.prose-section { padding-block: var(--s7); border-top: 1px solid var(--rule); }
+.prose-section .measure p { margin-bottom: var(--s4); }
+.privacy-list { list-style: none; display: grid; gap: var(--s3); max-width: var(--measure); margin-bottom: var(--s4); }
+
+/* footer */
+.site-footer { background: var(--navy); color: var(--on-dark); font: 500 15px/1.6 var(--f-body); padding-block: var(--s7); }
+.site-footer a { color: var(--on-dark); }
+.site-footer :focus-visible { outline-color: var(--focus-on-dark); }
+.site-footer p { margin: 0 0 var(--s2); }
+.site-footer address { font-style: normal; margin-bottom: var(--s5); }
+.foot-links { list-style: none; display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); margin-bottom: var(--s5); }
+.foot-links li { display: flex; align-items: center; min-height: 44px; }
+.foot-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.foot-credit { border-top: 1px solid rgba(255,255,255,.35); padding-top: var(--s4); }
+.foot-label { font-weight: 700; margin-top: var(--s3); }
+
+/* sticky bar */
+.sticky-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  display: flex; gap: var(--s3); align-items: center;
+  height: 64px; padding: 8px var(--gutter);
+  background: var(--surface); border-top: 1px solid var(--rule); box-shadow: var(--shadow-card);
+  transform: translateY(100%); visibility: hidden;
+  transition: transform .15s ease-out, visibility 0s linear .15s;
+}
+.sticky-bar.is-visible { transform: none; visibility: visible; transition: transform .15s ease-out, visibility 0s; }
+.sticky-bar .btn { flex: 1 1 0; min-width: 0; padding: 0 12px; }
+@media (min-width: 768px) { .sticky-bar { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+mark.vahvista { overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 24 24"><path d="M18 7.5A7 7 0 1 0 18 16.5"/><path d="M5 10.5h9M5 13.5h9"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c2.5.2 4.5 2.2 4.5 5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M21 16l-5-5-8 8"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-body" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="2.3"/><path d="M5 9h14M12 9v6M8.5 21.5L12 15l3.5 6.5"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-8.5-5-8.5-11A4.6 4.6 0 0 1 12 7a4.6 4.6 0 0 1 8.5 2.5c0 6-8.5 11-8.5 11z"/><path d="M6.5 12.5h3l1.5-3 2.5 6 1.5-3h2.5"/></symbol>
+    <symbol id="i-grip" viewBox="0 0 24 24"><path d="M8 13V6a1.6 1.6 0 0 1 3.2 0v5M11.2 11V4.6a1.6 1.6 0 0 1 3.2 0V11M14.4 11V6a1.6 1.6 0 0 1 3.2 0v7.5c0 4-2.6 7.5-6.2 7.5-3 0-4.4-1.6-6-4.3l-1.7-3a1.5 1.5 0 0 1 2.6-1.5L8 14"/></symbol>
+    <symbol id="i-cert" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5L7 21l5-3 5 3-1.5-7.5"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9L3.5 9.7l5.9-.8z"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#sisalto">Siirry sisältöön</a>
+
+<div class="bar" role="note" aria-label="Konseptiluonnos">
+  <p>Konseptiluonnos – ei julkaistu. [VAHVISTA]-merkityt tiedot odottavat Kolmen kampuksen urheiluopiston vahvistusta.</p>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="brand" href="https://www.kolmekampusta.fi/fi">
+      <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand-name">Kolmen kampuksen urheiluopisto</span>
+    </a>
+    <nav class="hdr-nav">
+      <ul>
+        <li><a href="https://www.kolmekampusta.fi/fi/kisakallion-kampus">Kisakallio</a></li>
+        <li><a href="https://www.kolmekampusta.fi/fi/pajulahden-kampus">Pajulahti</a></li>
+        <li><a href="#yhteyshenkilo">Yhteystiedot</a></li>
+      </ul>
+    </nav>
+    <a class="hdr-phone" href="tel:+358447755777" aria-label="Soita myyntipalveluun 044 77 55 777">
+      <svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>
+      <span class="hdr-phone-text">044&nbsp;77&nbsp;55&nbsp;777</span>
+    </a>
+  </div>
+</header>
+
+<main id="sisalto" tabindex="-1">
+
+  <!-- 2. Hero -->
+  <section class="hero" aria-labelledby="otsikko">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">Yrityksille · Kehon kuntoindeksi</p>
+        <h1 id="otsikko">Henkilöstön kuntokartoitus työpaikallanne</h1>
+        <p class="sub">Liikuntafysiologimme mittaavat vapaaehtoisten työntekijöiden kunnon ja kehonkoostumuksen teidän tiloissanne. Jokainen saa omat tuloksensa, ja yritys saa ryhmätason koontiraportin.</p>
+        <ul class="facts">
+          <li><span class="ico-circle"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></span><span>20 henkeä kahdessa tunnissa <mark class="vahvista">[VAHVISTA: 2 mittauspistettä]</mark></span></li>
+          <li><span class="ico-circle"><svg class="i" aria-hidden="true"><use href="#i-euro"/></svg></span><span>Hinta <mark class="vahvista">[VAHVISTA: 59&nbsp;€/mitattu, alv&nbsp;0&nbsp;%]</mark></span></li>
+          <li><span class="ico-circle"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg></span><span>Työpaikallanne tai kampuksella</span></li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn btn-primary" id="hero-cta" href="#tarjouspyynto" data-package="">Pyydä tarjous</a>
+          <div class="cta-phone">
+            <a class="btn btn-secondary" href="tel:+358447755777"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Soita 044&nbsp;77&nbsp;55&nbsp;777</a>
+            <span class="hours">arkisin klo 9.00–16.00</span>
+          </div>
+        </div>
+        <p class="reply">Vastaamme tarjouspyyntöihin kahden arkipäivän kuluessa.</p>
+      </div>
+      <div class="hero-photo">
+        <img class="photo" src="https://www.kolmekampusta.fi/sites/default/files/styles/16_9_704x396_focal_point_webp/public/2026-03/kehon_kuntoindeksi.png.webp?h=d644bbf5&amp;itok=db5wG6PN" width="704" height="396" alt="Kolme kuvaa Kehon kuntoindeksin mittauksista: henkilö seisoo kehonkoostumusmittarilla, käsi puristaa puristusvoimamittaria ja henkilö makaa sykevyö rinnallaan kuntoarviota varten." fetchpriority="high" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Todisterivi -->
+  <div class="proof">
+    <div class="wrap">
+      <ul>
+        <li><svg class="i" aria-hidden="true"><use href="#i-check-circle"/></svg><span>Mittaukset tekevät Suomen ainoan olympia- ja paralympiavalmennuskeskuksen liikuntafysiologit</span></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-cert"/></svg><span>Ekokompassi-sertifikaatti 24.4.2025–24.4.2028</span></li>
+        <li><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><span>Google-arviot: Kisakallio 4,4/5 (noin 285 arviota) ja Pajulahti 4,3/5 (noin 1&nbsp;330 arviota), tilanne 4.10.2026</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 4. Mitä kuntokartoitus mittaa -->
+  <section class="section" aria-labelledby="h-mita">
+    <div class="wrap">
+      <h2 id="h-mita">Mitä kuntokartoitus mittaa</h2>
+      <p class="measure">Kuntokartoitus tehdään Kehon kuntoindeksillä. Siinä on kolme mittausta:</p>
+      <ul class="tiles">
+        <li class="tile">
+          <span class="ico-circle"><svg class="i" aria-hidden="true"><use href="#i-body"/></svg></span>
+          <p><strong>Kehonkoostumus</strong> – InBody-mittaus kertoo kehon lihas- ja rasvakudoksen osuudet.</p>
+        </li>
+        <li class="tile">
+          <span class="ico-circle"><svg class="i" aria-hidden="true"><use href="#i-heart"/></svg></span>
+          <p><strong>Kuntoarvio</strong> – Polar OwnIndex -testi antaa arvion kestävyyskunnosta.</p>
+        </li>
+        <li class="tile">
+          <span class="ico-circle"><svg class="i" aria-hidden="true"><use href="#i-grip"/></svg></span>
+          <p><strong>Puristusvoima</strong> – mittaus kertoo käden ja käsivarren lihasvoimasta.</p>
+        </li>
+      </ul>
+      <p class="duration"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>Yhden henkilön mittaus kestää noin 10 minuuttia. Kahdessa tunnissa ehdimme mitata 20 henkeä <mark class="vahvista">[VAHVISTA: 2 mittauspistettä]</mark>.</span></p>
+      <div class="two-col">
+        <div>
+          <h3>Mitä osallistuja saa</h3>
+          <p>Kirjallisen yhteenvedon omista tuloksistaan.</p>
+        </div>
+        <div>
+          <h3>Mitä yritys saa</h3>
+          <p>Ryhmätason koontiraportin <mark class="vahvista">[VAHVISTA: vähintään 8 mitatusta]</mark> ja halutessanne 45 minuutin palautetilaisuuden henkilöstölle <mark class="vahvista">[VAHVISTA: ei sisälly, 135&nbsp;€/ryhmä]</mark>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Vapaaehtoisuus ja tietosuoja -->
+  <section class="section section--tint" aria-labelledby="h-vapaa">
+    <div class="wrap">
+      <div class="notice">
+        <h2 id="h-vapaa">Vapaaehtoisuus ja tietosuoja</h2>
+        <p class="banner"><mark class="vahvista">[VAHVISTA: hyväksytty 9.11.2026]</mark> Tämän osion ehdot ovat ehdotus, joka vahvistetaan ennen myyntiä.</p>
+        <ul class="checks">
+          <li><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><span>Osallistuminen on vapaaehtoista. Työnantajalle ei kerrota, kuka osallistui.</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><span>Jokainen osallistuja saa omat tuloksensa vain itselleen.</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><span>Yritys saa koontiraportin vain, kun mitattuja on vähintään <mark class="vahvista">[VAHVISTA: 8]</mark>. Raportissa ei eritellä tiimejä eikä muita alaryhmiä.</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><span>Ennen mittausta jokainen vastaa lyhyeen terveyskyselyyn, koska kehonkoostumusmittaus ei sovi kaikille, esimerkiksi sydämentahdistimen käyttäjille tai raskaana oleville. <mark class="vahvista">[VAHVISTA: kysely 8 kysymystä]</mark></span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><span>Osallistujat varaavat mittausajan itse, eikä varauksia näytetä työnantajalle. <mark class="vahvista">[VAHVISTA: sähköinen varauslinkki]</mark></span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><span>Mittaustietojen rekisterinpitäjä on <mark class="vahvista">[VAHVISTA: urheiluopisto]</mark>, ja tiedot säilytetään <mark class="vahvista">[VAHVISTA: 24 kuukautta]</mark>.</span></li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg><span>Työntekijöille on valmis tiedote, jonka voitte jakaa ennen mittausta. <mark class="vahvista">[VAHVISTA: valmis 10.11.2026]</mark></span></li>
+        </ul>
+        <p class="huomio">Kuntokartoitus ei ole terveystarkastus eikä korvaa työterveyshuoltoa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Hinnat ja paketit -->
+  <section class="section" aria-labelledby="h-hinnat">
+    <div class="wrap">
+      <h2 id="h-hinnat">Hinnat ja paketit</h2>
+      <p class="lead-in">Hinta riippuu ryhmän koosta. Lopullinen hinta vahvistetaan tarjouksessa.</p>
+      <div class="cards">
+
+        <article class="card card--primary" aria-labelledby="c1">
+          <h3 id="c1">Kuntokartoitus työpaikalla</h3>
+          <p class="card-kesto"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>Noin 2 tuntia 20 mitattavalle <mark class="vahvista">[VAHVISTA: 2 mittauspistettä]</mark></span></p>
+          <p class="card-desc">Mittaamme vapaaehtoiset teidän tiloissanne yhtenä tai useampana päivänä. Mittausajat keväälle 2027.</p>
+          <div class="incl">
+            <p class="incl-label">Hinta sisältää:</p>
+            <ul class="checks">
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Kehon kuntoindeksi jokaiselle osallistujalle</span></li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>kirjallinen yhteenveto jokaiselle osallistujalle</span></li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>ryhmätason koontiraportti yritykselle</span></li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>mittauslaitteet ja liikuntafysiologit paikan päällä</span></li>
+            </ul>
+          </div>
+          <p class="price"><mark class="vahvista">[VAHVISTA: 59&nbsp;€/mitattu, alv&nbsp;0&nbsp;%]</mark></p>
+          <div class="card-metas">
+            <p class="card-meta">Vähimmäisryhmä: <mark class="vahvista">[VAHVISTA: 20 henkeä]</mark></p>
+            <p class="card-meta">Matkakulut <mark class="vahvista">[VAHVISTA: sisältyvät]</mark></p>
+          </div>
+          <a class="btn btn-primary" href="#tarjouspyynto" data-package="kuntokartoitus-tyopaikalla">Pyydä tarjous</a>
+        </article>
+
+        <article class="card" aria-labelledby="c2">
+          <h3 id="c2">Tyky-päivä ja kuntokartoitus kampuksella</h3>
+          <p class="card-kesto"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>1 päivä, klo 8.30–14.00 <mark class="vahvista">[VAHVISTA: klo 8.30–14.00]</mark></span></p>
+          <p class="card-desc">Kisakalliossa Lohjalla tai Pajulahdessa Lahden Nastolassa: kuntokartoitus, luento, ohjattu aktiviteetti ja ruokailut samana päivänä.</p>
+          <div class="incl">
+            <p class="incl-label">Hinta sisältää:</p>
+            <ul class="checks">
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>aamiainen, lounas ja iltapäiväkahvi</span></li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>90 minuutin luento</span></li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>90 minuutin ohjattu aktiviteetti</span></li>
+            </ul>
+          </div>
+          <p class="price">Tiimin virkistyspaketti 125 €/hlö <mark class="vahvista">[VAHVISTA: alv 0 %, Kisakallio]</mark></p>
+          <div class="card-metas">
+            <p class="card-meta">Lisäksi: Kehon kuntoindeksi halukkaille <mark class="vahvista">[VAHVISTA: 49&nbsp;€/mitattu, alv&nbsp;0&nbsp;%]</mark></p>
+            <p class="card-meta">Vähimmäisryhmä: 10 henkeä</p>
+          </div>
+          <a class="btn btn-primary" href="#tarjouspyynto" data-package="tyky-paiva-kampuksella">Pyydä tarjous</a>
+        </article>
+
+        <article class="card" aria-labelledby="c3">
+          <h3 id="c3">Uusintamittaus vuoden päästä</h3>
+          <p class="card-kesto"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>Sama mittaus 12 kuukauden kuluttua</span></p>
+          <p class="card-desc">Koontiraportissa verrataan tuloksia edelliseen mittaukseen. <mark class="vahvista">[VAHVISTA: vertailu ryhmätasolla]</mark></p>
+          <div class="incl">
+            <p class="incl-label">Hinta sisältää:</p>
+            <ul class="checks">
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Kehon kuntoindeksi jokaiselle osallistujalle</span></li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>kirjallinen yhteenveto ja vertailu omiin aiempiin tuloksiin</span></li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>ryhmätason vertailuraportti yritykselle</span></li>
+            </ul>
+          </div>
+          <p class="price"><mark class="vahvista">[VAHVISTA: 55&nbsp;€/mitattu, alv&nbsp;0&nbsp;%]</mark></p>
+          <div class="card-metas">
+            <p class="card-meta">Vähimmäisryhmä: <mark class="vahvista">[VAHVISTA: 15 henkeä]</mark></p>
+          </div>
+          <a class="btn btn-primary" href="#tarjouspyynto" data-package="uusintamittaus">Pyydä tarjous</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Esimerkkiaikataulu -->
+  <section class="section section--tint" aria-labelledby="h-aika">
+    <div class="wrap">
+      <h2 id="h-aika">Esimerkkiaikataulu: 100 henkeä kolmena toimistopäivänä</h2>
+      <p class="lead-in">Kun mittaustiimi mittaa 20 henkeä kahdessa tunnissa <mark class="vahvista">[VAHVISTA: 2 mittauspistettä]</mark>, sata henkeä mahtuu kolmelle toimistopäivälle.</p>
+
+      <div class="panel aj-wide">
+        <table class="aikajana">
+          <caption class="sr-only">Esimerkkiaikataulu: 100 henkeä kolmena toimistopäivänä</caption>
+          <colgroup><col class="c-day"><col><col><col><col><col><col class="c-n"></colgroup>
+          <thead>
+            <tr>
+              <td></td>
+              <th scope="col">9.00</th><th scope="col">10.00</th><th scope="col">11.00</th><th scope="col">12.00</th><th scope="col">13.00</th>
+              <td></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Tiistai</th>
+              <td class="bar-cell" colspan="2"><span class="blk">klo 9.00–11.00</span></td>
+              <td></td>
+              <td class="bar-cell" colspan="2"><span class="blk">klo 12.00–14.00</span></td>
+              <td class="n">40 henkeä</td>
+            </tr>
+            <tr>
+              <th scope="row">Keskiviikko</th>
+              <td class="bar-cell" colspan="2"><span class="blk">klo 9.00–11.00</span></td>
+              <td></td>
+              <td class="bar-cell" colspan="2"><span class="blk">klo 12.00–14.00</span></td>
+              <td class="n">40 henkeä</td>
+            </tr>
+            <tr>
+              <th scope="row">Torstai</th>
+              <td class="bar-cell" colspan="2"><span class="blk">klo 9.00–11.00</span></td>
+              <td></td><td></td><td></td>
+              <td class="n">20 henkeä</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel aj-narrow">
+        <ol class="track">
+          <li><span class="day">Tiistai</span><span class="times">klo 9.00–11.00 ja 12.00–14.00</span><span class="count">40 henkeä</span></li>
+          <li><span class="day">Keskiviikko</span><span class="times">klo 9.00–11.00 ja 12.00–14.00</span><span class="count">40 henkeä</span></li>
+          <li><span class="day">Torstai</span><span class="times">klo 9.00–11.00</span><span class="count">20 henkeä</span></li>
+        </ol>
+      </div>
+
+      <p class="aj-after">Ajat sovitetaan toimistopäiviinne, ja jokainen varaa itselleen sopivan ajan suoraan meiltä. <mark class="vahvista">[VAHVISTA: sähköinen varauslinkki]</mark></p>
+
+      <div class="tyky">
+        <h3 id="h-tyky">Tyky-päivä kampuksella</h3>
+        <div class="panel tyky-list">
+          <ol class="track" aria-labelledby="h-tyky">
+            <li><time datetime="08:30">klo 8.30</time><span>Aamiainen</span></li>
+            <li><time datetime="09:15">klo 9.15</time><span>Luento (90 min)</span></li>
+            <li><time datetime="11:00">klo 11.00</time><span>Lounas</span></li>
+            <li><time datetime="12:00">klo 12.00</time><span>Ohjattu aktiviteetti (90 min)</span></li>
+            <li><time datetime="13:30">klo 13.30</time><span>Iltapäiväkahvi</span></li>
+          </ol>
+        </div>
+        <p class="aj-after">Kuntokartoitukset tehdään päivän aikana luennon ja aktiviteetin lomassa. <mark class="vahvista">[VAHVISTA: 10&nbsp;min/hlö, vuorotellen]</mark></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Aktiviteetit tyky-päivään -->
+  <section class="section" aria-labelledby="h-akt">
+    <div class="wrap">
+      <h2 id="h-akt">Aktiviteetit tyky-päivään</h2>
+      <p class="lead-in">Ohjatut aktiviteetit kestävät 1–2 tuntia. Valitkaa kaksi rinnakkaista vaihtoehtoa, yksi rauhallinen ja yksi reippaampi, niin päivään voi osallistua eri kuntoisina.</p>
+      <ul class="acts">
+        <li class="act"><p class="act-name">Rentoutus tai äänimaljarentoutus</p><p>Kisakallio tai Pajulahti</p><p class="level"><span class="lvl">Kevyt</span> <mark class="vahvista">[VAHVISTA: 40&nbsp;% maksimisykkeestä]</mark></p></li>
+        <li class="act"><p class="act-name">Karnaistenkorven luontopolku</p><p>Kisakallio</p><p class="level"><span class="lvl">Kevyt</span> <mark class="vahvista">[VAHVISTA: 55&nbsp;% maksimisykkeestä]</mark></p></li>
+        <li class="act"><p class="act-name">Kehonhuolto</p><p>Kisakallio</p><p class="level"><span class="lvl">Kevyt</span> <mark class="vahvista">[VAHVISTA: 45&nbsp;% maksimisykkeestä]</mark></p></li>
+        <li class="act"><p class="act-name">Jousiammunta</p><p>Kisakallio tai Pajulahti, Pajulahdessa enintään 24 henkeä</p><p class="level"><span class="lvl">Kevyt</span> <mark class="vahvista">[VAHVISTA: 50&nbsp;% maksimisykkeestä]</mark></p></li>
+        <li class="act"><p class="act-name">Curling</p><p>Kisakallio, 4–16 henkeä</p><p class="level"><span class="lvl">Kohtalainen</span> <mark class="vahvista">[VAHVISTA: 65&nbsp;% maksimisykkeestä]</mark></p></li>
+        <li class="act"><p class="act-name">Paralajien kokeilu</p><p>Pajulahti, enintään 36 henkeä</p><p class="level"><span class="lvl">Kohtalainen</span> <mark class="vahvista">[VAHVISTA: 70&nbsp;% maksimisykkeestä]</mark></p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 9. Saapuminen -->
+  <section class="section section--tint" aria-labelledby="h-saap">
+    <div class="wrap">
+      <h2 id="h-saap">Saapuminen</h2>
+      <div class="arrive">
+        <div>
+          <div class="kuva kuva--169" role="img" aria-label="[KUVA: liikuntafysiologi mittaa työntekijän puristusvoimaa asiakkaan neuvotteluhuoneessa]">
+            <svg class="i" aria-hidden="true"><use href="#i-image"/></svg>
+            <span aria-hidden="true">[KUVA: liikuntafysiologi mittaa työntekijän puristusvoimaa asiakkaan neuvotteluhuoneessa]</span>
+          </div>
+          <h3>Mittaus työpaikallanne</h3>
+          <p>Mittaustiimi tuo laitteet mukanaan. Tarvitsemme rauhallisen huoneen, jossa osallistujat mitataan yksi kerrallaan. <mark class="vahvista">[VAHVISTA: vähintään 20&nbsp;m²]</mark></p>
+        </div>
+        <div>
+          <img class="photo" src="https://www.kolmekampusta.fi/sites/default/files/styles/16_9_704x396_focal_point_webp/public/2026-10/kisakallio-lohja.png.webp?h=53d3e97a&amp;itok=74HXimxx" width="704" height="396" alt="Ilmakuva Kisakallion kampuksesta Lohjalla: urheilukenttiä ja rakennuksia metsän keskellä, taustalla Lohjanjärvi." loading="lazy" decoding="async">
+          <h3>Kisakallio, Lohja</h3>
+          <p>Kaarina Karin tie 4, 08360 Lohja. Ajomatka Helsingin keskustasta on noin tunti. Kisakallioon ei pääse kätevästi julkisilla liikennevälineillä, joten suosittelemme autoa tai tilausbussia. <mark class="vahvista">[VAHVISTA: 690&nbsp;€/ryhmä, alv&nbsp;0&nbsp;%]</mark></p>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Kaarina+Karin+tie+4%2C+08360+Lohja">Avaa Kisakallio kartalla</a>
+        </div>
+        <div>
+          <img class="photo" src="https://www.kolmekampusta.fi/sites/default/files/styles/16_9_704x396_focal_point_webp/public/2025-06/pajulahti_ilmakuva_ns_web_0869.jpg.webp?h=8b7966f8&amp;itok=XDV21pc-" width="704" height="396" alt="Ilmakuva Pajulahden kampuksesta: rakennuksia ja urheilukenttiä metsässä järven rannalla." loading="lazy" decoding="async">
+          <h3>Pajulahti, Lahden Nastola</h3>
+          <p>Pajulahdentie 167, 15560 Nastola. Ajomatka Lahden keskustasta on noin 20 minuuttia. Lahden matkakeskukselta kulkee bussi 11 kerran tunnissa, ja matka kestää noin 35 minuuttia. <mark class="vahvista">[VAHVISTA: voimassa 1.1.2027 alk.]</mark> Pysäköinti on maksutonta.</p>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Pajulahdentie+167%2C+15560+Nastola">Avaa Pajulahti kartalla</a>
+        </div>
+      </div>
+      <p class="section-cta"><a class="btn btn-primary" href="#tarjouspyynto">Pyydä tarjous</a></p>
+    </div>
+  </section>
+
+  <!-- 10. Usein kysyttyä -->
+  <section class="section" aria-labelledby="h-faq">
+    <div class="wrap">
+      <h2 id="h-faq">Usein kysyttyä</h2>
+      <div class="faq">
+        <details>
+          <summary>Kuka näkee tulokset?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <div class="ans"><p>Jokainen osallistuja näkee vain omat tuloksensa. Yritys saa ryhmätason koontiraportin, jossa ei eritellä tiimejä, ja vain kun mitattuja on vähintään <mark class="vahvista">[VAHVISTA: 8]</mark>. <mark class="vahvista">[VAHVISTA: hyväksytty 9.11.2026]</mark></p></div>
+        </details>
+        <details>
+          <summary>Onko osallistuminen vapaaehtoista?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <div class="ans"><p>Kyllä. Jokainen päättää itse, osallistuuko. Työnantajalle ei kerrota, kuka osallistui. <mark class="vahvista">[VAHVISTA: hyväksytty 9.11.2026]</mark></p></div>
+        </details>
+        <details>
+          <summary>Sopiiko mittaus kaikille kuntotasoille?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <div class="ans"><p>Kyllä. Mittauksessa ei kilpailla, eikä aiempaa liikuntaharrastusta tarvita. <mark class="vahvista">[VAHVISTA: kevyt, noin 10 min]</mark> Kehonkoostumusmittaus ei sovi esimerkiksi sydämentahdistimen käyttäjille tai raskaana oleville, joten jokainen vastaa ennen mittausta lyhyeen terveyskyselyyn. <mark class="vahvista">[VAHVISTA: kysely 8 kysymystä]</mark></p></div>
+        </details>
+        <details>
+          <summary>Miten tämä eroaa työterveyshuollon tarkastuksesta?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <div class="ans"><p>Kuntokartoitus kertoo kunnosta ja kehonkoostumuksesta. Se ei ole terveystarkastus eikä korvaa työterveyshuoltoa. Tulokset annetaan vain työntekijälle itselleen, ja hän voi halutessaan viedä ne työterveyshuoltoon. <mark class="vahvista">[VAHVISTA: hyväksytty 9.11.2026]</mark></p></div>
+        </details>
+        <details>
+          <summary>Voiko mittauksen jakaa usealle päivälle?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <div class="ans"><p>Kyllä. Mittausajat voi jakaa niille päiville, kun henkilöstö on toimistolla. Katso esimerkkiaikataulu yllä.</p></div>
+        </details>
+        <details>
+          <summary>Muuttaako yksi mittaus mitään?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <div class="ans"><p>Yksi mittaus kertoo lähtötason. Kun mittaus uusitaan vuoden päästä, koontiraportista näkee, mihin suuntaan on menty. <mark class="vahvista">[VAHVISTA: vertailu ryhmätasolla]</mark></p></div>
+        </details>
+        <details>
+          <summary>Sisältävätkö hinnat arvonlisäveron?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <div class="ans"><p>Ilmoitamme hinnat arvonlisäverottomina (alv 0 %). <mark class="vahvista">[VAHVISTA: vahvistettu 10.11.2026]</mark> Majoitukseen, ravintola- ja ateriapalveluihin, ohjattuun liikuntaan ja liikuntatilojen käyttöön sovelletaan 13,5 %:n verokantaa. Esimerkiksi valmennukseen, opetukseen, testaukseen, elämyspalveluihin ja alkoholijuomiin sovelletaan 25,5 %:n verokantaa. Tarjouksessa näkyy verokantojen erittely. <mark class="vahvista">[VAHVISTA: rivikohtainen erittely]</mark></p></div>
+        </details>
+        <details>
+          <summary>Voiko seurantatestit maksaa liikuntaedulla?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <div class="ans"><p>Yrityksen tilaama kuntokartoitus laskutetaan yritykseltä. Työntekijä voi halutessaan maksaa omat yksittäiset seurantatestinsä Pajulahdessa liikuntaedulla (Smartum, Epassi, Edenred).</p></div>
+        </details>
+        <details>
+          <summary>Onko tyky-päivä työntekijöille verovapaa?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <div class="ans">
+            <p>Verohallinnon ohjeen mukaan: ”Työnantajan järjestämä tavanomainen ja kohtuullinen, koko henkilökunnalle suunnattu virkistys- ja harrastustoiminta on työntekijöille verovapaa etu.” Oman organisaationne verokohtelun varmistaa kirjanpitäjänne.</p>
+            <p><a href="https://www.vero.fi/syventavat-vero-ohjeet/ohje-hakusivu/62486/henkilokuntaedut-verotuksessa9/">Verohallinnon ohje: Henkilökuntaedut verotuksessa</a></p>
+          </div>
+        </details>
+        <details>
+          <summary>Mitkä ovat peruutusehdot?<svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <div class="ans">
+            <p>Alle 50 hengen ryhmän vahvistetun varauksen perumisesta veloitamme käsittelymaksun 75&nbsp;€. Jos varaus perutaan 21–8 vuorokautta ennen tilaisuutta, veloitamme 50&nbsp;% tilaisuuden arvosta, ja jos 7–0 vuorokautta ennen, koko arvon. <mark class="vahvista">[VAHVISTA: voimassa 2027]</mark></p>
+            <p><a href="https://www.kolmekampusta.fi/fi/yritysasiakkaiden-jarjestojen-ja-rippileirien-varaus-ja-peruutusehdot">Varaus- ja peruutusehdot</a></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 + 12. Yhteyshenkilö ja lomake -->
+  <div class="section section--tint">
+    <div class="wrap cf-grid">
+
+      <section id="yhteyshenkilo" aria-labelledby="h-yhteys">
+        <h2 id="h-yhteys">Yhteyshenkilö</h2>
+        <div class="contact">
+          <div class="contact-top">
+            <div class="kuva-circle" role="img" aria-label="[KUVA: yhteyshenkilön kasvokuva]"><svg class="i" aria-hidden="true"><use href="#i-image"/></svg></div>
+            <p class="kuva-label" aria-hidden="true">[KUVA: yhteyshenkilön kasvokuva]</p>
+          </div>
+          <h3>[Etunimi Sukunimi]</h3>
+          <p class="contact-title">avainasiakasvastaava, Kisakallio</p>
+          <ul class="contact-list">
+            <li><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span><mark class="vahvista">[VAHVISTA: 040&nbsp;123&nbsp;4567]</mark></span></li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><span class="mail">etunimi.sukunimi<wbr>@kolmekampusta.fi</span></li>
+          </ul>
+          <p>Vastaan tarjouspyyntöihin kahden arkipäivän kuluessa.</p>
+          <p>Myyntipalvelu <a href="tel:+358447755777">044&nbsp;77&nbsp;55&nbsp;777</a>, arkisin klo 9.00–16.00</p>
+        </div>
+      </section>
+
+      <section id="tarjouspyynto" aria-labelledby="h-lomake">
+        <h2 id="h-lomake">Pyydä tarjous kuntokartoituksesta</h2>
+        <p class="lead-in">Kerro arvio mitattavien määrästä ja toivottu ajankohta, niin lähetämme tarjouksen ja esimerkin koontiraportista. <mark class="vahvista">[VAHVISTA: valmis 12.11.2026]</mark></p>
+        <div class="form-panel">
+
+          <div class="success" id="success" role="status" hidden>
+            <div class="success-head">
+              <svg class="i" aria-hidden="true"><use href="#i-check-circle"/></svg>
+              <h3 id="success-title" tabindex="-1">Kiitos, tarjouspyyntö on lähetetty.</h3>
+            </div>
+            <p>[Etunimi Sukunimi] vastaa osoitteeseen <span id="success-email"></span> kahden arkipäivän kuluessa. Kiireellisissä asioissa soita <a href="tel:+358447755777">044&nbsp;77&nbsp;55&nbsp;777</a> (arkisin klo 9.00–16.00).</p>
+            <p>Konseptiluonnos: tietoja ei lähetetty minnekään.</p>
+          </div>
+
+          <form id="lomake" novalidate>
+            <div class="error-summary" id="error-summary" role="alert" tabindex="-1" aria-labelledby="summary-title" hidden>
+              <h3 id="summary-title" data-one="Tarkista 1 kenttä:" data-many="Tarkista [n] kenttää:">Tarkista [n] kenttää:</h3>
+              <ul id="summary-list"></ul>
+            </div>
+
+            <input type="hidden" name="campaign_id" value="2026-11-S2-kuntokartoitus">
+            <input type="hidden" name="page_path" value="/fi/yritykset/kuntokartoitus-tyopaikalla">
+            <input type="hidden" name="campus" value="työpaikalla">
+            <input type="hidden" name="occasion" value="kuntokartoitus">
+            <input type="hidden" name="package" id="f-package" value="">
+            <input type="hidden" name="form_variant" value="A">
+
+            <p class="req-legend">Tähdellä (*) merkityt kentät ovat pakollisia.</p>
+
+            <div class="field">
+              <label for="f-nimi">Nimi <span aria-hidden="true">*</span></label>
+              <input type="text" id="f-nimi" name="name" autocomplete="name" required aria-required="true">
+              <p class="err" id="e-nimi-empty" hidden><svg class="i" aria-hidden="true"><use href="#i-alert"/></svg><span>Nimi puuttuu. Kirjoita etu- ja sukunimesi.</span></p>
+            </div>
+
+            <div class="field">
+              <label for="f-email">Sähköpostiosoite <span aria-hidden="true">*</span></label>
+              <p class="helper" id="h-email">Lähetämme tarjouksen tähän osoitteeseen.</p>
+              <input type="email" id="f-email" name="email" autocomplete="email" required aria-required="true" aria-describedby="h-email" data-desc="h-email">
+              <p class="err" id="e-email-empty" hidden><svg class="i" aria-hidden="true"><use href="#i-alert"/></svg><span>Sähköpostiosoite puuttuu. Kirjoita osoite muodossa nimi@yritys.fi.</span></p>
+              <p class="err" id="e-email-invalid" hidden><svg class="i" aria-hidden="true"><use href="#i-alert"/></svg><span>Sähköpostiosoite on puutteellinen. Tarkista, että siinä on @-merkki ja verkkotunnus, esim. nimi@yritys.fi.</span></p>
+            </div>
+
+            <div class="field">
+              <label for="f-org">Organisaatio <span aria-hidden="true">*</span></label>
+              <p class="helper" id="h-org">Yrityksen nimi</p>
+              <input type="text" id="f-org" name="organisation" autocomplete="organization" required aria-required="true" aria-describedby="h-org" data-desc="h-org">
+              <p class="err" id="e-org-empty" hidden><svg class="i" aria-hidden="true"><use href="#i-alert"/></svg><span>Organisaation nimi puuttuu. Kirjoita yrityksen nimi.</span></p>
+            </div>
+
+            <div class="field">
+              <label for="f-maara">Arvioitu mitattavien määrä <span aria-hidden="true">*</span></label>
+              <p class="helper" id="h-maara">Arvio riittää, esim. 60.</p>
+              <input type="text" id="f-maara" name="measured_count" inputmode="numeric" required aria-required="true" aria-describedby="h-maara" data-desc="h-maara">
+              <p class="err" id="e-maara-empty" hidden><svg class="i" aria-hidden="true"><use href="#i-alert"/></svg><span>Mitattavien määrä puuttuu. Kirjoita arvio numeroina, esim. 60.</span></p>
+              <p class="err" id="e-maara-invalid" hidden><svg class="i" aria-hidden="true"><use href="#i-alert"/></svg><span>Kirjoita mitattavien määrä numeroina, esim. 60 tai 50–70.</span></p>
+            </div>
+
+            <div class="field">
+              <label for="f-aika">Toivottu ajankohta <span aria-hidden="true">*</span></label>
+              <p class="helper" id="h-aika-f">Esim. kevät 2027, maaliskuu 2027 tai kaksi vaihtoehtoista viikkoa</p>
+              <input type="text" id="f-aika" name="preferred_time" required aria-required="true" aria-describedby="h-aika-f" data-desc="h-aika-f">
+              <p class="err" id="e-aika-empty" hidden><svg class="i" aria-hidden="true"><use href="#i-alert"/></svg><span>Ajankohta puuttuu. Kirjoita kuukausi tai viikot, esim. maaliskuu 2027.</span></p>
+            </div>
+
+            <fieldset class="field">
+              <legend>Missä mittaus tehdään?</legend>
+              <label class="opt"><input type="radio" name="location" value="tyopaikalla"><span>Työpaikallamme</span></label>
+              <label class="opt"><input type="radio" name="location" value="kisakallio"><span>Kisakalliossa</span></label>
+              <label class="opt"><input type="radio" name="location" value="pajulahti"><span>Pajulahdessa</span></label>
+              <label class="opt"><input type="radio" name="location" value="ei-paatetty"><span>Emme ole vielä päättäneet</span></label>
+            </fieldset>
+
+            <div class="field">
+              <label for="f-puh">Puhelinnumero (vapaaehtoinen)</label>
+              <p class="helper" id="h-puh">Soitamme vain, jos se nopeuttaa tarjousta.</p>
+              <input type="tel" id="f-puh" name="phone" autocomplete="tel" aria-describedby="h-puh" data-desc="h-puh">
+              <p class="err" id="e-puh-invalid" hidden><svg class="i" aria-hidden="true"><use href="#i-alert"/></svg><span>Puhelinnumerossa on kirjaimia tai muita merkkejä. Kirjoita numero muodossa 040 123 4567 tai +358 40 123 4567.</span></p>
+            </div>
+
+            <div class="field">
+              <label for="f-toive">Mitä haluatte mittauksesta saada? (vapaaehtoinen)</label>
+              <p class="helper" id="h-toive">Esim. useammalle päivälle jaetut mittausajat tai tyky-päivä samaan yhteyteen</p>
+              <textarea id="f-toive" name="notes" rows="4" aria-describedby="h-toive"></textarea>
+            </div>
+
+            <div class="field">
+              <label class="opt opt--check"><input type="checkbox" name="newsletter" value="yes"><span>Haluan saada Kolmen kampuksen urheiluopiston yritysasiakkaiden uutiskirjeen. Voin perua tilauksen milloin tahansa.</span></label>
+            </div>
+
+            <div class="hp" aria-hidden="true">
+              <label for="f-hp">Jätä tämä kenttä tyhjäksi</label>
+              <input type="text" id="f-hp" name="hp_url" tabindex="-1" autocomplete="off">
+            </div>
+
+            <p class="reply-line">Vastaamme kahden arkipäivän kuluessa. Kiireellisissä asioissa soita <a href="tel:+358447755777">044&nbsp;77&nbsp;55&nbsp;777</a> (arkisin klo 9.00–16.00).</p>
+            <div class="submit-row">
+              <button class="btn btn-primary" type="submit">Lähetä tarjouspyyntö</button>
+              <p class="privacy-line">Käytämme tietoja tarjouspyyntösi käsittelyyn. Lue <a href="#tietosuoja">tietosuojaseloste</a>.</p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- 13. Miksi sain tämän viestin? -->
+  <section class="prose-section" id="miksi-sain-viestin" aria-labelledby="h-miksi">
+    <div class="wrap">
+      <h2 id="h-miksi">Miksi sain tämän viestin?</h2>
+      <div class="measure">
+        <p>Sait viestin, koska tehtäväsi liittyy henkilöstön hyvinvointiin. Yhteystietosi on saatu yrityksenne verkkosivuilta tai muusta lähteestä, jonka tarkka nimi ja päivämäärä on mainittu saamassasi viestissä. Henkilötietojen rekisterinpitäjä on Kolmen kampuksen urheiluopisto oy. Käsittelemme tietoja oikeutetun edun perusteella yritysmyyntiä varten ja poistamme ne <mark class="vahvista">[VAHVISTA: 12 kuukauden]</mark> kuluttua viimeisestä yhteydenotosta, ellei yhteistyötä aloiteta.</p>
+        <p>Voit milloin tahansa kieltää yhteystietojesi käytön suoramarkkinointiin vastaamalla saamaasi viestiin ”ei kiitos” tai kirjoittamalla osoitteeseen <mark class="vahvista">[VAHVISTA: tietosuoja@esimerkki.fi]</mark>.</p>
+        <p>Lisätietoja: Markkinointi- ja asiakasrekisterin tietosuojaseloste <mark class="vahvista">[VAHVISTA: esimerkki.fi/rekisteri]</mark></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. Tietosuojaseloste: tarjouspyyntö -->
+  <section class="prose-section" id="tietosuoja" aria-labelledby="h-tietosuoja">
+    <div class="wrap">
+      <h2 id="h-tietosuoja">Tietosuojaseloste: tarjouspyyntö</h2>
+      <ul class="privacy-list">
+        <li><strong>Rekisterinpitäjä:</strong> Kolmen kampuksen urheiluopisto oy, Y-tunnus 3250102-9. Yhteys tietosuoja-asioissa: <mark class="vahvista">[VAHVISTA: tietosuoja@esimerkki.fi]</mark></li>
+        <li><strong>Mihin tietoja käytetään:</strong> Tarjouspyyntösi käsittelyyn, tarjoukseen ja siihen liittyvään yhteydenpitoon.</li>
+        <li><strong>Peruste:</strong> Sopimusta edeltävät toimenpiteet, joihin ryhdymme pyynnöstäsi. <mark class="vahvista">[VAHVISTA: art. 6(1)(b)]</mark> Uutiskirje lähetetään vain suostumuksella, jonka voit perua milloin tahansa.</li>
+        <li><strong>Säilytys:</strong> <mark class="vahvista">[VAHVISTA: 12 kuukautta pyynnöstä]</mark>, ellei tarjouksesta synny sopimusta.</li>
+        <li><strong>Vastaanottajat:</strong> Asiakkuudenhallinnan palveluntarjoaja <mark class="vahvista">[VAHVISTA: Esimerkki CRM Oy]</mark>. Tietoja ei luovuteta markkinointiin.</li>
+        <li><strong>Oikeutesi:</strong> Voit pyytää omat tietosi nähtäväksi, oikaistavaksi tai poistettavaksi ja tehdä valituksen tietosuojavaltuutetulle.</li>
+      </ul>
+      <p>Koko tietosuojaseloste <mark class="vahvista">[VAHVISTA: esimerkki.fi/tietosuoja]</mark></p>
+    </div>
+  </section>
+
+</main>
+
+<!-- 15. Footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <address>
+      <p>Kolmen kampuksen urheiluopisto oy · Y-tunnus 3250102-9 · Kotipaikka Lahti · Postiosoite Pajulahdentie 167, 15560 Nastola</p>
+      <p>Kisakallio: Kaarina Karin tie 4, 08360 Lohja · Pajulahti: Pajulahdentie 167, 15560 Nastola</p>
+      <p>Myyntipalvelu <a href="tel:+358447755777">044&nbsp;77&nbsp;55&nbsp;777</a> (arkisin klo 9.00–16.00) · <a href="mailto:sales.kisakallio@kolmekampusta.fi">sales.kisakallio@kolmekampusta.fi</a> · <a href="mailto:sales.pajulahti@kolmekampusta.fi">sales.pajulahti@kolmekampusta.fi</a></p>
+    </address>
+    <ul class="foot-links">
+      <li><a href="#tietosuoja">Tietosuojaseloste</a></li>
+      <li><a href="https://www.kolmekampusta.fi/fi/yritysasiakkaiden-jarjestojen-ja-rippileirien-varaus-ja-peruutusehdot">Varaus- ja peruutusehdot</a></li>
+      <li>Saavutettavuusseloste <mark class="vahvista">[VAHVISTA: esimerkki.fi/esteeton]</mark></li>
+      <li>Evästeet: tämä konseptiluonnos ei käytä evästeitä.</li>
+    </ul>
+    <div class="foot-credit">
+      <p>Kuvat: Kolmen kampuksen urheiluopisto, kolmekampusta.fi. Kuvia käytetään tässä konseptiluonnoksessa vain havainnollistamiseen.</p>
+      <p class="foot-label">Konseptiluonnos – ei julkaistu.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- 16. Sticky mobile bar -->
+<div class="sticky-bar" id="sticky-bar">
+  <a class="btn btn-primary" href="#tarjouspyynto">Pyydä tarjous</a>
+  <a class="btn btn-secondary" href="tel:+358447755777" aria-label="Soita myyntipalveluun 044 77 55 777"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>Soita</a>
+</div>
+
+<script>
+(function () {
+  var form = document.getElementById('lomake');
+  var pkg = document.getElementById('f-package');
+  var summary = document.getElementById('error-summary');
+  var summaryTitle = document.getElementById('summary-title');
+  var summaryList = document.getElementById('summary-list');
+  var success = document.getElementById('success');
+
+  document.querySelectorAll('[data-package]').forEach(function (el) {
+    el.addEventListener('click', function () { pkg.value = el.getAttribute('data-package'); });
+  });
+
+  var FIELDS = [
+    { id: 'f-nimi', err: { empty: 'e-nimi-empty' },
+      test: function (v) { return v ? null : 'empty'; } },
+    { id: 'f-email', err: { empty: 'e-email-empty', invalid: 'e-email-invalid' },
+      test: function (v) { return !v ? 'empty' : (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) ? null : 'invalid'); } },
+    { id: 'f-org', err: { empty: 'e-org-empty' },
+      test: function (v) { return v ? null : 'empty'; } },
+    { id: 'f-maara', err: { empty: 'e-maara-empty', invalid: 'e-maara-invalid' },
+      test: function (v) { return !v ? 'empty' : (/^\d+(\s*[–-]\s*\d+)?$/.test(v) ? null : 'invalid'); } },
+    { id: 'f-aika', err: { empty: 'e-aika-empty' },
+      test: function (v) { return v ? null : 'empty'; } },
+    { id: 'f-puh', err: { invalid: 'e-puh-invalid' },
+      test: function (v) { return !v || /^[0-9 +()\-]*[0-9][0-9 +()\-]*$/.test(v) ? null : 'invalid'; } }
+  ];
+  var errors = {};
+
+  function validate(f) {
+    var input = document.getElementById(f.id);
+    var wrap = input.closest('.field');
+    var kind = f.test(input.value.trim());
+    Object.keys(f.err).forEach(function (k) { document.getElementById(f.err[k]).hidden = true; });
+    wrap.classList.remove('has-error');
+    input.removeAttribute('aria-invalid');
+    var desc = input.getAttribute('data-desc');
+    if (desc) input.setAttribute('aria-describedby', desc); else input.removeAttribute('aria-describedby');
+    if (kind) {
+      var msg = document.getElementById(f.err[kind]);
+      msg.hidden = false;
+      wrap.classList.add('has-error');
+      input.setAttribute('aria-invalid', 'true');
+      input.setAttribute('aria-describedby', (desc ? desc + ' ' : '') + msg.id);
+      errors[f.id] = f.err[kind];
+    } else {
+      delete errors[f.id];
+    }
+    return kind;
+  }
+
+  function renderSummary(moveFocus) {
+    var ids = FIELDS.filter(function (f) { return errors[f.id]; });
+    summaryList.textContent = '';
+    if (!ids.length) { summary.hidden = true; return; }
+    summaryTitle.textContent = ids.length === 1
+      ? summaryTitle.getAttribute('data-one')
+      : summaryTitle.getAttribute('data-many').replace('[n]', ids.length);
+    ids.forEach(function (f) {
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + f.id;
+      a.textContent = document.getElementById(errors[f.id]).querySelector('span').textContent;
+      a.addEventListener('click', function (e) { e.preventDefault(); document.getElementById(f.id).focus(); });
+      li.appendChild(a);
+      summaryList.appendChild(li);
+    });
+    summary.hidden = false;
+    if (moveFocus) summary.focus();
+  }
+
+  FIELDS.forEach(function (f) {
+    document.getElementById(f.id).addEventListener('input', function () {
+      if (errors[f.id]) { validate(f); renderSummary(false); }
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var hasErrors = false;
+    FIELDS.forEach(function (f) { if (validate(f)) hasErrors = true; });
+    if (hasErrors) { renderSummary(true); return; }
+    summary.hidden = true;
+    document.getElementById('success-email').textContent = document.getElementById('f-email').value.trim();
+    form.hidden = true;
+    success.hidden = false;
+    document.getElementById('success-title').focus();
+  });
+
+  var bar = document.getElementById('sticky-bar');
+  var heroCta = document.getElementById('hero-cta');
+  var formSection = document.getElementById('tarjouspyynto');
+  if (bar && 'IntersectionObserver' in window) {
+    var heroGone = false, formInView = false;
+    var update = function () { bar.classList.toggle('is-visible', heroGone && !formInView); };
+    new IntersectionObserver(function (entries) {
+      var en = entries[entries.length - 1];
+      heroGone = !en.isIntersecting && en.boundingClientRect.top < 0;
+      update();
+    }).observe(heroCta);
+    new IntersectionObserver(function (entries) {
+      formInView = entries[entries.length - 1].isIntersecting;
+      update();
+    }).observe(formSection);
+  }
+})();
+</script>
+</body>
+</html>

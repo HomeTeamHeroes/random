@@ -1,0 +1,1164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Training camps in Finland | Three-Campus Sports Institute</title>
+<meta name="description" content="Training camps at Pajulahti, Finland: training, testing and recovery on one campus, about an hour and a half from Helsinki Airport. Request a camp proposal.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 12'%3E%3Ccircle cx='6' cy='6' r='5' fill='%2394A67C'/%3E%3Ccircle cx='16' cy='6' r='5' fill='%23486499'/%3E%3Ccircle cx='26' cy='6' r='5' fill='%23A18BB6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@600;700;800&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  /* text */
+  --ink: #0A0A0A;            /* all body text on light */
+  --on-dark: #FFFFFF;        /* all text on navy / ink */
+  /* brand */
+  --navy: #1F2C53;           /* headings, primary buttons, dark bands */
+  --blue: #486499;           /* logo dot 1; page A accent; links on light allowed (5.5:1) */
+  --green: #94A67C;          /* logo dot 2; page B accent – CHROME ONLY on light (2.5:1) */
+  --violet: #A18BB6;         /* logo dot 3; page C accent – CHROME ONLY on light (2.9:1) */
+  --green-strong: #6B7F52;   /* meaningful non-text graphics on light, page B (4.1:1) */
+  --violet-strong: #7A5F96;  /* meaningful non-text graphics on light, page C (5.1:1) */
+  /* surfaces */
+  --paper: #F6F8F8;          /* page background (3K) */
+  --surface: #FFFFFF;        /* cards, form */
+  --tint-a: #E8EDF6;         /* page A section tint */
+  --tint-b: #EEF1E8;         /* page B section tint */
+  --tint-c: #F1EDF5;         /* page C section tint */
+  /* chrome */
+  --rule: #C9D1DC;           /* dividers, card borders (decorative) */
+  --field: #5E6B7E;          /* input borders, radio/checkbox outlines (5.1:1 on paper) */
+  /* states */
+  --focus: #1F2C53;          /* focus ring on light */
+  --focus-on-dark: #FFE58A;  /* focus ring on navy / ink */
+  --error: #B3261E;          /* error text + icon (6.5:1 on white) */
+  --error-bg: #FDECEA;
+  --success: #1E6B3A;        /* success icon/border; success text stays --ink */
+  --success-bg: #E6F2EA;
+  /* placeholders */
+  --vahvista-bg: #FFE58A;    /* [VAHVISTA: …] chip */
+  --vahvista-border: #8A6D00;
+  --kuva-bg: #FFF6CC;        /* [KUVA: …] image placeholder block */
+  /* per-page accent: set ONE of these on <body> */
+  --accent: var(--blue);           /* page A */
+  /* --accent: var(--green);       page B */
+  /* --accent: var(--violet);      page C */
+  --accent-strong: var(--blue);    /* A: --blue · B: --green-strong · C: --violet-strong */
+  --tint: var(--tint-a);           /* A: --tint-a · B: --tint-b · C: --tint-c */
+}
+:root {
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px;
+  --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px;
+  --gutter: 16px;            /* ≤ 600 px; 32px from 601; 48px from 1024 */
+  --container: 1200px;       /* content max width; page bg runs full width */
+  --measure: 68ch;
+  --radius-card: 10px; --radius-field: 8px; --radius-pill: 999px; --radius-chip: 4px;
+  --tap: 48px;               /* min height of buttons; links/targets ≥ 44 × 44 */
+  --shadow-card: 0 1px 2px rgba(31,44,83,.08), 0 4px 16px rgba(31,44,83,.06); /* chrome only */
+}
+:root {
+  --f-body: "Barlow", "Segoe UI", Arial, sans-serif;
+  --f-cond: "Barlow Semi Condensed", "Arial Narrow", "Segoe UI", sans-serif;
+}
+body {
+  --accent: var(--blue);
+  --accent-strong: var(--blue);
+  --tint: var(--tint-a);
+}
+@media (min-width: 601px)  { :root { --gutter: 32px; } }
+@media (min-width: 1024px) { :root { --gutter: 48px; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 16px; }
+@media (min-width: 768px) { html { scroll-padding-top: 72px; } }
+body {
+  margin: 0;
+  font: 400 18px/1.6 var(--f-body);
+  color: var(--ink);
+  background: var(--paper);
+}
+img { display: block; max-width: 100%; height: auto; }
+p { margin: 0 0 var(--s4); }
+ul, ol { margin: 0; padding: 0; }
+a { color: var(--navy); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: .18em; }
+a:hover { text-decoration-thickness: 3px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+#content:focus { outline: none; }
+h1, h2, h3 { margin: 0; font-family: var(--f-cond); color: var(--navy); text-wrap: balance; }
+h1 { font-weight: 800; font-size: 32px; line-height: 1.04; letter-spacing: -0.01em; }
+h2 { font-weight: 700; font-size: 28px; line-height: 1.1; margin-bottom: var(--s4); }
+h3 { font-weight: 700; font-size: 20px; line-height: 1.2; }
+@media (min-width: 601px)  { h1 { font-size: 42px; } h2 { font-size: 34px; } h3 { font-size: 22px; } }
+@media (min-width: 1024px) { h1 { font-size: 48px; } h2 { font-size: 38px; } }
+@media (min-width: 1280px) { h1 { font-size: 56px; } }
+mark { background: none; color: inherit; }
+.visually-hidden, .hp {
+  position: absolute !important; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;
+}
+.wrap {
+  width: 100%;
+  max-width: calc(var(--container) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.section { padding-block: var(--s7); }
+@media (min-width: 768px) { .section { padding-block: var(--s8); } }
+.band-tint { background: var(--tint); }
+.band-surface { background: var(--surface); }
+.on-dark { color: var(--on-dark); }
+.nw { white-space: nowrap; }
+.ic { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.intro { max-width: var(--measure); }
+
+/* skip link */
+.skip {
+  position: absolute; left: 8px; top: -100px; z-index: 200;
+  padding: 12px 20px; border-radius: 999px;
+  background: var(--navy); color: var(--on-dark);
+  font: 700 19px/1 var(--f-cond); text-decoration: none;
+}
+.skip:focus { top: 8px; outline: 3px solid var(--focus-on-dark); outline-offset: 0; box-shadow: 0 0 0 6px var(--navy); }
+
+/* placeholders */
+.vahvista {
+  display: inline;
+  background: var(--vahvista-bg); color: var(--ink);
+  border: 1px dashed var(--vahvista-border); border-radius: var(--radius-chip);
+  padding: 0 4px;
+  font-family: var(--f-body); font-weight: 600; font-size: .85em; line-height: 1.5;
+  white-space: normal; -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.kuva {
+  display: flex; align-items: center; gap: var(--s4);
+  background: var(--kuva-bg); border: 2px dashed var(--vahvista-border); border-radius: var(--radius-card);
+  padding: var(--s3) var(--s4);
+  font: 600 16px/1.4 var(--f-body); color: var(--ink);
+}
+.kuva .ic { width: 28px; height: 28px; }
+
+/* bar */
+.bar {
+  background: var(--ink); color: var(--vahvista-bg);
+  font: 600 14px/1.4 var(--f-body); text-align: center;
+  padding: 8px var(--s4);
+}
+@media (min-width: 768px) { .bar { position: sticky; top: 0; z-index: 100; } }
+
+/* header */
+.site-header { background: var(--surface); border-bottom: 1px solid var(--rule); }
+.hdr { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2px var(--s3); padding-block: 4px; min-height: 56px; }
+.brand { display: flex; flex: 1 1 0; min-width: 0; flex-wrap: wrap; align-items: center; gap: 4px var(--s3); }
+.dots { display: inline-flex; gap: 4px; flex: none; }
+.dots i { display: block; width: 10px; height: 10px; border-radius: 50%; }
+.dots i:nth-child(1) { background: var(--green); }
+.dots i:nth-child(2) { background: var(--blue); }
+.dots i:nth-child(3) { background: var(--violet); }
+.wordmark {
+  font: 700 15px/1.1 var(--f-cond); letter-spacing: .02em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+  display: inline-flex; align-items: center; min-height: 44px;
+}
+.campus { font: 600 16px/1 var(--f-cond); color: var(--navy); }
+.hdr-nav { display: none; }
+.hdr-nav ul { list-style: none; display: flex; gap: var(--s5); }
+.hdr-nav a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font: 600 16px/1.2 var(--f-body); color: var(--navy); text-decoration: none;
+}
+.hdr-nav a:hover, .hdr-nav a:focus-visible { text-decoration: underline; text-decoration-thickness: 2px; }
+.hdr-phone {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-width: 44px; min-height: 44px;
+  font: 600 17px/1 var(--f-cond); color: var(--navy); text-decoration: none; white-space: nowrap;
+}
+.hdr-phone .num { display: none; }
+@media (min-width: 768px) {
+  .wordmark { font-size: 18px; }
+  .campus { font-size: 18px; padding-left: var(--s3); border-left: 1px solid var(--rule); }
+  .hdr { gap: 0 var(--s5); padding-block: 8px; min-height: 64px; }
+  .brand { flex: 1 1 100%; }
+  .hdr-nav { display: block; margin-left: auto; }
+  .hdr-phone .num { display: inline; }
+  .hdr-phone { padding-inline: 4px; }
+}
+@media (min-width: 1024px) {
+  .hdr { flex-wrap: nowrap; }
+  .brand { flex: 0 1 auto; }
+  .hdr-nav { margin-left: auto; }
+  .hdr-nav ul { gap: var(--s5); }
+}
+
+/* buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: var(--tap); padding: 0 28px; border-radius: var(--radius-pill);
+  font: 700 19px/1.1 var(--f-cond); text-decoration: none; text-align: center; cursor: pointer;
+  border: 2px solid var(--navy);
+}
+.btn-primary { background: var(--navy); color: var(--on-dark); }
+.btn-primary:hover { background: #2E3F73; border-color: #2E3F73; }
+.btn-secondary { background: transparent; color: var(--navy); }
+.btn-secondary:hover { background: var(--tint); }
+.btn:hover { text-decoration: none; }
+.btn .ic { width: 22px; height: 22px; }
+
+/* hero */
+.hero { padding-block: var(--s4) var(--s6); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s4); }
+.eyebrow {
+  margin: 0 0 var(--s3);
+  font: 600 14px/1.3 var(--f-cond); letter-spacing: .08em; text-transform: uppercase; color: var(--navy);
+}
+.lead { max-width: 56ch; margin: 0; font-size: 17px; line-height: 1.5; }
+.hero-actions .btn-primary, .hero-actions .btn-secondary { width: 100%; }
+.cta-row { display: flex; flex-direction: column; gap: var(--s3); }
+.phone-block { display: flex; flex-direction: column; align-items: stretch; gap: 6px; }
+.hours { margin: 0; font: 500 15px/1.5 var(--f-body); text-align: center; }
+.reply { margin: var(--s4) 0 0; font: 500 16px/1.5 var(--f-body); max-width: 60ch; }
+.facts { list-style: none; display: grid; gap: 6px; padding: 0; margin: 0; }
+.facts li { display: flex; gap: var(--s3); align-items: flex-start; font: 600 16px/1.4 var(--f-body); }
+.fact { min-width: 0; padding-top: 3px; line-height: 1.35; }
+.vat-short { display: block; margin-top: 4px; font: 500 15px/1.5 var(--f-body); }
+.fic {
+  flex: none; display: grid; place-items: center;
+  width: 32px; height: 32px; border-radius: 50%; background: var(--tint); color: var(--navy);
+}
+.fic .ic { width: 22px; height: 22px; }
+.hero-photo { margin: 0; max-width: 560px; }
+.hero-photo img { width: 100%; border-radius: var(--radius-card); }
+@media (min-width: 601px) {
+  .hero { padding-block: var(--s6) var(--s7); }
+  .hero-grid {
+    gap: var(--s5);
+    grid-template-areas: "head" "lead" "facts" "actions" "photo";
+  }
+  .hero-head { grid-area: head; }
+  .lead { grid-area: lead; margin-top: calc(-1 * var(--s3)); font-size: 18px; line-height: 1.6; }
+  .facts { grid-area: facts; }
+  .hero-actions { grid-area: actions; }
+  .hero-photo { grid-area: photo; }
+  .eyebrow { font-size: 15px; }
+  .facts { gap: var(--s3); }
+  .facts li { font-size: 18px; }
+  .fic { width: 36px; height: 36px; }
+  .fic .ic { width: 24px; height: 24px; }
+  .cta-row { flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
+  .hero-actions .btn-primary, .hero-actions .btn-secondary { width: auto; }
+}
+@media (min-width: 768px) {
+  .facts { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr); gap: var(--s5); padding: var(--s5) 0 0; border-top: 1px solid var(--rule); }
+}
+@media (min-width: 1024px) {
+  .hero { padding-block: var(--s7) var(--s8); }
+  .hero-grid {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    grid-template-areas: "head photo" "lead photo" "actions photo" "facts facts";
+    column-gap: var(--s7); row-gap: var(--s5); align-items: start;
+  }
+  .facts { margin-top: var(--s3); }
+  .hero-photo { max-width: none; }
+}
+
+/* proof strip */
+.proof { background: var(--navy); padding-block: var(--s5); }
+.proof-list { list-style: none; display: grid; gap: var(--s4); }
+.proof-list li { display: flex; gap: var(--s3); align-items: flex-start; font: 500 16px/1.5 var(--f-body); }
+.proof-list .ic { stroke: var(--accent); width: 24px; height: 24px; margin-top: 0; }
+@media (min-width: 900px) { .proof-list { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s6); } }
+
+/* getting here */
+.band-saapuminen { border-top: 4px solid var(--accent); }
+.gh-grid { display: grid; gap: var(--s6); grid-template-columns: minmax(0, 1fr); margin-top: var(--s5); align-items: start; }
+.iconlist { list-style: none; display: grid; gap: var(--s4); }
+.iconlist li { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: var(--s3); align-items: start; }
+.iconlist .ic { width: 22px; height: 22px; color: var(--navy); margin-top: 3px; }
+.addr-list { list-style: none; display: grid; gap: var(--s3); margin: var(--s5) 0 0; }
+.addr-list li { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: var(--s3); align-items: start; font-weight: 600; }
+.addr-list .ic { width: 22px; height: 22px; color: var(--navy); margin-top: 3px; }
+.maplink { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
+.gh-photo { flex-direction: column; justify-content: center; text-align: center; aspect-ratio: 16 / 9; max-width: 640px; padding: var(--s5); }
+.gh-photo .ic { width: 40px; height: 40px; }
+@media (min-width: 900px) {
+  .gh-grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--s7); }
+  .gh-photo { aspect-ratio: 4 / 3; max-width: none; }
+}
+
+/* price cards */
+.vat-para { max-width: var(--measure); margin: 0 0 var(--s4); font: 500 15px/1.5 var(--f-body); }
+.cards { display: grid; gap: var(--s5); grid-template-columns: minmax(0, 1fr); margin-top: var(--s5); }
+.card {
+  display: flex; flex-direction: column;
+  background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-card);
+  padding: var(--s5);
+}
+.card--primary { border-top: 4px solid var(--accent-strong); }
+.card h3 { margin-bottom: var(--s2); }
+.dur { display: flex; align-items: center; gap: var(--s2); margin: 0 0 var(--s3); font: 600 15px/1.4 var(--f-body); }
+.dur .ic { width: 18px; height: 18px; color: var(--navy); }
+.card .desc { margin-bottom: var(--s4); }
+.risk {
+  display: flex; gap: 10px; align-items: flex-start;
+  margin: 0 0 var(--s4); padding: 12px var(--s3); border-radius: var(--radius-field); background: var(--tint);
+}
+.risk .ic { width: 22px; height: 22px; color: var(--navy); margin-top: 3px; }
+.incl-label { margin: 0 0 var(--s2); font: 700 16px/1.4 var(--f-body); }
+.checks { list-style: none; display: grid; gap: var(--s2); margin-bottom: var(--s4); }
+.checks li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; align-items: start; }
+.checks .ic { width: 16px; height: 16px; color: var(--navy); margin-top: 6px; }
+.price .pr, .fact .pr { display: inline-block; }
+@media (min-width: 768px) { .facts .pr { display: inline-block; } }
+.price { margin: 0 0 var(--s2); font: 700 24px/1.25 var(--f-cond); color: var(--navy); font-variant-numeric: tabular-nums lining-nums; }
+.price .vahvista { font-size: 15px; }
+.vat-line { margin: 0 0 var(--s3); font: 500 15px/1.5 var(--f-body); }
+.extra { margin: 0 0 var(--s2); font: 500 15px/1.5 var(--f-body); }
+.c-extra:empty { display: none; }
+.c-btn { margin-top: auto; padding-top: var(--s3); }
+.c-btn .btn { width: 100%; }
+@media (min-width: 640px) {
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 0; column-gap: var(--s5); }
+  .card { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; margin-bottom: var(--s5); padding: var(--s5) var(--s6); }
+  .card--primary { grid-column: 1 / -1; }
+  .c-extra:empty { display: block; }
+  .c-btn { margin-top: 0; align-self: end; }
+}
+@media (min-width: 1024px) {
+  .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .card { padding: var(--s5); margin-bottom: var(--s5); }
+  .card--primary { grid-column: auto; }
+}
+@media (min-width: 1280px) { .card { padding: var(--s5) var(--s6); } }
+
+/* price and VAT notice */
+.notice {
+  max-width: 820px;
+  background: var(--surface); border-left: 4px solid var(--accent-strong);
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
+  padding: var(--s5);
+}
+.notice--wide { max-width: none; margin-top: var(--s5); }
+@media (min-width: 640px) { .notice--wide { margin-top: var(--s2); } }
+.notice h3 { margin-bottom: var(--s3); }
+.notice p:last-child { margin-bottom: 0; }
+
+/* rooms table */
+.table-region {
+  background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-card);
+  overflow-x: auto; margin-top: var(--s5);
+}
+.spec { width: 100%; min-width: 760px; border-collapse: separate; border-spacing: 0; font-size: 17px; line-height: 1.45; }
+.spec caption {
+  caption-side: top; text-align: left; padding: var(--s3) var(--s4);
+  font: 500 15px/1.5 var(--f-body); border-bottom: 1px solid var(--rule); background: var(--surface);
+}
+.spec th, .spec td { padding: 12px var(--s4); text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
+.spec thead th { background: var(--tint); font: 700 16px/1.3 var(--f-body); color: var(--ink); white-space: nowrap; }
+.spec tbody th { font-weight: 600; background: var(--surface); }
+.spec tbody th { white-space: normal; width: 13rem; min-width: 9.5rem; }
+.spec th:last-child, .spec td:last-child { min-width: 20rem; }
+.spec .sz { text-align: right; width: 15rem; font: 600 18px/1.35 var(--f-cond); font-variant-numeric: tabular-nums lining-nums; }
+.spec thead .sz { font: 700 16px/1.3 var(--f-body); }
+@media (max-width: 767.98px) { .spec tbody th { width: 9.5rem; } }
+.spec tbody tr:last-child th, .spec tbody tr:last-child td { border-bottom: 0; }
+.spec thead th:first-child, .spec tbody th { position: sticky; left: 0; z-index: 1; box-shadow: 1px 0 0 var(--rule); }
+.spec tbody tr.lead-row th { font-weight: 700; box-shadow: inset 4px 0 0 var(--accent-strong), 1px 0 0 var(--rule); }
+.table-region:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.acc-block { margin-top: var(--s7); max-width: 820px; }
+.acc-block h3 { display: flex; align-items: center; gap: var(--s3); margin-bottom: var(--s5); }
+.acc-block h3 .fic { width: 44px; height: 44px; background: var(--tint); }
+.acc-block h3 .fic .ic { width: 24px; height: 24px; }
+.after-list { margin: var(--s5) 0 0; font-weight: 600; }
+.trio { display: grid; gap: var(--s4); grid-template-columns: minmax(0, 1fr); margin-top: var(--s7); }
+.trio figure { margin: 0; }
+.trio img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius-card); }
+.cta-after { margin: var(--s7) 0 0; }
+@media (min-width: 768px) { .trio { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .cta-after .btn { width: 100%; } }
+
+/* timeline (Aikajana) */
+.days { display: grid; gap: var(--s6); grid-template-columns: minmax(0, 1fr); margin-top: var(--s6); }
+.day h3 { background: var(--tint); border-radius: var(--radius-field); padding: 12px var(--s4); margin-bottom: var(--s5); font-size: 22px; }
+.track { list-style: none; --tcol: 4rem; --tgap: 12px; --ring: var(--surface); }
+.track li {
+  position: relative; display: grid; grid-template-columns: var(--tcol) 12px minmax(0, 1fr);
+  column-gap: var(--tgap); padding-bottom: var(--s5); line-height: 28px;
+}
+.track li:last-child { padding-bottom: 0; }
+.track li::before {
+  content: ""; grid-column: 2; grid-row: 1; justify-self: center;
+  width: 12px; height: 12px; margin-top: 8px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 0 3px var(--ring); position: relative; z-index: 1;
+}
+.track li::after {
+  content: ""; position: absolute; top: 14px; bottom: -8px; width: 3px;
+  left: calc(var(--tcol) + var(--tgap) + 6px - 1.5px); background: var(--accent);
+}
+.track li:last-child::after { display: none; }
+.track li:first-child::before { background: var(--navy); }
+.track time {
+  grid-column: 1; grid-row: 1; white-space: nowrap;
+  font: 600 20px/28px var(--f-cond); color: var(--navy); font-variant-numeric: tabular-nums lining-nums;
+}
+.track .ev { grid-column: 3; grid-row: 1; min-width: 0; }
+.after-days { margin: var(--s7) 0 0; max-width: var(--measure); }
+@media (min-width: 768px) {
+  .days { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--s7); row-gap: 0; }
+  .day { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 0; margin-bottom: var(--s6); }
+  .day h3 { margin-bottom: var(--s5); }
+}
+@media (min-width: 1280px) {
+  .days { grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--s5); }
+  .day { margin-bottom: 0; }
+  .track { --tcol: 3.6rem; --tgap: 10px; }
+}
+
+/* FAQ */
+.faq { max-width: 820px; border-top: 1px solid var(--rule); margin-top: var(--s5); }
+.faq details { border-bottom: 1px solid var(--rule); }
+.faq summary {
+  list-style: none; cursor: pointer; min-height: 48px; padding: 12px 0;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s4);
+  font: 600 18px/1.4 var(--f-body);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary .ic { width: 24px; height: 24px; color: var(--navy); transition: transform .15s ease-out; }
+.faq details[open] summary .ic { transform: rotate(180deg); }
+.faq summary:focus-visible { outline-offset: 2px; }
+.faq-a { padding: 0 0 var(--s4); max-width: var(--measure); }
+.faq-a p:last-child { margin-bottom: 0; }
+.faq-a p + p { margin-top: calc(-1 * var(--s2)); }
+
+/* contact + form */
+.cf { display: grid; gap: var(--s7); grid-template-columns: minmax(0, 1fr); align-items: start; }
+.contact { background: var(--surface); border-radius: var(--radius-card); padding: 20px; box-shadow: var(--shadow-card); }
+.contact .kuva { margin-bottom: var(--s4); }
+.contact .kuva .ic { width: 28px; height: 28px; }
+.face { flex: none; display: grid; place-items: center; width: 96px; height: 96px; border-radius: 50%; background: var(--kuva-bg); border: 2px dashed var(--vahvista-border); }
+.contact h3 { margin: 0 0 var(--s1); }
+.contact p { margin: 0 0 var(--s3); overflow-wrap: anywhere; }
+.contact .mail { font-size: 17px; }
+.contact .role { font-weight: 600; }
+.contact p:last-child { margin-bottom: 0; }
+.form-panel { max-width: 640px; background: var(--surface); border-radius: var(--radius-card); padding: var(--s5); box-shadow: var(--shadow-card); }
+.form-panel > p:first-of-type { margin-bottom: var(--s4); }
+.req-note { font: 500 15px/1.5 var(--f-body); margin: 0 0 var(--s5); }
+.field { margin: 0 0 var(--s5); }
+.field > label:not(.choice), .field > legend { display: block; margin: 0 0 4px; padding: 0; font: 600 17px/1.4 var(--f-body); }
+.field > .help { margin: 0 0 8px; font: 500 15px/1.5 var(--f-body); }
+.field input[type=text], .field input[type=email], .field input[type=tel], .field textarea {
+  display: block; width: 100%; min-height: 52px; padding: 12px 14px;
+  border: 2px solid var(--field); border-radius: var(--radius-field);
+  background: var(--surface); color: var(--ink); font: 400 18px/1.4 var(--f-body);
+  scroll-margin-top: 140px;
+}
+.field textarea { min-height: 132px; resize: vertical; }
+.field input[type=text]:focus, .field input[type=email]:focus, .field input[type=tel]:focus, .field textarea:focus {
+  border-color: var(--navy); outline: 3px solid var(--focus); outline-offset: 2px;
+}
+.field input[aria-invalid=true] { border-color: var(--error); }
+.err { display: flex; gap: 8px; align-items: flex-start; margin: 6px 0 0; font: 600 16px/1.4 var(--f-body); color: var(--error); }
+.err .ic { width: 16px; height: 16px; margin-top: 3px; }
+fieldset.field { border: 0; min-width: 0; padding: 0; }
+.choice { display: flex; gap: 12px; align-items: flex-start; min-height: 44px; padding: 9px 0; cursor: pointer; font: 400 18px/1.4 var(--f-body); }
+.choice input {
+  -webkit-appearance: none; appearance: none; flex: none;
+  width: 24px; height: 24px; margin: 1px 0 0; border: 2px solid var(--field); background-color: var(--surface);
+}
+.choice input[type=radio] { border-radius: 50%; }
+.choice input[type=checkbox] { border-radius: 6px; }
+.choice input[type=radio]:checked { border-color: var(--navy); background-image: radial-gradient(circle, var(--navy) 0 5px, transparent 6px); }
+.choice input[type=checkbox]:checked {
+  border-color: var(--navy); background-color: var(--navy); background-repeat: no-repeat; background-position: center; background-size: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E");
+}
+.choice input:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.summary {
+  background: var(--error-bg); border-left: 4px solid var(--error); border-radius: 0 var(--radius-field) var(--radius-field) 0;
+  padding: var(--s4) var(--s5); margin: 0 0 var(--s5); scroll-margin-top: 140px;
+}
+.summary:focus { outline: 3px solid var(--focus); outline-offset: 3px; }
+.summary h3 { display: flex; align-items: center; gap: 8px; color: var(--ink); font-size: 20px; }
+.summary h3 .ic { color: var(--error); width: 20px; height: 20px; }
+.summary ul { margin: var(--s2) 0 0; padding-left: 20px; }
+.summary a { color: var(--error); font-weight: 600; }
+.reply-line { margin: 0 0 var(--s4); font: 500 16px/1.5 var(--f-body); }
+.submit-row { display: flex; flex-direction: column; gap: var(--s4); align-items: stretch; }
+.submit-row .btn { width: 100%; cursor: pointer; }
+.submit-row .privacy { margin: 0; font: 500 15px/1.5 var(--f-body); }
+.success {
+  background: var(--success-bg); border-left: 4px solid var(--success); border-radius: 0 var(--radius-card) var(--radius-card) 0;
+  padding: var(--s5); color: var(--ink); scroll-margin-top: 140px;
+}
+.success h3 { display: flex; align-items: center; gap: 10px; color: var(--ink); margin-bottom: var(--s3); }
+.success h3 .ic { color: var(--success); width: 26px; height: 26px; }
+.success h3:focus { outline: 3px solid var(--focus); outline-offset: 3px; }
+.success p:last-child { margin-bottom: 0; font-weight: 600; }
+.success strong { overflow-wrap: anywhere; }
+@media (min-width: 601px) {
+  .form-panel { padding: var(--s6); }
+  .contact { padding: var(--s6); }
+  .contact .mail { font-size: 18px; }
+  .submit-row { flex-direction: row; align-items: center; }
+  .submit-row .btn { width: auto; flex: none; }
+}
+@media (min-width: 1024px) { .cf { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); } }
+
+/* why / privacy */
+.prose { max-width: var(--measure); }
+.plist { list-style: none; display: grid; gap: var(--s3); max-width: 820px; margin-bottom: var(--s4); }
+.plist strong { font-weight: 700; }
+.plain-sec { padding-block: var(--s6); border-top: 1px solid var(--rule); }
+.plain-sec h2 { font-size: 28px; }
+@media (min-width: 768px) { .plain-sec { padding-block: var(--s7); } .plain-sec h2 { font-size: 32px; } }
+
+/* footer */
+.site-footer { background: var(--navy); color: var(--on-dark); padding-block: var(--s7); font: 500 15px/1.6 var(--f-body); }
+.site-footer p { margin: 0 0 var(--s2); }
+.site-footer a { color: var(--on-dark); }
+.site-footer :focus-visible { outline-color: var(--focus-on-dark); }
+.foot-links { list-style: none; display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); margin: var(--s4) 0; }
+.foot-links li { display: flex; align-items: center; min-height: 44px; }
+.foot-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.foot-credit { margin-top: var(--s4); }
+.foot-label { font-weight: 700; margin-top: var(--s4); margin-bottom: 0; }
+
+/* sticky mobile bar */
+.sticky-bar { display: none; }
+@media (max-width: 767.98px) {
+  body { padding-bottom: 80px; }
+  html { scroll-padding-bottom: 96px; }
+  .sticky-bar {
+    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 80;
+    min-height: 64px; padding: 8px var(--gutter); gap: var(--s3);
+    background: var(--surface); border-top: 1px solid var(--rule);
+    box-shadow: 0 -1px 2px rgba(31,44,83,.08), 0 -4px 16px rgba(31,44,83,.06);
+    transform: translateY(100%); visibility: hidden;
+    transition: transform .15s ease-out, visibility 0s linear .15s;
+  }
+  .sticky-bar.is-visible { transform: none; visibility: visible; transition: transform .15s ease-out; }
+  .sticky-bar .btn { flex: 1 1 0; min-width: 0; padding: 0 10px; font-size: 18px; }
+  .sticky-bar .btn-primary { flex: 2 1 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+mark.vahvista { overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></symbol>
+  <symbol id="i-euro" viewBox="0 0 24 24"><path d="M17.5 7.5A6.5 6.5 0 1 0 17.5 16.5"/><path d="M5 10.2h8.5M5 13.8h8.5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s-6.5-5.7-6.5-11.2a6.5 6.5 0 0 1 13 0c0 5.5-6.5 11.2-6.5 11.2z"/><circle cx="12" cy="10.3" r="2.3"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9" r="2.5"/><path d="M17.2 14.2c2.5.3 4.3 2.3 4.3 5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5.5 4h3.3l1.9 4.6-2.3 1.5a11 11 0 0 0 5.5 5.5l1.5-2.3 4.6 1.9v3.3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 3.5 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-access" viewBox="0 0 24 24"><circle cx="12" cy="4.2" r="1.7"/><path d="M12 8v6h4.6l2.4 5"/><path d="M12 11h4.2"/><path d="M8.4 11.6a5.2 5.2 0 1 0 6.2 7.4"/></symbol>
+  <symbol id="i-train" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14" r=".6"/><circle cx="15" cy="14" r=".6"/><path d="M8 21l2-4M16 21l-2-4"/></symbol>
+  <symbol id="i-bus" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="13" rx="2.5"/><path d="M4 11h16"/><circle cx="8" cy="14" r=".6"/><circle cx="16" cy="14" r=".6"/><path d="M6.5 17v3M17.5 17v3"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5.5 17H4.5a1 1 0 0 1-1-1v-3.5L5.5 7h13l2 5.5V16a1 1 0 0 1-1 1h-1"/><path d="M3.5 12.5h17"/><circle cx="8" cy="16.5" r="1.6"/><circle cx="16" cy="16.5" r="1.6"/></symbol>
+  <symbol id="i-parking" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M10 16.5V8h3a2.6 2.6 0 0 1 0 5.2h-3"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6h.01"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5M12 17.4h.01"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M21 16l-5-5-8 9"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+</svg>
+
+<a class="skip" href="#content">Skip to content</a>
+
+<div class="bar" role="note" aria-label="Concept draft"><span lang="fi">Konseptiluonnos – ei julkaistu.</span> Concept draft – not published. <span lang="fi">[VAHVISTA]-merkityt tiedot odottavat Kolmen kampuksen urheiluopiston vahvistusta.</span></div>
+
+<header class="site-header">
+  <div class="wrap hdr">
+    <div class="brand">
+      <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <a class="wordmark" href="https://www.kolmekampusta.fi/en">Three-Campus Sports Institute</a>
+    </div>
+    <nav class="hdr-nav" aria-label="Page sections">
+      <ul>
+        <li><a href="#getting-here">Getting here</a></li>
+        <li><a href="#itinerary">Itinerary</a></li>
+        <li><a href="#prices">Prices</a></li>
+      </ul>
+    </nav>
+    <a class="hdr-phone" href="tel:+358447755777" aria-label="Call sales on +358 44 77 55 777"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg><span class="num">+358&nbsp;44&nbsp;77&nbsp;55&nbsp;777</span></a>
+  </div>
+</header>
+
+<main id="content" tabindex="-1">
+
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap hero-grid">
+      <div class="hero-head">
+        <p class="eyebrow">Pajulahti and Kisakallio, Finland · For federations and clubs</p>
+        <h1 id="h1">Training camps at Pajulahti and Kisakallio, Finland</h1>
+      </div>
+      <ul class="facts">
+        <li><span class="fic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-euro"/></svg></span><span class="fact"><span class="pr">from €<mark class="vahvista">[VAHVISTA: 690]</mark> per&nbsp;person (incl.&nbsp;VAT)&nbsp;·</span> <span class="pr">from €<mark class="vahvista">[VAHVISTA: 575]</mark> per&nbsp;person (excl.&nbsp;VAT)</span><span class="vat-short">The first price includes Finnish VAT on accommodation, meals and events; your quote shows the VAT treatment of each item. <mark class="vahvista">[VAHVISTA: approved 15.12.2026]</mark></span></span></li>
+        <li><span class="fic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-car"/></svg></span><span class="fact">About an hour and a half by car from Helsinki Airport</span></li>
+        <li><span class="fic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span><span class="fact">Training, testing and recovery on one campus</span></li>
+      </ul>
+      <div class="hero-actions">
+        <div class="cta-row">
+          <a id="hero-cta" class="btn btn-primary" href="#request">Request a camp proposal</a>
+          <div class="phone-block">
+            <a class="btn btn-secondary" href="tel:+358447755777">Call +358&nbsp;44&nbsp;77&nbsp;55&nbsp;777</a>
+            <p class="hours">weekdays 9.00–16.00 (Finnish time)</p>
+          </div>
+        </div>
+        <p class="reply">We reply to quote requests within two working days. <mark class="vahvista">[VAHVISTA: confirmed 15.12.2026]</mark></p>
+      </div>
+      <p class="lead">A four-day camp plan at Pajulahti for national teams and clubs, with a seminar day for coaches. Curling camps at Kisakallio. Dates for autumn 2027.</p>
+      <figure class="hero-photo">
+        <img src="https://www.kolmekampusta.fi/sites/default/files/styles/16_9_608x342_focal_point_webp/public/2025-05/pajulahti_testausasema_kestavyystestaus.jpeg.webp?h=7ee2c21e&amp;itok=GsOrbaVe" width="608" height="342" alt="An athlete runs on a treadmill wearing a breathing mask in the Pajulahti testing lab." fetchpriority="high" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <div class="proof on-dark">
+    <ul class="wrap proof-list">
+      <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Three-Campus Sports Institute is Finland's only Olympic and Paralympic Training Centre</span></li>
+      <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Gold member of the Association of Sport Performance Centres (ASPC) since September 2026</span></li>
+      <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Ekokompassi environmental certificate, valid 24 April 2025 – 24 April 2028</span></li>
+    </ul>
+  </div>
+
+  <section id="getting-here" class="section band-tint band-saapuminen" aria-labelledby="h-getting-here">
+    <div class="wrap">
+      <h2 id="h-getting-here">Getting here from Helsinki Airport</h2>
+      <p class="intro">Pajulahti is in Nastola, Lahti, 115&nbsp;km from Helsinki Airport. Kisakallio is in Lohja, 64&nbsp;km from the airport.</p>
+      <div class="gh-grid">
+        <div class="gh-text">
+          <ul class="iconlist">
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-car"/></svg><span><strong>By car or coach:</strong> About an hour and a half from Helsinki Airport to Pajulahti. Parking at Pajulahti is free.</span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-train"/></svg><span><strong>By train and bus:</strong> You can reach Lahti travel centre (Lahden matkakeskus), a railway and bus station, by train. <mark class="vahvista">[VAHVISTA: 1 h 15 min from airport]</mark> From there, bus 11 runs to Pajulahti once an hour. The journey takes about 35 minutes. <mark class="vahvista">[VAHVISTA: valid from 1.1.2027]</mark></span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-bus"/></svg><span><strong>Group transfer:</strong> Ask for a coach from Helsinki Airport to Pajulahti and back, and we include it in your quote. <mark class="vahvista">[VAHVISTA: from €780 per coach]</mark></span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span><strong>Kisakallio (curling camps):</strong> About an hour by car from Helsinki Airport. Kisakallio cannot be reached conveniently by public transport, so plan to come by car or coach. <mark class="vahvista">[VAHVISTA: from €720 per coach]</mark></span></li>
+          </ul>
+          <ul class="addr-list">
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span>Pajulahti: Pajulahdentie 167, 15560 Nastola, Finland<br><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Pajulahdentie%20167%2C%2015560%20Nastola%2C%20Finland">Open Pajulahti on the map</a></span></li>
+            <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span>Kisakallio: Kaarina Karin tie 4, 08360 Lohja, Finland<br><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Kaarina%20Karin%20tie%204%2C%2008360%20Lohja%2C%20Finland">Open Kisakallio on the map</a></span></li>
+          </ul>
+        </div>
+        <div class="kuva gh-photo" role="img" aria-label="[KUVA: group transfer from Helsinki Airport]">
+          <svg class="ic" aria-hidden="true" focusable="false"><use href="#i-image"/></svg>
+          <span aria-hidden="true">[KUVA: group transfer from Helsinki Airport]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="aikajana" class="section band-surface" aria-labelledby="itinerary">
+    <div class="wrap">
+      <h2 id="itinerary">Itinerary: four days at Pajulahti</h2>
+      <p class="intro">A sample plan for the 4-day camp. Times are examples, and your head coach sets the content of each training block. <mark class="vahvista">[VAHVISTA: typical day 7.30–19.30]</mark></p>
+      <div class="days">
+        <div class="day">
+          <h3>Day 1 · Arrival</h3>
+          <ol class="track">
+            <li><time datetime="11:00">11.00</time><span class="ev">Departure from Helsinki Airport, about an hour and a half by car</span></li>
+            <li><time datetime="12:30">12.30</time><span class="ev">Arrival at Pajulahti and check-in</span></li>
+            <li><time datetime="13:00">13.00</time><span class="ev">Lunch</span></li>
+            <li><time datetime="15:00">15.00</time><span class="ev">Training block 1</span></li>
+            <li><time datetime="18:00">18.00</time><span class="ev">Dinner</span></li>
+            <li><time datetime="19:30">19.30</time><span class="ev">Team meeting in a seminar room</span></li>
+          </ol>
+        </div>
+        <div class="day">
+          <h3>Day 2 · Testing</h3>
+          <ol class="track">
+            <li><time datetime="07:30">7.30</time><span class="ev">Breakfast</span></li>
+            <li><time datetime="09:00">9.00</time><span class="ev">Tests in the testing lab, for example a threshold test (optional, priced per athlete)</span></li>
+            <li><time datetime="12:00">12.00</time><span class="ev">Lunch</span></li>
+            <li><time datetime="15:00">15.00</time><span class="ev">Training block 2</span></li>
+            <li><time datetime="18:00">18.00</time><span class="ev">Dinner</span></li>
+            <li><time datetime="19:30">19.30</time><span class="ev">Recovery centre <mark class="vahvista">[VAHVISTA: group use included]</mark></span></li>
+          </ol>
+        </div>
+        <div class="day">
+          <h3>Day 3 · Coaches' day</h3>
+          <ol class="track">
+            <li><time datetime="07:30">7.30</time><span class="ev">Breakfast</span></li>
+            <li><time datetime="09:00">9.00</time><span class="ev">Athletes: training block 3 · Coaches: seminar in a seminar room</span></li>
+            <li><time datetime="12:00">12.00</time><span class="ev">Lunch</span></li>
+            <li><time datetime="13:00">13.00</time><span class="ev">Coaches: 45-minute feedback session on the test results (optional)</span></li>
+            <li><time datetime="15:00">15.00</time><span class="ev">Training block 4</span></li>
+            <li><time datetime="18:00">18.00</time><span class="ev">Dinner</span></li>
+          </ol>
+        </div>
+        <div class="day">
+          <h3>Day 4 · Recovery and departure</h3>
+          <ol class="track">
+            <li><time datetime="07:30">7.30</time><span class="ev">Breakfast</span></li>
+            <li><time datetime="09:00">9.00</time><span class="ev">Recovery session: cold and hot pool room, recovery boots <mark class="vahvista">[VAHVISTA: group use included]</mark></span></li>
+            <li><time datetime="11:30">11.30</time><span class="ev">Lunch</span></li>
+            <li><time datetime="12:30">12.30</time><span class="ev">Departure to Helsinki Airport</span></li>
+          </ol>
+        </div>
+      </div>
+      <p class="after-days">Training blocks take place in the facilities your sport needs, for example the Pajulahti hall. <mark class="vahvista">[VAHVISTA: booked with the camp]</mark> Special diets are taken into account. Tell us about them in your request.</p>
+    </div>
+  </section>
+
+  <section id="prices" class="section" aria-labelledby="h-prices">
+    <div class="wrap">
+      <h2 id="h-prices">Camps and prices</h2>
+      <p class="intro">Each camp has two prices: the first includes Finnish VAT, the second excludes it. The price depends on the group size and the services you choose. The final price is confirmed in the quote.</p>
+      <p class="vat-para">Accommodation, meals and admission to events take place in Finland, so Finnish VAT applies to them whether the buyer is Finnish or foreign. Some other services sold to an organisation with an EU VAT number, such as coaching or testing, may fall under the reverse-charge rule instead. The first price includes Finnish VAT on every item and is the one to budget with; the second shows the amount before VAT. Your quote shows the VAT treatment of each item, including facility use and transfers. <mark class="vahvista">[VAHVISTA: approved 15.12.2026]</mark></p>
+      <div class="cards">
+        <article class="card card--primary">
+          <div class="c-top">
+          <div class="c-head">
+            <h3>Training camp in Finland: 4 days</h3>
+            <p class="dur"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg><span>4 days, 3 nights</span></p>
+            <p class="desc">Training, testing and recovery on one campus at Pajulahti, with a seminar room for a coaches' day. Camps from August to November 2027. <mark class="vahvista">[VAHVISTA: open 23.8.–26.11.2027]</mark></p>
+          </div>
+          <div class="c-incl">
+            <p class="incl-label">Price includes:</p>
+            <ul class="checks">
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>accommodation for 3 nights at Pajulahti</span></li>
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>full board: breakfast, lunch and dinner <mark class="vahvista">[VAHVISTA: included]</mark></span></li>
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>training facilities for your sport <mark class="vahvista" lang="fi">[VAHVISTA]</mark></span></li>
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>use of the recovery centre <mark class="vahvista">[VAHVISTA: group use included]</mark></span></li>
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>a seminar room for one coaches' day <mark class="vahvista">[VAHVISTA: included, one day]</mark></span></li>
+            </ul>
+          </div>
+          </div>
+          <div class="c-price">
+            <p class="price"><span class="pr">from €<mark class="vahvista">[VAHVISTA: 690]</mark> per&nbsp;person (incl.&nbsp;VAT)&nbsp;·</span> <span class="pr">from €<mark class="vahvista">[VAHVISTA: 575]</mark> per&nbsp;person (excl.&nbsp;VAT)</span></p>
+            <p class="vat-line">The first price includes Finnish VAT on accommodation, meals and events; your quote shows the VAT treatment of each item. <mark class="vahvista">[VAHVISTA: approved 15.12.2026]</mark></p>
+          </div>
+          <p class="extra c-min">Minimum group: <mark class="vahvista">[VAHVISTA: 15 people]</mark></p>
+          <p class="extra c-extra">Optional: one test per athlete in the testing lab, for example a threshold test, €140 per athlete <mark class="vahvista">[VAHVISTA: excl. VAT]</mark></p>
+          <div class="c-btn"><a class="btn btn-primary" href="#request" data-package="training-camp-4-days">Request a camp proposal</a></div>
+        </article>
+        <article class="card">
+          <div class="c-top">
+          <div class="c-head">
+            <h3>Camp and coaches' seminar</h3>
+            <p class="dur"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg><span>4 days, 3 nights</span></p>
+            <p class="desc">The 4-day camp, with a seminar for your coaches on day 3 in the auditorium or a smaller seminar room. A lecture or workshop is part of the seminar. <mark class="vahvista">[VAHVISTA: recovery, in English]</mark></p>
+          </div>
+          <div class="c-incl">
+            <p class="incl-label">Price includes:</p>
+            <ul class="checks">
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>everything in the 4-day camp</span></li>
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>a lecture or workshop for your coaches <mark class="vahvista" lang="fi">[VAHVISTA]</mark></span></li>
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>a seminar room with a projector, screen and sound system <mark class="vahvista">[VAHVISTA: included]</mark></span></li>
+            </ul>
+          </div>
+          </div>
+          <div class="c-price">
+            <p class="price"><span class="pr">from €<mark class="vahvista">[VAHVISTA: 790]</mark> per&nbsp;person (incl.&nbsp;VAT)&nbsp;·</span> <span class="pr">from €<mark class="vahvista">[VAHVISTA: 658]</mark> per&nbsp;person (excl.&nbsp;VAT)</span></p>
+            <p class="vat-line">The first price includes Finnish VAT on accommodation, meals and events; your quote shows the VAT treatment of each item. <mark class="vahvista">[VAHVISTA: approved 15.12.2026]</mark></p>
+          </div>
+          <p class="extra c-min">Minimum group: <mark class="vahvista">[VAHVISTA: 20 people]</mark></p>
+          <p class="extra c-extra">Optional: 45-minute group feedback session on the test results, €135 <mark class="vahvista">[VAHVISTA: excl. VAT]</mark></p>
+          <div class="c-btn"><a class="btn btn-primary" href="#request" data-package="camp-and-coaches-seminar">Request a camp proposal</a></div>
+        </article>
+        <article class="card">
+          <div class="c-top">
+          <div class="c-head">
+            <h3>Camp with altitude training</h3>
+            <p class="dur"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg><span>4 days or longer <mark class="vahvista">[VAHVISTA: usually 7 days]</mark></span></p>
+            <p class="desc">For athletes only. Athletes sleep in hypoxic alpine huts and train in an altitude training room at 1,800&nbsp;m (Puistopaju C).</p>
+            <p class="risk"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><span>Altitude training loads the body more than training in normal conditions and may involve risks. Altitude blocks suit athletes with a solid training background. <mark class="vahvista" lang="fi">[VAHVISTA]</mark></span></p>
+          </div>
+          <div class="c-incl">
+            <p class="incl-label">Price includes:</p>
+            <ul class="checks">
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>everything in the 4-day camp</span></li>
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>nights in the alpine huts <mark class="vahvista">[VAHVISTA: 12 beds, included]</mark></span></li>
+              <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>sessions in the altitude training room <mark class="vahvista">[VAHVISTA: included]</mark></span></li>
+            </ul>
+          </div>
+          </div>
+          <div class="c-price">
+            <p class="price"><span class="pr">from €<mark class="vahvista">[VAHVISTA: 840]</mark> per&nbsp;person (incl.&nbsp;VAT)&nbsp;·</span> <span class="pr">from €<mark class="vahvista">[VAHVISTA: 700]</mark> per&nbsp;person (excl.&nbsp;VAT)</span></p>
+            <p class="vat-line">The first price includes Finnish VAT on accommodation, meals and events; your quote shows the VAT treatment of each item. <mark class="vahvista">[VAHVISTA: approved 15.12.2026]</mark></p>
+          </div>
+          <p class="extra c-min">Minimum group: <mark class="vahvista">[VAHVISTA: 10 athletes]</mark></p>
+          <div class="c-extra"></div>
+          <div class="c-btn"><a class="btn btn-primary" href="#request" data-package="camp-with-altitude-training">Request a camp proposal</a></div>
+        </article>
+      </div>
+      <div class="notice notice--wide">
+        <h3>Price and VAT: what we need from you</h3>
+        <p>Tell us your organisation's country in the form. If your organisation has an EU VAT number, add it to the message field.</p>
+        <p>Our finance team then shows the VAT treatment of each item in your quote. <mark class="vahvista">[VAHVISTA: approved 15.12.2026]</mark></p>
+        <p><a href="https://www.vero.fi/en/businesses-and-corporations/taxes-and-charges/vat/international-commerce/vat-on-international-supply-of-services/">Finnish Tax Administration: VAT on international supply of services</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="facilities" class="section band-surface" aria-labelledby="h-facilities">
+    <div class="wrap">
+      <h2 id="h-facilities">Facilities</h2>
+      <p class="intro">Everything below is at Pajulahti, except the ice hall at Kisakallio.</p>
+      <div class="table-region" role="region" tabindex="0" aria-label="Facilities at Pajulahti and Kisakallio, table">
+        <table class="spec">
+          <caption>Facilities at Pajulahti and Kisakallio. Source: kolmekampusta.fi, read 5–6 October 2026.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Facility</th>
+              <th scope="col" class="sz">Size or capacity</th>
+              <th scope="col">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Pajulahti hall</th><td class="sz">11,000&nbsp;m²</td><td>Arched indoor hall with artificial turf, 18–20&nbsp;°C</td></tr>
+            <tr><th scope="row">Testing lab</th><td class="sz">–</td><td>Maximal oxygen uptake test €205 per athlete (under 20: €180) <mark class="vahvista">[VAHVISTA: excl. VAT]</mark> · threshold test €140 per athlete <mark class="vahvista">[VAHVISTA: excl. VAT]</mark> · group feedback session, 45 min, €135 <mark class="vahvista">[VAHVISTA: excl. VAT]</mark> · weekdays after 17.00 and on Saturdays +15&nbsp;%</td></tr>
+            <tr><th scope="row">Recovery centre</th><td class="sz">Open daily 7.00–22.00</td><td>Main building, first floor: recovery room with a Neurosonic massage couch, Normatec 3 recovery boots and a TheraGun massage gun; AlterG room; cold and hot pool room; infrared saunas; gym. <mark class="vahvista">[VAHVISTA: group use included]</mark></td></tr>
+            <tr><th scope="row">Altitude training</th><td class="sz">1,800&nbsp;m</td><td>Hypoxic alpine huts and an altitude training room (Puistopaju C). For athletes only. Altitude training loads the body more than training in normal conditions and may involve risks.</td></tr>
+            <tr><th scope="row">Auditorium <mark class="vahvista">[VAHVISTA: ramp, 4 wheelchair places]</mark></th><td class="sz">136 seats, 139&nbsp;m²</td><td>Daylight, projector, screen, sound system, computer connections</td></tr>
+            <tr><th scope="row">Seminar and group rooms</th><td class="sz">More than 20 rooms</td><td>Lecture, meeting and group-work rooms of different sizes</td></tr>
+            <tr><th scope="row">Accommodation</th><td class="sz">Kalliopaju hotel: 36 double rooms · Puistopaju: 48 rooms, 16 of them accessible</td><td>Also Hopeapaju, Rantapaju, Kangaspaju and institute accommodation. Your quote names the building.</td></tr>
+            <tr><th scope="row">Restaurant</th><td class="sz">Ravintola Fanni, 76 seats</td><td>Pajulahti's restaurant services are run by Kanresta, a social enterprise owned by Suomen Kansanterveysyhdistys ry. Special diets are taken into account.</td></tr>
+            <tr class="lead-row"><th scope="row"><strong>Kisakallio</strong> ice hall (curling)</th><td class="sz">6 curling sheets in tournament set-up</td><td>Hall temperature about 3–4&nbsp;°C. In the 2026–2027 season the hall hosts three curling world championships (mixed doubles, wheelchair, and wheelchair mixed doubles), awarded by World Curling. Accommodation at Kisakallio: Hotel Omenatarha, 49 double rooms. <mark class="vahvista">[VAHVISTA: ice 16.8.–30.11.2027]</mark></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="acc-block">
+        <h3><span class="fic"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-access"/></svg></span>Accessibility for para athletes</h3>
+        <ul class="iconlist">
+          <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>All Pajulahti sports facilities are accessible.</span></li>
+          <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Kalliopaju hotel is fully accessible: 36 double rooms, braille signs and a covered walkway to the main building.</span></li>
+          <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Puistopaju has 16 accessible rooms.</span></li>
+          <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>There is an induction loop at reception and in some rooms.</span></li>
+          <li><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Pajulahti hosts top-level para-sport camps.</span></li>
+        </ul>
+        <p class="after-list">Pajulahti holds the Sustainable Travel Finland label.</p>
+      </div>
+      <div class="trio">
+        <figure><img src="https://www.kolmekampusta.fi/sites/default/files/styles/16_9_608x342_focal_point_webp/public/2025-05/pajulahti-halli_nurmikentta.jpg.webp?h=ada05aa9&amp;itok=x7LRczL4" width="608" height="342" alt="The indoor artificial-turf pitch of the Pajulahti hall." loading="lazy" decoding="async"></figure>
+        <figure><img src="https://www.kolmekampusta.fi/sites/default/files/styles/16_9_1312x738_focal_point_webp/public/2025-08/pajulahti_palautumishuone.jpg.webp?h=307624f5&amp;itok=n-KmSlym" width="1312" height="738" alt="The recovery room at Pajulahti with a massage couch." loading="lazy" decoding="async"></figure>
+        <figure><img src="https://www.kolmekampusta.fi/sites/default/files/styles/16_9_608x342_focal_point_webp/public/2026-09/kisakallio_curling_20251118-0021-sergisukh-1920x1280.webp?h=e5aec6c8&amp;itok=O7F3aEWW" width="608" height="342" alt="A curling game in progress in the Kisakallio ice hall." loading="lazy" decoding="async"></figure>
+      </div>
+      <p class="cta-after"><a class="btn btn-primary" href="#request">Request a camp proposal</a></p>
+    </div>
+  </section>
+
+  <section id="faq" class="section" aria-labelledby="h-faq">
+    <div class="wrap">
+      <h2 id="h-faq">Frequently asked questions</h2>
+      <div class="faq">
+        <details>
+          <summary><span>Which prices include Finnish VAT?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a">
+            <p>Each camp has two prices. The first includes Finnish VAT, and the second excludes it. Accommodation, meals and admission to events take place in Finland, so Finnish VAT applies to them whether the buyer is Finnish or foreign. Some other services sold to an organisation with an EU VAT number, such as coaching or testing, may fall under the reverse-charge rule instead. The first price includes Finnish VAT on every item and is the one to budget with; the second shows the amount before VAT. Your quote shows the VAT treatment of each item, including facility use and transfers. <mark class="vahvista">[VAHVISTA: approved 15.12.2026]</mark></p>
+            <p><a href="https://www.vero.fi/en/businesses-and-corporations/taxes-and-charges/vat/international-commerce/vat-on-international-supply-of-services/">Finnish Tax Administration: VAT on international supply of services</a></p>
+          </div>
+        </details>
+        <details>
+          <summary><span>Can we deal with you in English?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a">
+            <p>Tell us in your request that you need service in English. Your quote confirms which steps, including the invoice, we handle in English. <mark class="vahvista">[VAHVISTA: confirmed 15.12.2026]</mark></p>
+            <p><a href="https://www.kolmekampusta.fi/en/training-center">Training centre (our English page)</a></p>
+          </div>
+        </details>
+        <details>
+          <summary><span>What are the altitude rooms, and who can use them?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a"><p>Pajulahti has hypoxic alpine huts and an altitude training room at 1,800&nbsp;m in Puistopaju C. Altitude training loads the body more than training in normal conditions and may involve risks. We offer altitude blocks to athletes only, and they suit athletes with a solid training background. <mark class="vahvista" lang="fi">[VAHVISTA]</mark></p></div>
+        </details>
+        <details>
+          <summary><span>Is Pajulahti accessible for para athletes?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a"><p>Yes. All Pajulahti sports facilities are accessible. Kalliopaju hotel is fully accessible, with braille signs and a covered walkway to the main building, and Puistopaju has 16 accessible rooms. There is an induction loop at reception and in some rooms. Pajulahti hosts top-level para-sport camps. Tell us your athletes' accessibility needs in your request, and the quote will show the rooms and facilities we propose.</p></div>
+        </details>
+        <details>
+          <summary><span>Can you cater for special diets?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a"><p>Yes. Special diets are taken into account. Tell us about them in your request.</p></div>
+        </details>
+        <details>
+          <summary><span>Can we hold dates provisionally?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a"><p>Yes. We hold the dates provisionally, so that your head coach and finance can confirm the camp. A provisional hold is free of charge and valid for 14 days. <mark class="vahvista" lang="fi">[VAHVISTA]</mark></p></div>
+        </details>
+        <details>
+          <summary><span>What are the cancellation terms?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a">
+            <p>A booking is binding once we have confirmed it in writing, and the programme and list of names are due 14 days before arrival. For groups of under 50 people, we charge a handling fee of €75 if a confirmed booking is cancelled. If it is cancelled 21–8 days before arrival, we charge 50&nbsp;% of the booking value, and if 7–0 days before, the full value. <mark class="vahvista">[VAHVISTA: valid for 2027]</mark> Your quote states the terms for your camp. <mark class="vahvista">[VAHVISTA: approved 1.12.2026]</mark></p>
+            <p><a href="https://www.kolmekampusta.fi/fi/yritysasiakkaiden-jarjestojen-ja-rippileirien-varaus-ja-peruutusehdot">Booking and cancellation terms (in Finnish)</a></p>
+          </div>
+        </details>
+        <details>
+          <summary><span>How do you invoice?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a"><p>We invoice after the camp by e-invoice or email, payment term 14 days net. <mark class="vahvista" lang="fi">[VAHVISTA]</mark></p></div>
+        </details>
+        <details>
+          <summary><span>Can we hold a camp at Kisakallio?</span><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg></summary>
+          <div class="faq-a"><p>For curling, yes. The ice hall at Kisakallio has six curling sheets in tournament set-up, and Kisakallio is about an hour by car from Helsinki Airport. Tell us your preferred dates, and we check the ice. <mark class="vahvista">[VAHVISTA: ice 16.8.–30.11.2027]</mark></p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <div class="section band-tint">
+    <div class="wrap cf">
+      <section id="contact" aria-labelledby="h-contact">
+        <h2 id="h-contact">Your contact person</h2>
+        <div class="contact">
+          <div class="kuva" role="img" aria-label="[KUVA: contact person's portrait]">
+            <span class="face"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-image"/></svg></span>
+            <span aria-hidden="true" lang="fi">[KUVA: yhteyshenkilön kasvokuva]</span>
+          </div>
+          <h3><mark class="vahvista">[First name Last name]</mark></h3>
+          <p class="role">Sales Manager, Pajulahti</p>
+          <p><mark class="vahvista">[VAHVISTA: 040&nbsp;123&nbsp;4567]</mark></p>
+          <p class="mail">firstname.lastname@kolmekampusta.fi</p>
+          <p>I reply to quote requests within two working days. <mark class="vahvista">[VAHVISTA: confirmed 15.12.2026]</mark></p>
+          <p>Sales +358&nbsp;44&nbsp;77&nbsp;55&nbsp;777, weekdays 9.00–16.00 (Finnish time)</p>
+        </div>
+      </section>
+
+      <section id="request" aria-labelledby="h-request">
+        <h2 id="h-request">Request a camp proposal</h2>
+        <div class="form-panel" id="form-panel">
+          <form id="request-form" novalidate>
+            <p>Tell us your group size, sport and preferred dates, and we will send you a camp proposal with an itinerary, available dates and prices.</p>
+            <p class="req-note">Fields marked with an asterisk (*) are required.</p>
+
+            <div id="error-summary" class="summary" tabindex="-1" hidden>
+              <h3 id="error-summary-title"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></h3>
+              <ul id="error-summary-list"></ul>
+            </div>
+
+            <div class="field">
+              <label for="f-name">Name *</label>
+              <input type="text" id="f-name" name="name" autocomplete="name" required aria-required="true" data-empty="Your name is missing. Enter your first and last name.">
+              <p class="err" id="err-name" hidden><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></p>
+            </div>
+
+            <div class="field">
+              <label for="f-email">Email *</label>
+              <p class="help" id="h-email">We will send the proposal to this address.</p>
+              <input type="email" id="f-email" name="email" autocomplete="email" required aria-required="true" aria-describedby="h-email" data-empty="Your email address is missing. Enter it in the form name@example.com." data-invalid="The email address is incomplete. Check that it has an @ sign and a domain, e.g. name@example.com.">
+              <p class="err" id="err-email" hidden><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></p>
+            </div>
+
+            <div class="field">
+              <label for="f-org">Organisation and country *</label>
+              <p class="help" id="h-org">We need the country for the VAT treatment.</p>
+              <input type="text" id="f-org" name="organisation" autocomplete="organization" required aria-required="true" aria-describedby="h-org" data-empty="The organisation and country are missing. Enter your federation or club and its country, e.g. Example Federation, Sweden.">
+              <p class="err" id="err-org" hidden><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></p>
+            </div>
+
+            <div class="field">
+              <label for="f-count">Group size *</label>
+              <p class="help" id="h-count">Athletes and staff together. An estimate is enough, e.g. 30.</p>
+              <input type="text" id="f-count" name="group_size" inputmode="numeric" required aria-required="true" aria-describedby="h-count" data-empty="The group size is missing. Enter an estimate in digits, e.g. 30." data-invalid="Enter the group size in digits, e.g. 30 or 25–30.">
+              <p class="err" id="err-count" hidden><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></p>
+            </div>
+
+            <div class="field">
+              <label for="f-dates">Preferred dates *</label>
+              <p class="help" id="h-dates">E.g. 4–7 October 2027 or October 2027</p>
+              <input type="text" id="f-dates" name="preferred_dates" required aria-required="true" aria-describedby="h-dates" data-empty="The preferred dates are missing. Enter dates or a month, e.g. October 2027.">
+              <p class="err" id="err-dates" hidden><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></p>
+            </div>
+
+            <fieldset class="field">
+              <legend>How flexible are the dates?</legend>
+              <label class="choice"><input type="radio" name="flexibility" value="fixed"><span>The dates are fixed</span></label>
+              <label class="choice"><input type="radio" name="flexibility" value="a-few-weeks"><span>We can move by a few weeks</span></label>
+              <label class="choice"><input type="radio" name="flexibility" value="still-planning"><span>We are still planning</span></label>
+            </fieldset>
+
+            <div class="field">
+              <label for="f-phone">Phone (optional)</label>
+              <p class="help" id="h-phone">We only call if it speeds up the proposal. Include the country code.</p>
+              <input type="tel" id="f-phone" name="phone" autocomplete="tel" aria-describedby="h-phone" data-invalid="The phone number contains letters or other characters. Enter it with the country code, e.g. +46 70 123 4567.">
+              <p class="err" id="err-phone" hidden><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></p>
+            </div>
+
+            <div class="field">
+              <label for="f-notes">Sport, training needs and accessibility needs (optional)</label>
+              <p class="help" id="h-notes">E.g. your sport, the facilities and tests you need, para athletes' needs or the coaches' seminar. If your organisation has an EU VAT number, add it here. Please don't write athletes' names or health details.</p>
+              <textarea id="f-notes" name="notes" rows="4" aria-describedby="h-notes"></textarea>
+            </div>
+
+            <div class="hp" aria-hidden="true">
+              <label for="f-hp">Leave this field empty</label>
+              <input type="text" id="f-hp" name="hp_field" tabindex="-1" autocomplete="off">
+            </div>
+
+            <input type="hidden" name="campaign_id" value="2027-03-S10-training-camps">
+            <input type="hidden" name="page_path" value="/en/groups/training-camps-finland">
+            <input type="hidden" name="campus" value="molemmat">
+            <input type="hidden" name="occasion" value="training-camp">
+            <input type="hidden" name="package" id="f-package" value="">
+            <input type="hidden" name="form_variant" value="A">
+
+            <p class="reply-line">We reply within two working days. For urgent matters, call +358&nbsp;44&nbsp;77&nbsp;55&nbsp;777 (weekdays 9.00–16.00, Finnish time).</p>
+            <div class="submit-row">
+              <button type="submit" class="btn btn-primary">Send request</button>
+              <p class="privacy">We use your details to handle your request. Read the <a href="#privacy">privacy notice</a>.</p>
+            </div>
+          </form>
+
+          <div id="success" class="success" role="status" hidden>
+            <h3 id="success-title" tabindex="-1"><svg class="ic" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Thank you, your request has been sent.</span></h3>
+            <p><mark class="vahvista">[First name Last name]</mark> will reply to <strong id="success-address"></strong> within two working days. For urgent matters, call +358&nbsp;44&nbsp;77&nbsp;55&nbsp;777 (weekdays 9.00–16.00, Finnish time).</p>
+            <p>Concept draft: no data was sent anywhere.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section id="why-this-email" class="plain-sec" aria-labelledby="h-why">
+    <div class="wrap"><div class="prose">
+      <h2 id="h-why">Why did I get this email?</h2>
+      <p>You received our email because your role covers your team's training camps. We found your contact details on your organisation's website or in another source; the exact source and date are in the email you received. The controller of your personal data is <span lang="fi">Kolmen kampuksen urheiluopisto oy</span> (Three-Campus Sports Institute), Finland. We process the data on the basis of legitimate interest for business sales, and we delete it 12 months after our last contact <mark class="vahvista">[VAHVISTA: 12 months]</mark>, unless we start working together.</p>
+      <p>You can object to the use of your contact details for direct marketing at any time by replying “no thanks” to the email you received or by writing to <mark class="vahvista">[VAHVISTA: tietosuoja@esimerkki.fi]</mark>.</p>
+      <p>More information: privacy notice for marketing and customer data <mark class="vahvista">[VAHVISTA: esimerkki.fi/en/privacy]</mark></p>
+    </div></div>
+  </section>
+
+  <section id="privacy" class="plain-sec" aria-labelledby="h-privacy">
+    <div class="wrap">
+      <h2 id="h-privacy">Privacy notice: camp request</h2>
+      <ul class="plist">
+        <li><strong>Controller:</strong> <span lang="fi">Kolmen kampuksen urheiluopisto oy</span> (Three-Campus Sports Institute), Business ID 3250102-9. Data protection contact: <mark class="vahvista">[VAHVISTA: tietosuoja@esimerkki.fi]</mark></li>
+        <li><strong>What we use the data for:</strong> To handle your request, prepare the camp proposal and quote, and contact you about them.</li>
+        <li><strong>Legal basis:</strong> Steps taken at your request before a contract. <mark class="vahvista">[VAHVISTA: art. 6(1)(b)]</mark></li>
+        <li><strong>Retention:</strong> <mark class="vahvista">[VAHVISTA: 12 months from request]</mark>, unless the quote leads to a contract.</li>
+        <li><strong>Recipients:</strong> Our customer relationship management provider <mark class="vahvista">[VAHVISTA: Esimerkki CRM Oy]</mark>. We do not share the data for marketing.</li>
+        <li><strong>Your rights:</strong> You can ask to see, correct or delete your data, and you can lodge a complaint with the Finnish Data Protection Ombudsman or with the data protection authority in your own country.</li>
+      </ul>
+      <p>Full privacy notice <mark class="vahvista">[VAHVISTA: esimerkki.fi/en/privacy]</mark></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer on-dark">
+  <div class="wrap">
+    <p><span lang="fi">Kolmen kampuksen urheiluopisto oy</span> (Three-Campus Sports Institute) · Business ID 3250102-9 · Registered office Lahti, Finland · Postal address Pajulahdentie 167, 15560 Nastola, Finland</p>
+    <p>Kisakallio: Kaarina Karin tie 4, 08360 Lohja, Finland · Pajulahti: Pajulahdentie 167, 15560 Nastola, Finland</p>
+    <p>Sales +358&nbsp;44&nbsp;77&nbsp;55&nbsp;777 (weekdays 9.00–16.00, Finnish time) · sales.kisakallio@kolmekampusta.fi · sales.pajulahti@kolmekampusta.fi</p>
+    <ul class="foot-links">
+      <li><a href="#privacy">Privacy notice</a></li>
+      <li><a href="https://www.kolmekampusta.fi/fi/yritysasiakkaiden-jarjestojen-ja-rippileirien-varaus-ja-peruutusehdot">Booking and cancellation terms (in Finnish)</a></li>
+      <li>Accessibility statement <mark class="vahvista">[VAHVISTA: esimerkki.fi/accessibility]</mark></li>
+      <li>Cookies: this concept draft uses no cookies.</li>
+    </ul>
+    <p class="foot-credit">Photos: <span lang="fi">Kolmen kampuksen urheiluopisto</span>, kolmekampusta.fi. The photos are used in this concept draft for illustration only.</p>
+    <p class="foot-label"><span lang="fi">Konseptiluonnos – ei julkaistu.</span> Concept draft – not published.</p>
+  </div>
+</footer>
+
+<div class="sticky-bar" id="sticky-bar">
+  <a class="btn btn-primary" href="#request">Request a camp proposal</a>
+  <a class="btn btn-secondary" href="tel:+358447755777" aria-label="Call sales on +358 44 77 55 777">Call</a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+
+  var pkg = $('f-package');
+  Array.prototype.forEach.call(document.querySelectorAll('a[href="#request"]'), function (a) {
+    a.addEventListener('click', function () { pkg.value = a.getAttribute('data-package') || ''; });
+  });
+
+  var bar = $('sticky-bar');
+  var heroOut = false, formIn = false;
+  function syncBar() { bar.classList.toggle('is-visible', heroOut && !formIn); }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      heroOut = !entries[entries.length - 1].isIntersecting;
+      syncBar();
+    }).observe($('hero-cta'));
+    new IntersectionObserver(function (entries) {
+      formIn = entries[entries.length - 1].isIntersecting;
+      syncBar();
+    }, { rootMargin: '0px 0px -64px 0px' }).observe($('request'));
+  }
+
+  var form = $('request-form');
+  var summary = $('error-summary');
+  var summaryTitle = summary.querySelector('h3 span');
+  var summaryList = $('error-summary-list');
+  var inputs = ['f-name', 'f-email', 'f-org', 'f-count', 'f-dates', 'f-phone'].map($);
+  var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var COUNT = /^\d{1,5}(\s*[–-]\s*\d{1,5})?$/;
+  var PHONE = /^\+?\d[\d\s\-()]*$/;
+
+  function errFor(el) { return $(el.id.replace('f-', 'err-')); }
+
+  function messageFor(el) {
+    var v = el.value.trim();
+    if (!v) return el.required ? el.getAttribute('data-empty') : '';
+    if (el.type === 'email' && !EMAIL.test(v)) return el.getAttribute('data-invalid');
+    if (el.id === 'f-count' && !COUNT.test(v)) return el.getAttribute('data-invalid');
+    if (el.type === 'tel' && !PHONE.test(v)) return el.getAttribute('data-invalid');
+    return '';
+  }
+
+  function showError(el, msg) {
+    var err = errFor(el);
+    var help = $(el.id.replace('f-', 'h-'));
+    if (msg) {
+      err.querySelector('span').textContent = msg;
+      err.hidden = false;
+      el.setAttribute('aria-invalid', 'true');
+      el.setAttribute('aria-describedby', (help ? help.id + ' ' : '') + err.id);
+    } else {
+      err.hidden = true;
+      el.removeAttribute('aria-invalid');
+      if (help) el.setAttribute('aria-describedby', help.id); else el.removeAttribute('aria-describedby');
+    }
+  }
+
+  function renderSummary() {
+    var bad = inputs.filter(function (el) { return el.getAttribute('aria-invalid') === 'true'; });
+    summaryList.textContent = '';
+    if (!bad.length) { summary.hidden = true; return; }
+    summaryTitle.textContent = bad.length === 1 ? 'Check 1 field:' : 'Check ' + bad.length + ' fields:';
+    bad.forEach(function (el) {
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + el.id;
+      a.textContent = errFor(el).querySelector('span').textContent;
+      a.addEventListener('click', function (ev) { ev.preventDefault(); el.focus(); });
+      li.appendChild(a);
+      summaryList.appendChild(li);
+    });
+    summary.hidden = false;
+  }
+
+  inputs.forEach(function (el) {
+    el.addEventListener('input', function () {
+      if (el.getAttribute('aria-invalid') !== 'true') return;
+      showError(el, messageFor(el));
+      renderSummary();
+    });
+  });
+
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var first = null;
+    inputs.forEach(function (el) {
+      var msg = messageFor(el);
+      showError(el, msg);
+      if (msg && !first) first = el;
+    });
+    if (first) {
+      renderSummary();
+      summary.focus();
+      return;
+    }
+    summary.hidden = true;
+    $('success-address').textContent = $('f-email').value.trim();
+    form.hidden = true;
+    $('success').hidden = false;
+    $('success-title').focus();
+  });
+})();
+</script>
+</body>
+</html>
